@@ -1,0 +1,6 @@
+@MedicalCabinetWeb.Domain_HostAddress = http://localhost:5031
+
+GET {{MedicalCabinetWeb.Domain_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

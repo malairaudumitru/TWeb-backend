@@ -1,0 +1,5 @@
+D:\Anul 2\SEM 2\TWeb backend\MedicalCabinetWeb\MedicalCabinetWeb.DataAccesLayer\obj\Debug\net8.0\MedicalCabinetWeb.DataAccesLayer.csproj.AssemblyReference.cache
+D:\Anul 2\SEM 2\TWeb backend\MedicalCabinetWeb\MedicalCabinetWeb.DataAccesLayer\obj\Debug\net8.0\MedicalCabinetWeb.DataAccesLayer.GeneratedMSBuildEditorConfig.editorconfig
+D:\Anul 2\SEM 2\TWeb backend\MedicalCabinetWeb\MedicalCabinetWeb.DataAccesLayer\obj\Debug\net8.0\MedicalCabinetWeb.DataAccesLayer.AssemblyInfoInputs.cache
+D:\Anul 2\SEM 2\TWeb backend\MedicalCabinetWeb\MedicalCabinetWeb.DataAccesLayer\obj\Debug\net8.0\MedicalCabinetWeb.DataAccesLayer.AssemblyInfo.cs
+D:\Anul 2\SEM 2\TWeb backend\MedicalCabinetWeb\MedicalCabinetWeb.DataAccesLayer\obj\Debug\net8.0\MedicalCabinetWeb.DataAccesLayer.csproj.CoreCompileInputs.cache
