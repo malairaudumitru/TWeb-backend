@@ -52,3 +52,10 @@ CodeCoverage/
 *.VisualState.xml
 TestResult.xml
 nunit-*.xml
+
+bin/
+obj/
+.idea/
+.vs/
+*.user
+*.log
