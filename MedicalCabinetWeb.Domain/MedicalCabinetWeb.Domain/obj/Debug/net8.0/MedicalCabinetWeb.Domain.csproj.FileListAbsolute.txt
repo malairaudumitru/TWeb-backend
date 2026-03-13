@@ -9,3 +9,4 @@ D:\Anul 2\SEM 2\TWeb backend\MedicalCabinetWeb\MedicalCabinetWeb.Domain\MedicalC
 D:\Anul 2\SEM 2\TWeb backend\MedicalCabinetWeb\MedicalCabinetWeb.Domain\MedicalCabinetWeb.Domain\obj\Debug\net8.0\refint\MedicalCabinetWeb.Domain.dll
 D:\Anul 2\SEM 2\TWeb backend\MedicalCabinetWeb\MedicalCabinetWeb.Domain\MedicalCabinetWeb.Domain\obj\Debug\net8.0\MedicalCabinetWeb.Domain.pdb
 D:\Anul 2\SEM 2\TWeb backend\MedicalCabinetWeb\MedicalCabinetWeb.Domain\MedicalCabinetWeb.Domain\obj\Debug\net8.0\ref\MedicalCabinetWeb.Domain.dll
+D:\Anul 2\SEM 2\TWeb backend\MedicalCabinetWeb\MedicalCabinetWeb.Domain\MedicalCabinetWeb.Domain\obj\Debug\net8.0\MedicalCabinetWeb.Domain.sourcelink.json

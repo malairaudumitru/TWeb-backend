@@ -15,3 +15,4 @@ D:\Anul 2\SEM 2\TWeb backend\MedicalCabinetWeb\MedicalCabinetWeb.BusinessLayer\M
 D:\Anul 2\SEM 2\TWeb backend\MedicalCabinetWeb\MedicalCabinetWeb.BusinessLayer\MedicalCabinetWeb.BusinessLayer\obj\Debug\net8.0\refint\MedicalCabinetWeb.BusinessLayer.dll
 D:\Anul 2\SEM 2\TWeb backend\MedicalCabinetWeb\MedicalCabinetWeb.BusinessLayer\MedicalCabinetWeb.BusinessLayer\obj\Debug\net8.0\MedicalCabinetWeb.BusinessLayer.pdb
 D:\Anul 2\SEM 2\TWeb backend\MedicalCabinetWeb\MedicalCabinetWeb.BusinessLayer\MedicalCabinetWeb.BusinessLayer\obj\Debug\net8.0\ref\MedicalCabinetWeb.BusinessLayer.dll
+D:\Anul 2\SEM 2\TWeb backend\MedicalCabinetWeb\MedicalCabinetWeb.BusinessLayer\MedicalCabinetWeb.BusinessLayer\obj\Debug\net8.0\MedicalCabinetWeb.BusinessLayer.sourcelink.json

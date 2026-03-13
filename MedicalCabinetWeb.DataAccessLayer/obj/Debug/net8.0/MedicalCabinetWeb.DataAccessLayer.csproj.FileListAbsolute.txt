@@ -15,3 +15,4 @@ D:\Anul 2\SEM 2\TWeb backend\MedicalCabinetWeb\MedicalCabinetWeb.DataAccessLayer
 D:\Anul 2\SEM 2\TWeb backend\MedicalCabinetWeb\MedicalCabinetWeb.DataAccessLayer\obj\Debug\net8.0\MedicalCabinetWeb.DataAccessLayer.pdb
 D:\Anul 2\SEM 2\TWeb backend\MedicalCabinetWeb\MedicalCabinetWeb.DataAccessLayer\obj\Debug\net8.0\MedicalCabinetWeb.DataAccessLayer.genruntimeconfig.cache
 D:\Anul 2\SEM 2\TWeb backend\MedicalCabinetWeb\MedicalCabinetWeb.DataAccessLayer\obj\Debug\net8.0\ref\MedicalCabinetWeb.DataAccessLayer.dll
+D:\Anul 2\SEM 2\TWeb backend\MedicalCabinetWeb\MedicalCabinetWeb.DataAccessLayer\obj\Debug\net8.0\MedicalCabinetWeb.DataAccessLayer.sourcelink.json
