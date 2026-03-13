@@ -1,16 +1,22 @@
 ﻿using MedicalCabinetWeb.BusinessLayer.Interfaces;
-using MedicalCabinetWeb.BusinessLayer.Structure;
+using MedicalCabinetWeb.DataAccessLayer.Interfaces;
 using MedicalCabinetWeb.Domain.Models.Service;
 using MedicalCabinetWeb.Domain.Models.LogicService;
 
 
 namespace MedicalCabinetWeb.BusinessLayer.Core;
 
-public class ServiceLogic: ServiceActions, IServiceLogic
+public class ServiceLogic: IServiceLogic
 {
+    private readonly IServiceRepository _serviceRepository;
+
+    public ServiceLogic(IServiceRepository serviceRepository)
+    {
+        _serviceRepository = serviceRepository;
+    }
     public LogicServiceResponse CreateService(ServiceCreateDto serviceCreateDto)
     {
-        var result = CreateServiceAction(serviceCreateDto);
+        var result = _serviceRepository.CreateService(serviceCreateDto);
         if (result == false)
             return new LogicServiceResponse
             {
@@ -27,7 +33,7 @@ public class ServiceLogic: ServiceActions, IServiceLogic
 
     public LogicServiceResponse DeleteService(int id)
     {
-        var result =DeleteServiceAction(id);
+        var result = _serviceRepository.DeleteService(id);
         if (result == false)
             return new LogicServiceResponse
             {
@@ -46,7 +52,7 @@ public class ServiceLogic: ServiceActions, IServiceLogic
 
     public LogicServiceResponse GetServiceById(int id)
     {
-        var service = GetServiceByIdAction(id);
+        var service = _serviceRepository.GetServiceById(id);
         if (service == null)
             return LogicServiceResponse.NotFound("Service not found");
 
@@ -60,7 +66,7 @@ public class ServiceLogic: ServiceActions, IServiceLogic
 
     public LogicServiceResponse GetServiceList()
     {
-        var serviceList = GetServiceListAction();
+        var serviceList = _serviceRepository.GetServiceList();
         return new LogicServiceResponse
         {
             IsSuccess = true,

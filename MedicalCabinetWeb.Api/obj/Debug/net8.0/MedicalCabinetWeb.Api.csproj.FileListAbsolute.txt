@@ -109,3 +109,4 @@ D:\Anul 2\SEM 2\TWeb backend\MedicalCabinetWeb\MedicalCabinetWeb.Api\bin\Debug\n
 D:\Anul 2\SEM 2\TWeb backend\MedicalCabinetWeb\MedicalCabinetWeb.Api\bin\Debug\net8.0\MedicalCabinetWeb.BusinessLayer.pdb
 D:\Anul 2\SEM 2\TWeb backend\MedicalCabinetWeb\MedicalCabinetWeb.Api\bin\Debug\net8.0\MedicalCabinetWeb.Domain.pdb
 D:\Anul 2\SEM 2\TWeb backend\MedicalCabinetWeb\MedicalCabinetWeb.Api\bin\Debug\net8.0\MedicalCabinetWeb.DataAccessLayer.pdb
+D:\Anul 2\SEM 2\TWeb backend\MedicalCabinetWeb\MedicalCabinetWeb.Api\obj\Debug\net8.0\MedicalCabinetWeb.Api.sourcelink.json
