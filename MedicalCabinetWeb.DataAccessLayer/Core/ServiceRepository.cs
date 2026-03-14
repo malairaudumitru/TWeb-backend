@@ -20,7 +20,9 @@ public class ServiceRepository: IServiceRepository
         var serviceEntity = new ServiceEntity
         {
             Name = service.Name,
-            Price = service.Price
+            Price = service.Price,
+            Description = service.Description,
+            Duration = service.Duration
         };
         try
         {
@@ -43,7 +45,9 @@ public class ServiceRepository: IServiceRepository
         {
             Id = serviceEntity.Id,
             Name = serviceEntity.Name,
-            Price = serviceEntity.Price
+            Price = serviceEntity.Price,
+            Description = serviceEntity.Description,
+            Duration = serviceEntity.Duration
         };
        
         return serviceInfoDto;
@@ -56,7 +60,9 @@ public class ServiceRepository: IServiceRepository
             {
                 Id = serviceEntity.Id,
                 Name = serviceEntity.Name,
-                Price = serviceEntity.Price
+                Price = serviceEntity.Price,
+                Description = serviceEntity.Description,
+                Duration = serviceEntity.Duration
             })
             .ToList();
        
