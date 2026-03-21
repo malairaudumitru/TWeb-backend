@@ -1,21 +1,20 @@
 ﻿
 using MedicalCabinetWeb.DataAccessLayer.Context;
-using MedicalCabinetWeb.DataAccessLayer.Interfaces;
 using MedicalCabinetWeb.Domain.Entities.MedicalService;
 using MedicalCabinetWeb.Domain.Models.MedicalService;
  
-namespace MedicalCabinetWeb.DataAccessLayer.Core;
+namespace MedicalCabinetWeb.BusinessLayer.Structure;
 
-public class ServiceRepository : IServiceRepository
+public class MedicalServiceActions
 {
-    private readonly ServiceDbContext _context;
+    private readonly MedicalServiceContext _context;
 
-    public ServiceRepository(ServiceDbContext context)
+    public MedicalServiceActions()
     {
-        _context = context;
+        _context = new MedicalServiceContext();
     }
 
-    public bool CreateService(MedicalServiceDto service)
+    public bool CreateMedicalServiceAction(MedicalServiceDto service)
     {
         var serviceEntity = new MedicalServiceData
         {
@@ -35,9 +34,9 @@ public class ServiceRepository : IServiceRepository
         }
     }
     
-    public MedicalServiceDto? GetServiceById(int id)
+    public MedicalServiceDto? GetMedicalServiceByIdAction(int id)
     {
-        var serviceEntity = _context.Services.Find(id);
+        var serviceEntity = _context.MedicalServices.Find(id);
         if(serviceEntity == null)
             return null; 
        
@@ -54,9 +53,9 @@ public class ServiceRepository : IServiceRepository
 
     }
 
-    public List<MedicalServiceDto>? GetServiceList()
+    public List<MedicalServiceDto>? GetMedicalServiceListAction()
     {
-        var productList = _context.Services.Select(serviceEntity => new MedicalServiceDto
+        var productList = _context.MedicalServices.Select(serviceEntity => new MedicalServiceDto
             {
                 Id = serviceEntity.Id,
                 ServiceName = serviceEntity.ServiceName,
@@ -69,16 +68,16 @@ public class ServiceRepository : IServiceRepository
         return productList;
     }
 
-    public bool DeleteService(int id)
+    public bool DeleteMedicalServiceAction(int id)
     {
-        var serviceEntity = _context.Services.Find(id);
+        var serviceEntity = _context.MedicalServices.Find(id);
         {
             if (serviceEntity == null)
                 return false;
         }
         try
         {
-            _context.Services.Remove(serviceEntity);
+            _context.MedicalServices.Remove(serviceEntity);
             _context.SaveChanges();
             return true;
         }
@@ -86,6 +85,11 @@ public class ServiceRepository : IServiceRepository
         {
             return false;
         }
+    }
+    
+    public bool UpdateMedicalServiceAction(MedicalServiceDto service)
+    {
+        throw new NotImplementedException();
     }
    
 }

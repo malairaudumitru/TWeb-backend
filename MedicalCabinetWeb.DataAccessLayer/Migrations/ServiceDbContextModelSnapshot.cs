@@ -9,7 +9,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace MedicalCabinetWeb.DataAccessLayer.Migrations
 {
-    [DbContext(typeof(ServiceDbContext))]
+    [DbContext(typeof(MedicalServiceContext))]
     partial class ServiceDbContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)

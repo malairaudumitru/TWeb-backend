@@ -10,17 +10,17 @@ namespace MedicalCabinetWeb.Api.Controllers;
 [Route("api/service")]
 public class MedicalServiceController: ControllerBase
 {
-    private readonly IServiceLogic _serviceLogic;
+    private readonly IMedicalServiceLogic _medicalServiceLogic;
     public MedicalServiceController()
     {
         var bl = new BusinessLogic();
-        _serviceLogic = bl.GetServiceLogic();
+        _medicalServiceLogic = bl.GetServiceLogic();
     }
 
     [HttpGet("{id}")]
-    public IActionResult GetServiceById([FromRoute] int id)
+    public IActionResult GetMedicalServiceById([FromRoute] int id)
     {
-        var result = _serviceLogic.GetServiceById(id);
+        var result = _medicalServiceLogic.GetMedicalServiceById(id);
         if(result.IsSuccess == false)
             return StatusCode((int)result.StatusCode, result.Message);
         
@@ -29,9 +29,9 @@ public class MedicalServiceController: ControllerBase
     }
 
     [HttpGet("list")]
-    public IActionResult GetProductList()
+    public IActionResult GetMedicalProductList()
     {
-        var result = _serviceLogic.GetServiceList();
+        var result = _medicalServiceLogic.GetMedicalServiceList();
         if(result.IsSuccess == false)
             return StatusCode((int)result.StatusCode, result.Message);
         
@@ -40,9 +40,9 @@ public class MedicalServiceController: ControllerBase
 
 
     [HttpPost("create")]
-    public IActionResult CreateService([FromBody] MedicalServiceDto medicalService)
+    public IActionResult CreateMedicalService([FromBody] MedicalServiceDto medicalService)
     {
-        var result = _serviceLogic.CreateService(medicalService);
+        var result = _medicalServiceLogic.CreateMedicalService(medicalService);
         if(result.IsSuccess == false)
             return StatusCode((int)result.StatusCode, result.Message);
         
@@ -50,13 +50,19 @@ public class MedicalServiceController: ControllerBase
     }
 
     [HttpDelete("{id}")]
-    public IActionResult DeleteService([FromRoute] int id)
+    public IActionResult DeleteMedicalService([FromRoute] int id)
     {
-        var result = _serviceLogic.DeleteService(id);
+        var result = _medicalServiceLogic.DeleteMedicalService(id);
         if (result.IsSuccess == false)
             return StatusCode((int)result.StatusCode, result.Message);
 
         return Ok(result.Message);
+    }
+
+    [HttpPut("update")]
+    public IActionResult UpdateMedicalService([FromBody] MedicalServiceDto medicalService)
+    {
+        throw new NotImplementedException();
     }
     
     
