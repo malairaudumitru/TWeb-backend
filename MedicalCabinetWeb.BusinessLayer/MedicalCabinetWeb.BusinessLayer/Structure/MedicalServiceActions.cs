@@ -60,7 +60,8 @@ public class MedicalServiceActions
     
     protected MedicalServiceDto? GetMedicalServiceByIdAction(int id)
     {
-        var serviceEntity = _context.MedicalServices.Find(id);
+        var serviceEntity = _context.MedicalServices
+            .FirstOrDefault(x => x.Id == id && x.IsDeleted == false);
         if(serviceEntity == null)
             return null; 
        
@@ -79,7 +80,10 @@ public class MedicalServiceActions
 
     protected List<MedicalServiceDto> GetMedicalServiceListAction()
     {
-        var productList = _context.MedicalServices.Select(serviceEntity => new MedicalServiceDto
+        var productList = _context.MedicalServices
+            .Where(x => x.IsDeleted == false)
+            .Select(serviceEntity => new MedicalServiceDto
+            
             {
                 Id = serviceEntity.Id,
                 ServiceName = serviceEntity.ServiceName,
@@ -89,6 +93,7 @@ public class MedicalServiceActions
                 
             })
             .ToList();
+            
        
         return productList;
     }
@@ -102,7 +107,8 @@ public class MedicalServiceActions
         }
         try
         {
-            _context.MedicalServices.Remove(serviceEntity);
+            serviceEntity.IsDeleted = true;
+            _context.MedicalServices.Update(serviceEntity);
             _context.SaveChanges();
             return true;
         }

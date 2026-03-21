@@ -30,4 +30,6 @@ public class MedicalServiceData
     [DataType(DataType.Date)]
     public DateTime? UpdatedAt { get; set; }
     
+    public bool IsDeleted { get; set; } = false;
+    
 }
