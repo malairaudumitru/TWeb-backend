@@ -1,12 +1,12 @@
 ﻿
 using MedicalCabinetWeb.DataAccessLayer.Context;
 using MedicalCabinetWeb.DataAccessLayer.Interfaces;
-using MedicalCabinetWeb.Domain.Entities.Service;
-using MedicalCabinetWeb.Domain.Models.Service;
+using MedicalCabinetWeb.Domain.Entities.MedicalService;
+using MedicalCabinetWeb.Domain.Models.MedicalService;
  
 namespace MedicalCabinetWeb.DataAccessLayer.Core;
 
-public class ServiceRepository: IServiceRepository
+public class ServiceRepository : IServiceRepository
 {
     private readonly ServiceDbContext _context;
 
@@ -15,14 +15,14 @@ public class ServiceRepository: IServiceRepository
         _context = context;
     }
 
-    public bool CreateService(ServiceCreateDto service)
+    public bool CreateService(MedicalServiceDto service)
     {
-        var serviceEntity = new ServiceEntity
+        var serviceEntity = new MedicalServiceData
         {
-            Name = service.Name,
-            Price = service.Price,
-            Description = service.Description,
-            Duration = service.Duration
+            ServiceName = service.ServiceName,
+            ServicePrice = service.ServicePrice,
+            ServiceDescription = service.ServiceDescription,
+            ServiceDuration = service.ServiceDuration
         };
         try
         {
@@ -35,34 +35,34 @@ public class ServiceRepository: IServiceRepository
         }
     }
     
-    public ServiceInfoDto? GetServiceById(int id)
+    public MedicalServiceDto? GetServiceById(int id)
     {
         var serviceEntity = _context.Services.Find(id);
         if(serviceEntity == null)
             return null; 
        
-        var serviceInfoDto = new ServiceInfoDto
+        var serviceInfoDto = new MedicalServiceDto
         {
             Id = serviceEntity.Id,
-            Name = serviceEntity.Name,
-            Price = serviceEntity.Price,
-            Description = serviceEntity.Description,
-            Duration = serviceEntity.Duration
+            ServiceName = serviceEntity.ServiceName,
+            ServicePrice = serviceEntity.ServicePrice,
+            ServiceDescription = serviceEntity.ServiceDescription,
+            ServiceDuration = serviceEntity.ServiceDuration
         };
        
         return serviceInfoDto;
 
     }
 
-    public List<ServiceInfoDto>? GetServiceList()
+    public List<MedicalServiceDto>? GetServiceList()
     {
-        var productList = _context.Services.Select(serviceEntity => new ServiceInfoDto
+        var productList = _context.Services.Select(serviceEntity => new MedicalServiceDto
             {
                 Id = serviceEntity.Id,
-                Name = serviceEntity.Name,
-                Price = serviceEntity.Price,
-                Description = serviceEntity.Description,
-                Duration = serviceEntity.Duration
+                ServiceName = serviceEntity.ServiceName,
+                ServicePrice = serviceEntity.ServicePrice,
+                ServiceDescription = serviceEntity.ServiceDescription,
+                ServiceDuration = serviceEntity.ServiceDuration
             })
             .ToList();
        

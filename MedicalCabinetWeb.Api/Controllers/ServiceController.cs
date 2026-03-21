@@ -1,17 +1,17 @@
 ﻿
 using MedicalCabinetWeb.BusinessLayer;
 using MedicalCabinetWeb.BusinessLayer.Interfaces;
-using MedicalCabinetWeb.Domain.Models.Service;
+using MedicalCabinetWeb.Domain.Models.MedicalService;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MedicalCabinetWeb.Api.Controllers;
 
 [ApiController]
 [Route("api/service")]
-public class ServiceController: ControllerBase
+public class MedicalServiceController: ControllerBase
 {
     private readonly IServiceLogic _serviceLogic;
-    public ServiceController()
+    public MedicalServiceController()
     {
         var bl = new BusinessLogic();
         _serviceLogic = bl.GetServiceLogic();
@@ -40,9 +40,9 @@ public class ServiceController: ControllerBase
 
 
     [HttpPost("create")]
-    public IActionResult CreateService([FromBody] ServiceCreateDto service)
+    public IActionResult CreateService([FromBody] MedicalServiceDto medicalService)
     {
-        var result = _serviceLogic.CreateService(service);
+        var result = _serviceLogic.CreateService(medicalService);
         if(result.IsSuccess == false)
             return StatusCode((int)result.StatusCode, result.Message);
         

@@ -1,6 +1,6 @@
 ﻿using MedicalCabinetWeb.BusinessLayer.Interfaces;
 using MedicalCabinetWeb.DataAccessLayer.Interfaces;
-using MedicalCabinetWeb.Domain.Models.Service;
+using MedicalCabinetWeb.Domain.Models.MedicalService;
 using MedicalCabinetWeb.Domain.Models.LogicService;
 
 
@@ -14,7 +14,7 @@ public class ServiceLogic: IServiceLogic
     {
         _serviceRepository = serviceRepository;
     }
-    public LogicServiceResponse CreateService(ServiceCreateDto serviceCreateDto)
+    public LogicServiceResponse CreateService(MedicalServiceDto serviceCreateDto)
     {
         var result = _serviceRepository.CreateService(serviceCreateDto);
         if (result == false)

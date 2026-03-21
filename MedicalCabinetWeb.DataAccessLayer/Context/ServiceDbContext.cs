@@ -1,4 +1,4 @@
-﻿using MedicalCabinetWeb.Domain.Entities.Service;
+﻿using MedicalCabinetWeb.Domain.Entities.MedicalService;
 using Microsoft.EntityFrameworkCore;
 
 
@@ -6,7 +6,7 @@ namespace MedicalCabinetWeb.DataAccessLayer.Context;
 
 public class ServiceDbContext: DbContext
 {
-    public DbSet<ServiceEntity> Services { get; set; }
+    public DbSet<MedicalServiceData> Services { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {

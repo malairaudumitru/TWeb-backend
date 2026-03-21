@@ -1,11 +1,11 @@
-﻿using MedicalCabinetWeb.Domain.Models.Service;
+﻿using MedicalCabinetWeb.Domain.Models.MedicalService;
 using MedicalCabinetWeb.Domain.Models.LogicService;
 
 namespace MedicalCabinetWeb.BusinessLayer.Interfaces;
 
 public interface IServiceLogic
 {
-    LogicServiceResponse CreateService(ServiceCreateDto service);
+    LogicServiceResponse CreateService(MedicalServiceDto service);
     LogicServiceResponse GetServiceById(int id);
     LogicServiceResponse GetServiceList();
     LogicServiceResponse DeleteService(int id);

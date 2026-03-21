@@ -1,11 +1,12 @@
-﻿using MedicalCabinetWeb.Domain.Models.Service;
+﻿using MedicalCabinetWeb.Domain.Models.MedicalService;
+
 
 namespace MedicalCabinetWeb.DataAccessLayer.Interfaces;
 
 public interface IServiceRepository
 {
-    bool CreateService(ServiceCreateDto service);
-    ServiceInfoDto? GetServiceById(int id);
-    List<ServiceInfoDto>? GetServiceList();
+    bool CreateService(MedicalServiceDto service);
+    MedicalServiceDto? GetServiceById(int id);
+    List<MedicalServiceDto>? GetServiceList();
     bool DeleteService(int id);
 }
