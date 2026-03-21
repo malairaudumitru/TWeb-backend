@@ -25,11 +25,11 @@ public class MedicalServiceData
     public int ServiceDuration { get; set; }
     
     [DataType(DataType.Date)]
-    public DateTime CreatedAt { get; set; } = DateTime.Now;
+    public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
     
     [DataType(DataType.Date)]
-    public DateTime? UpdatedAt { get; set; }
+    public DateTime? UpdatedAt { get; set; } = DateTime.UtcNow;
     
     public bool IsDeleted { get; set; } = false;
-    
+
 }

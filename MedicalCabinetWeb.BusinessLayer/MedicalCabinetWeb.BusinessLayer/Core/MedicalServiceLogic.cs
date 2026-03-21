@@ -44,9 +44,9 @@ public class MedicalServiceLogic: MedicalServiceActions, IMedicalServiceLogic
         return ActionResponse.Ok(data: serviceList);
     }
     
-    public ActionResponse UpdateMedicalService(MedicalServiceInfoDto data)
+    public ActionResponse UpdateMedicalService(int id, MedicalServiceInfoDto data)
     {
-        var result = UpdateMedicalServiceAction(data);
+        var result = UpdateMedicalServiceAction(id, data);
         if (result == false)
             return ActionResponse.BadRequest("Error updating service");
         

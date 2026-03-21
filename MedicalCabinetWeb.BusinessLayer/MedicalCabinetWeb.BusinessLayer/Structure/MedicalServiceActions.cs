@@ -33,29 +33,29 @@ public class MedicalServiceActions
             _context.Add(serviceEntity);
             _context.SaveChanges();
             return true;
-        } catch (Exception e)
+        } 
+        catch (Exception e)
         {
+            Console.WriteLine(e.Message);
             return false;
         }
     }
     
     private ActionResponse ValidateMedicalServiceName(MedicalServiceCreateDto data)
     {
+        
+        if (string.IsNullOrEmpty(data.ServiceName))
+            return new ActionResponse { IsSuccess = false, Message = "ServiceName is empty" };
+
         var localData = _context.MedicalServices
-            .FirstOrDefault(x => x.ServiceName.ToLower() == data.ServiceName.ToLower());
+            .FirstOrDefault(x => x.ServiceName != null && 
+                                 x.ServiceName.ToLower() == data.ServiceName.ToLower() && 
+                                 x.IsDeleted == false);
 
         if (localData != null)
-            return new ActionResponse
-            {
-                IsSuccess = false,
-                Message = "A medical service with the same name already exists."
-            };
+            return new ActionResponse { IsSuccess = false, Message = "Already exists" };
 
-        return new ActionResponse
-        {
-            IsSuccess = true,
-            Message = "A medical service name is valid."
-        };
+        return new ActionResponse { IsSuccess = true };
     }
     
     protected MedicalServiceInfoDto? GetMedicalServiceByIdAction(int id)
@@ -118,9 +118,9 @@ public class MedicalServiceActions
         }
     }
     
-    protected bool UpdateMedicalServiceAction(MedicalServiceInfoDto serviceInfo)
+    protected bool UpdateMedicalServiceAction(int id, MedicalServiceInfoDto serviceInfo)
     {
-        var serviceEntity = _context.MedicalServices.Find(serviceInfo.Id);
+        var serviceEntity = _context.MedicalServices.Find(id);
         if(serviceEntity == null)
             return false;
 

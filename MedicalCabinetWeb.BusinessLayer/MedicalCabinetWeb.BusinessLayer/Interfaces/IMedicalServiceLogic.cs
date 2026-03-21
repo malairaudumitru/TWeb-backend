@@ -8,7 +8,7 @@ public interface IMedicalServiceLogic
     ActionResponse GetMedicalServiceList();
     ActionResponse GetMedicalServiceById(int id);
     ActionResponse CreateMedicalService(MedicalServiceCreateDto data);
-    ActionResponse UpdateMedicalService(MedicalServiceInfoDto data);
+    ActionResponse UpdateMedicalService(int id, MedicalServiceInfoDto data);
     ActionResponse DeleteMedicalService(int id);
 
     //In caz daca vrei sa modifici de pe front
