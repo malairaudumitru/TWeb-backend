@@ -59,10 +59,10 @@ public class MedicalServiceController: ControllerBase
         return Ok(result.Message);
     }
 
-    [HttpPut("{id}")]
-    public IActionResult UpdateMedicalService([FromRoute] int id, [FromBody] MedicalServiceInfoDto medicalServiceInfo)
+    [HttpPut("update/{id}")]
+    public IActionResult UpdateMedicalService([FromRoute] int id, [FromBody] MedicalServiceCreateDto medicalServiceCreate)
     {
-       var result = _medicalServiceLogic.UpdateMedicalService(id, medicalServiceInfo);
+       var result = _medicalServiceLogic.UpdateMedicalService(id, medicalServiceCreate);
        if (result.IsSuccess == false)
            return StatusCode((int)result.StatusCode, result.Message);
        

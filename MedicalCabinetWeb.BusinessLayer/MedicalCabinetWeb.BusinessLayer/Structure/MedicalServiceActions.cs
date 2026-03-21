@@ -118,7 +118,7 @@ public class MedicalServiceActions
         }
     }
     
-    protected bool UpdateMedicalServiceAction(int id, MedicalServiceInfoDto serviceInfo)
+    protected bool UpdateMedicalServiceAction(int id, MedicalServiceCreateDto serviceInfo)
     {
         var serviceEntity = _context.MedicalServices.Find(id);
         if(serviceEntity == null)
@@ -128,7 +128,7 @@ public class MedicalServiceActions
         serviceEntity.ServicePrice = serviceInfo.ServicePrice;
         serviceEntity.ServiceDescription = serviceInfo.ServiceDescription;
         serviceEntity.ServiceDuration = serviceInfo.ServiceDuration;
-        serviceEntity.UpdatedAt = DateTime.Now;
+        serviceEntity.UpdatedAt = DateTime.UtcNow;
 
         try
         {
