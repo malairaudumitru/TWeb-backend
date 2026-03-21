@@ -46,7 +46,11 @@ public class MedicalServiceLogic: MedicalServiceActions, IMedicalServiceLogic
     
     public ActionResponse UpdateMedicalService(MedicalServiceDto data)
     {
-        throw new NotImplementedException();
+        var result = UpdateMedicalServiceAction(data);
+        if (result == false)
+            return ActionResponse.BadRequest("Error updating service");
+        
+        return ActionResponse.Ok("Service updated successfully");
     }
     
 }

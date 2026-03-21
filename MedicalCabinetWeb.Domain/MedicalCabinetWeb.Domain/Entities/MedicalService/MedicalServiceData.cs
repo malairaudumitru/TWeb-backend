@@ -25,6 +25,9 @@ public class MedicalServiceData
     public int ServiceDuration { get; set; }
     
     [DataType(DataType.Date)]
-    public DateTime CreatedAt { get; set; }
+    public DateTime CreatedAt { get; set; } = DateTime.Now;
+    
+    [DataType(DataType.Date)]
+    public DateTime? UpdatedAt { get; set; }
     
 }

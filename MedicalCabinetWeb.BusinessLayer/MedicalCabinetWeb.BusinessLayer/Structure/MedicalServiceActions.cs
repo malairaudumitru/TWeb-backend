@@ -2,7 +2,8 @@
 using MedicalCabinetWeb.DataAccessLayer.Context;
 using MedicalCabinetWeb.Domain.Entities.MedicalService;
 using MedicalCabinetWeb.Domain.Models.MedicalService;
- 
+using MedicalCabinetWeb.Domain.Models.Responses;
+
 namespace MedicalCabinetWeb.BusinessLayer.Structure;
 
 public class MedicalServiceActions
@@ -14,8 +15,12 @@ public class MedicalServiceActions
         _context = new MedicalServiceContext();
     }
 
-    public bool CreateMedicalServiceAction(MedicalServiceDto service)
+    protected bool CreateMedicalServiceAction(MedicalServiceDto service)
     {
+        var validate = ValidateMedicalServiceName(service);
+        if (!validate.IsSuccess)
+            return false;
+        
         var serviceEntity = new MedicalServiceData
         {
             ServiceName = service.ServiceName,
@@ -34,7 +39,26 @@ public class MedicalServiceActions
         }
     }
     
-    public MedicalServiceDto? GetMedicalServiceByIdAction(int id)
+    private ActionResponse ValidateMedicalServiceName(MedicalServiceDto data)
+    {
+        var localData = _context.MedicalServices
+            .FirstOrDefault(x => x.ServiceName.ToLower() == data.ServiceName.ToLower());
+
+        if (localData != null)
+            return new ActionResponse
+            {
+                IsSuccess = false,
+                Message = "A medical service with the same name already exists."
+            };
+
+        return new ActionResponse
+        {
+            IsSuccess = true,
+            Message = "A medical service name is valid."
+        };
+    }
+    
+    protected MedicalServiceDto? GetMedicalServiceByIdAction(int id)
     {
         var serviceEntity = _context.MedicalServices.Find(id);
         if(serviceEntity == null)
@@ -53,7 +77,7 @@ public class MedicalServiceActions
 
     }
 
-    public List<MedicalServiceDto>? GetMedicalServiceListAction()
+    protected List<MedicalServiceDto> GetMedicalServiceListAction()
     {
         var productList = _context.MedicalServices.Select(serviceEntity => new MedicalServiceDto
             {
@@ -61,14 +85,15 @@ public class MedicalServiceActions
                 ServiceName = serviceEntity.ServiceName,
                 ServicePrice = serviceEntity.ServicePrice,
                 ServiceDescription = serviceEntity.ServiceDescription,
-                ServiceDuration = serviceEntity.ServiceDuration
+                ServiceDuration = serviceEntity.ServiceDuration,
+                
             })
             .ToList();
        
         return productList;
     }
 
-    public bool DeleteMedicalServiceAction(int id)
+    protected bool DeleteMedicalServiceAction(int id)
     {
         var serviceEntity = _context.MedicalServices.Find(id);
         {
@@ -87,9 +112,30 @@ public class MedicalServiceActions
         }
     }
     
-    public bool UpdateMedicalServiceAction(MedicalServiceDto service)
+    protected bool UpdateMedicalServiceAction(MedicalServiceDto service)
     {
-        throw new NotImplementedException();
+        var serviceEntity = _context.MedicalServices.Find(service.Id);
+        if(serviceEntity == null)
+            return false;
+
+        serviceEntity.ServiceName = service.ServiceName;
+        serviceEntity.ServicePrice = service.ServicePrice;
+        serviceEntity.ServiceDescription = service.ServiceDescription;
+        serviceEntity.ServiceDuration = service.ServiceDuration;
+        serviceEntity.UpdatedAt = DateTime.Now;
+
+        try
+        {
+            _context.MedicalServices.Update(serviceEntity);
+            _context.SaveChanges();
+            return true;
+        }
+        catch (Exception e)
+        {
+            return false;
+        }
+
+
     }
    
 }

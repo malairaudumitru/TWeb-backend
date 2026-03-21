@@ -62,7 +62,11 @@ public class MedicalServiceController: ControllerBase
     [HttpPut("update")]
     public IActionResult UpdateMedicalService([FromBody] MedicalServiceDto medicalService)
     {
-        throw new NotImplementedException();
+       var result = _medicalServiceLogic.UpdateMedicalService(medicalService);
+       if (result.IsSuccess == false)
+           return StatusCode((int)result.StatusCode, result.Message);
+       
+       return Ok(result.Message);
     }
     
     
