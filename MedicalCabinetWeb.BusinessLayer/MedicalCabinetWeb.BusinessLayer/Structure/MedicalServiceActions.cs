@@ -15,18 +15,18 @@ public class MedicalServiceActions
         _context = new MedicalServiceContext();
     }
 
-    protected bool CreateMedicalServiceAction(MedicalServiceDto service)
+    protected bool CreateMedicalServiceAction(MedicalServiceCreateDto serviceInfo)
     {
-        var validate = ValidateMedicalServiceName(service);
+        var validate = ValidateMedicalServiceName(serviceInfo);
         if (!validate.IsSuccess)
             return false;
         
         var serviceEntity = new MedicalServiceData
         {
-            ServiceName = service.ServiceName,
-            ServicePrice = service.ServicePrice,
-            ServiceDescription = service.ServiceDescription,
-            ServiceDuration = service.ServiceDuration
+            ServiceName = serviceInfo.ServiceName,
+            ServicePrice = serviceInfo.ServicePrice,
+            ServiceDescription = serviceInfo.ServiceDescription,
+            ServiceDuration = serviceInfo.ServiceDuration
         };
         try
         {
@@ -39,7 +39,7 @@ public class MedicalServiceActions
         }
     }
     
-    private ActionResponse ValidateMedicalServiceName(MedicalServiceDto data)
+    private ActionResponse ValidateMedicalServiceName(MedicalServiceCreateDto data)
     {
         var localData = _context.MedicalServices
             .FirstOrDefault(x => x.ServiceName.ToLower() == data.ServiceName.ToLower());
@@ -58,14 +58,14 @@ public class MedicalServiceActions
         };
     }
     
-    protected MedicalServiceDto? GetMedicalServiceByIdAction(int id)
+    protected MedicalServiceInfoDto? GetMedicalServiceByIdAction(int id)
     {
         var serviceEntity = _context.MedicalServices
             .FirstOrDefault(x => x.Id == id && x.IsDeleted == false);
         if(serviceEntity == null)
             return null; 
        
-        var serviceInfoDto = new MedicalServiceDto
+        var serviceInfoDto = new MedicalServiceInfoDto
         {
             Id = serviceEntity.Id,
             ServiceName = serviceEntity.ServiceName,
@@ -78,11 +78,11 @@ public class MedicalServiceActions
 
     }
 
-    protected List<MedicalServiceDto> GetMedicalServiceListAction()
+    protected List<MedicalServiceInfoDto> GetMedicalServiceListAction()
     {
         var productList = _context.MedicalServices
             .Where(x => x.IsDeleted == false)
-            .Select(serviceEntity => new MedicalServiceDto
+            .Select(serviceEntity => new MedicalServiceInfoDto
             
             {
                 Id = serviceEntity.Id,
@@ -118,16 +118,16 @@ public class MedicalServiceActions
         }
     }
     
-    protected bool UpdateMedicalServiceAction(MedicalServiceDto service)
+    protected bool UpdateMedicalServiceAction(MedicalServiceInfoDto serviceInfo)
     {
-        var serviceEntity = _context.MedicalServices.Find(service.Id);
+        var serviceEntity = _context.MedicalServices.Find(serviceInfo.Id);
         if(serviceEntity == null)
             return false;
 
-        serviceEntity.ServiceName = service.ServiceName;
-        serviceEntity.ServicePrice = service.ServicePrice;
-        serviceEntity.ServiceDescription = service.ServiceDescription;
-        serviceEntity.ServiceDuration = service.ServiceDuration;
+        serviceEntity.ServiceName = serviceInfo.ServiceName;
+        serviceEntity.ServicePrice = serviceInfo.ServicePrice;
+        serviceEntity.ServiceDescription = serviceInfo.ServiceDescription;
+        serviceEntity.ServiceDuration = serviceInfo.ServiceDuration;
         serviceEntity.UpdatedAt = DateTime.Now;
 
         try

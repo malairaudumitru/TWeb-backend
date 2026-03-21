@@ -8,9 +8,9 @@ namespace MedicalCabinetWeb.BusinessLayer.Core;
 
 public class MedicalServiceLogic: MedicalServiceActions, IMedicalServiceLogic
 {
-    public ActionResponse CreateMedicalService(MedicalServiceDto service)
+    public ActionResponse CreateMedicalService(MedicalServiceCreateDto serviceInfo)
     {
-        var result = CreateMedicalServiceAction(service);
+        var result = CreateMedicalServiceAction(serviceInfo);
         if (result == false)
             return ActionResponse.BadRequest("Error creating service");
         
@@ -44,7 +44,7 @@ public class MedicalServiceLogic: MedicalServiceActions, IMedicalServiceLogic
         return ActionResponse.Ok(data: serviceList);
     }
     
-    public ActionResponse UpdateMedicalService(MedicalServiceDto data)
+    public ActionResponse UpdateMedicalService(MedicalServiceInfoDto data)
     {
         var result = UpdateMedicalServiceAction(data);
         if (result == false)

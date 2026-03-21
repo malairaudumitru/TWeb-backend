@@ -40,9 +40,9 @@ public class MedicalServiceController: ControllerBase
 
 
     [HttpPost("create")]
-    public IActionResult CreateMedicalService([FromBody] MedicalServiceDto medicalService)
+    public IActionResult CreateMedicalService([FromBody] MedicalServiceCreateDto medicalServiceInfo)
     {
-        var result = _medicalServiceLogic.CreateMedicalService(medicalService);
+        var result = _medicalServiceLogic.CreateMedicalService(medicalServiceInfo);
         if(result.IsSuccess == false)
             return StatusCode((int)result.StatusCode, result.Message);
         
@@ -60,9 +60,9 @@ public class MedicalServiceController: ControllerBase
     }
 
     [HttpPut("update")]
-    public IActionResult UpdateMedicalService([FromBody] MedicalServiceDto medicalService)
+    public IActionResult UpdateMedicalService([FromBody] MedicalServiceInfoDto medicalServiceInfo)
     {
-       var result = _medicalServiceLogic.UpdateMedicalService(medicalService);
+       var result = _medicalServiceLogic.UpdateMedicalService(medicalServiceInfo);
        if (result.IsSuccess == false)
            return StatusCode((int)result.StatusCode, result.Message);
        
