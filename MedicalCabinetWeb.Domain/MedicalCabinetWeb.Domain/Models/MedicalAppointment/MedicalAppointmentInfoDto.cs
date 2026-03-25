@@ -2,7 +2,7 @@
 
 namespace MedicalCabinetWeb.Domain.Models.MedicalAppointment;
 
-public class MedicalAppointmentsInfoDto
+public class MedicalAppointmentInfoDto
 {
     public int Id { get; set; }
     public string PatientName { get; set; }

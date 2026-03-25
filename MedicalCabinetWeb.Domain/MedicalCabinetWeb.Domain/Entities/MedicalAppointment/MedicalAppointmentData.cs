@@ -49,7 +49,7 @@ public class MedicalAppointmentData
     [DataType(DataType.Date)]
     public DateTime? UpdatedAt { get; set; } = DateTime.UtcNow;
     
-    public AppointmentStatus Status { get; set; } = AppointmentStatus.Pending;
+    public AppointmentStatus Status { get; set; } = AppointmentStatus.Asteptare;
     
     public bool IsDeleted { get; set; } = false;
     

@@ -11,7 +11,5 @@ public interface IMedicalServiceLogic
     ActionResponse UpdateMedicalService(int id, MedicalServiceCreateDto data);
     ActionResponse DeleteMedicalService(int id);
 
-    //In caz daca vrei sa modifici de pe front
-    //UpdateProduct
-    //DeleteProduct
+    
 }

@@ -8,7 +8,7 @@ namespace MedicalCabinetWeb.Api.Controllers;
 
 [ApiController]
 [Route("api/service")]
-public class MedicalServiceController: ControllerBase
+public class MedicalServiceController : ControllerBase
 {
     private readonly IMedicalServiceLogic _medicalServiceLogic;
     public MedicalServiceController()

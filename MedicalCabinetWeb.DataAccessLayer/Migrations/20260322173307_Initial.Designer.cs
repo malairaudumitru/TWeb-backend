@@ -11,7 +11,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace MedicalCabinetWeb.DataAccessLayer.Migrations
 {
-    [DbContext(typeof(MedicalAppointmentsContext))]
+    [DbContext(typeof(MedicalAppointmentContext))]
     [Migration("20260322173307_Initial")]
     partial class Initial
     {
