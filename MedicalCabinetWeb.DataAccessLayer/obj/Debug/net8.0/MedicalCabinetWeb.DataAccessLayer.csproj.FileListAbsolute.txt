@@ -15,3 +15,21 @@ D:\Anul 2\SEM 2\TWeb backend\MedicalCabinetWeb\MedicalCabinetWeb.DataAccessLayer
 D:\Anul 2\SEM 2\TWeb backend\MedicalCabinetWeb\MedicalCabinetWeb.DataAccessLayer\obj\Debug\net8.0\MedicalCabinetWeb.DataAccessLayer.pdb
 D:\Anul 2\SEM 2\TWeb backend\MedicalCabinetWeb\MedicalCabinetWeb.DataAccessLayer\obj\Debug\net8.0\MedicalCabinetWeb.DataAccessLayer.genruntimeconfig.cache
 D:\Anul 2\SEM 2\TWeb backend\MedicalCabinetWeb\MedicalCabinetWeb.DataAccessLayer\obj\Debug\net8.0\ref\MedicalCabinetWeb.DataAccessLayer.dll
+D:\laburi_anu_2_sem_2\TWeb_project\Tweb Backend\MedicalCabinetWeb.DataAccessLayer\bin\Debug\net8.0\MedicalCabinetWeb.DataAccessLayer.deps.json
+D:\laburi_anu_2_sem_2\TWeb_project\Tweb Backend\MedicalCabinetWeb.DataAccessLayer\bin\Debug\net8.0\MedicalCabinetWeb.DataAccessLayer.runtimeconfig.json
+D:\laburi_anu_2_sem_2\TWeb_project\Tweb Backend\MedicalCabinetWeb.DataAccessLayer\bin\Debug\net8.0\MedicalCabinetWeb.DataAccessLayer.dll
+D:\laburi_anu_2_sem_2\TWeb_project\Tweb Backend\MedicalCabinetWeb.DataAccessLayer\bin\Debug\net8.0\MedicalCabinetWeb.DataAccessLayer.pdb
+D:\laburi_anu_2_sem_2\TWeb_project\Tweb Backend\MedicalCabinetWeb.DataAccessLayer\bin\Debug\net8.0\MedicalCabinetWeb.Domain.dll
+D:\laburi_anu_2_sem_2\TWeb_project\Tweb Backend\MedicalCabinetWeb.DataAccessLayer\bin\Debug\net8.0\MedicalCabinetWeb.Domain.pdb
+D:\laburi_anu_2_sem_2\TWeb_project\Tweb Backend\MedicalCabinetWeb.DataAccessLayer\obj\Debug\net8.0\MedicalCabinetWeb.DataAccessLayer.csproj.AssemblyReference.cache
+D:\laburi_anu_2_sem_2\TWeb_project\Tweb Backend\MedicalCabinetWeb.DataAccessLayer\obj\Debug\net8.0\MedicalCabinetWeb.DataAccessLayer.GeneratedMSBuildEditorConfig.editorconfig
+D:\laburi_anu_2_sem_2\TWeb_project\Tweb Backend\MedicalCabinetWeb.DataAccessLayer\obj\Debug\net8.0\MedicalCabinetWeb.DataAccessLayer.AssemblyInfoInputs.cache
+D:\laburi_anu_2_sem_2\TWeb_project\Tweb Backend\MedicalCabinetWeb.DataAccessLayer\obj\Debug\net8.0\MedicalCabinetWeb.DataAccessLayer.AssemblyInfo.cs
+D:\laburi_anu_2_sem_2\TWeb_project\Tweb Backend\MedicalCabinetWeb.DataAccessLayer\obj\Debug\net8.0\MedicalCabinetWeb.DataAccessLayer.csproj.CoreCompileInputs.cache
+D:\laburi_anu_2_sem_2\TWeb_project\Tweb Backend\MedicalCabinetWeb.DataAccessLayer\obj\Debug\net8.0\MedicalCabinetWeb.DataAccessLayer.sourcelink.json
+D:\laburi_anu_2_sem_2\TWeb_project\Tweb Backend\MedicalCabinetWeb.DataAccessLayer\obj\Debug\net8.0\MedicalC.1392C16B.Up2Date
+D:\laburi_anu_2_sem_2\TWeb_project\Tweb Backend\MedicalCabinetWeb.DataAccessLayer\obj\Debug\net8.0\MedicalCabinetWeb.DataAccessLayer.dll
+D:\laburi_anu_2_sem_2\TWeb_project\Tweb Backend\MedicalCabinetWeb.DataAccessLayer\obj\Debug\net8.0\refint\MedicalCabinetWeb.DataAccessLayer.dll
+D:\laburi_anu_2_sem_2\TWeb_project\Tweb Backend\MedicalCabinetWeb.DataAccessLayer\obj\Debug\net8.0\MedicalCabinetWeb.DataAccessLayer.pdb
+D:\laburi_anu_2_sem_2\TWeb_project\Tweb Backend\MedicalCabinetWeb.DataAccessLayer\obj\Debug\net8.0\MedicalCabinetWeb.DataAccessLayer.genruntimeconfig.cache
+D:\laburi_anu_2_sem_2\TWeb_project\Tweb Backend\MedicalCabinetWeb.DataAccessLayer\obj\Debug\net8.0\ref\MedicalCabinetWeb.DataAccessLayer.dll

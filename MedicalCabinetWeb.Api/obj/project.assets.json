@@ -2783,23 +2783,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\пк\\.nuget\\packages\\": {},
-    "D:\\Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\vsirb\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Anul 2\\SEM 2\\TWeb backend\\MedicalCabinetWeb\\MedicalCabinetWeb.Api\\MedicalCabinetWeb.Api.csproj",
+      "projectUniqueName": "D:\\laburi_anu_2_sem_2\\TWeb_project\\Tweb Backend\\MedicalCabinetWeb.Api\\MedicalCabinetWeb.Api.csproj",
       "projectName": "MedicalCabinetWeb.Api",
-      "projectPath": "D:\\Anul 2\\SEM 2\\TWeb backend\\MedicalCabinetWeb\\MedicalCabinetWeb.Api\\MedicalCabinetWeb.Api.csproj",
-      "packagesPath": "C:\\Users\\пк\\.nuget\\packages\\",
-      "outputPath": "D:\\Anul 2\\SEM 2\\TWeb backend\\MedicalCabinetWeb\\MedicalCabinetWeb.Api\\obj\\",
+      "projectPath": "D:\\laburi_anu_2_sem_2\\TWeb_project\\Tweb Backend\\MedicalCabinetWeb.Api\\MedicalCabinetWeb.Api.csproj",
+      "packagesPath": "C:\\Users\\vsirb\\.nuget\\packages\\",
+      "outputPath": "D:\\laburi_anu_2_sem_2\\TWeb_project\\Tweb Backend\\MedicalCabinetWeb.Api\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "D:\\Visual Studio\\Shared\\NuGetPackages"
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\пк\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\vsirb\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -2814,11 +2814,11 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "D:\\Anul 2\\SEM 2\\TWeb backend\\MedicalCabinetWeb\\MedicalCabinetWeb.BusinessLayer\\MedicalCabinetWeb.BusinessLayer\\MedicalCabinetWeb.BusinessLayer.csproj": {
-              "projectPath": "D:\\Anul 2\\SEM 2\\TWeb backend\\MedicalCabinetWeb\\MedicalCabinetWeb.BusinessLayer\\MedicalCabinetWeb.BusinessLayer\\MedicalCabinetWeb.BusinessLayer.csproj"
+            "D:\\laburi_anu_2_sem_2\\TWeb_project\\Tweb Backend\\MedicalCabinetWeb.BusinessLayer\\MedicalCabinetWeb.BusinessLayer\\MedicalCabinetWeb.BusinessLayer.csproj": {
+              "projectPath": "D:\\laburi_anu_2_sem_2\\TWeb_project\\Tweb Backend\\MedicalCabinetWeb.BusinessLayer\\MedicalCabinetWeb.BusinessLayer\\MedicalCabinetWeb.BusinessLayer.csproj"
             },
-            "D:\\Anul 2\\SEM 2\\TWeb backend\\MedicalCabinetWeb\\MedicalCabinetWeb.Domain\\MedicalCabinetWeb.Domain\\MedicalCabinetWeb.Domain.csproj": {
-              "projectPath": "D:\\Anul 2\\SEM 2\\TWeb backend\\MedicalCabinetWeb\\MedicalCabinetWeb.Domain\\MedicalCabinetWeb.Domain\\MedicalCabinetWeb.Domain.csproj"
+            "D:\\laburi_anu_2_sem_2\\TWeb_project\\Tweb Backend\\MedicalCabinetWeb.Domain\\MedicalCabinetWeb.Domain\\MedicalCabinetWeb.Domain.csproj": {
+              "projectPath": "D:\\laburi_anu_2_sem_2\\TWeb_project\\Tweb Backend\\MedicalCabinetWeb.Domain\\MedicalCabinetWeb.Domain\\MedicalCabinetWeb.Domain.csproj"
             }
           }
         }
@@ -2872,7 +2872,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.418/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.419/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

@@ -1,12 +1,18 @@
-﻿using MedicalCabinetWeb.Domain.Entities.Service;
+using MedicalCabinetWeb.Domain.Entities.News;
 using Microsoft.EntityFrameworkCore;
-
 
 namespace MedicalCabinetWeb.DataAccessLayer.Context;
 
-public class ServiceDbContext: DbContext
+public class NewsDbContext: DbContext
 {
-    public DbSet<ServiceEntity> Services { get; set; }
+    public DbSet<NewsEntity> News { get; set; }
+    
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        modelBuilder.Entity<NewsEntity>()
+            .Property(n => n.Type)
+            .HasConversion<string>(); 
+    }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {

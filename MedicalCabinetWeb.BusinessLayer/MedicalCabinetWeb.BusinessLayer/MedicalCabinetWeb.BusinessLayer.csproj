@@ -11,4 +11,10 @@
       <ProjectReference Include="..\..\MedicalCabinetWeb.Domain\MedicalCabinetWeb.Domain\MedicalCabinetWeb.Domain.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="Core\" />
+      <Folder Include="Interfaces\" />
+      <Folder Include="Structure\" />
+    </ItemGroup>
+
 </Project>
