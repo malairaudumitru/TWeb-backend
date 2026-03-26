@@ -62,7 +62,7 @@ public class MedicalAppointmentActions
         if (data.AppointmentDate == default)
             return new ActionResponse { IsSuccess = false, Message = "AppointmentDate is empty" };
 
-        if (data.AppointmentDate.Date < DateTime.Now.Date)
+        if (data.AppointmentDate < DateOnly.FromDateTime(DateTime.Today))
             return new ActionResponse { IsSuccess = false, Message = "AppointmentDate cannot be in the past" };
 
         return new ActionResponse { IsSuccess = true };

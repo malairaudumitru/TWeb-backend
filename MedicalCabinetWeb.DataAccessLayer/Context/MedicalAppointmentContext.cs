@@ -11,7 +11,7 @@ public class MedicalAppointmentContext : DbContext
     {
         if (!optionsBuilder.IsConfigured)
         {
-            optionsBuilder.UseNpgsql("Host=localhost;Port=5432;Database=MedicalCabinet;Username=postgres;Password=admin");
+            optionsBuilder.UseNpgsql("Host=localhost;Port=5433;Database=MedicalCabinet;Username=postgres;Password=admin");
         }
     }
     

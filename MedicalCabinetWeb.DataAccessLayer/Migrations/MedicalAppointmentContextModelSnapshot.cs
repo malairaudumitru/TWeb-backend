@@ -3,7 +3,6 @@ using System;
 using MedicalCabinetWeb.DataAccessLayer.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
-using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -11,12 +10,10 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace MedicalCabinetWeb.DataAccessLayer.Migrations
 {
-    [DbContext(typeof(MedicalServiceContext))]
-    [Migration("20260321174948_Initial2")]
-    partial class Initial2
+    [DbContext(typeof(MedicalAppointmentContext))]
+    partial class MedicalAppointmentContextModelSnapshot : ModelSnapshot
     {
-        /// <inheritdoc />
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
+        protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -25,7 +22,7 @@ namespace MedicalCabinetWeb.DataAccessLayer.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
-            modelBuilder.Entity("MedicalCabinetWeb.Domain.Entities.MedicalService.MedicalServiceData", b =>
+            modelBuilder.Entity("MedicalCabinetWeb.Domain.Entities.MedicalAppointment.MedicalAppointmentData", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -33,34 +30,59 @@ namespace MedicalCabinetWeb.DataAccessLayer.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
+                    b.Property<DateOnly>("AppointmentDate")
+                        .HasColumnType("date");
+
+                    b.Property<TimeOnly>("AppointmentTime")
+                        .HasMaxLength(10)
+                        .HasColumnType("time without time zone");
+
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("DoctorName")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("character varying(50)");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("character varying(50)");
 
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("boolean");
 
-                    b.Property<string>("ServiceDescription")
+                    b.Property<string>("PatientName")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("character varying(50)");
+
+                    b.Property<string>("Phone")
+                        .IsRequired()
+                        .HasMaxLength(15)
+                        .HasColumnType("character varying(15)");
+
+                    b.Property<string>("ReasonForVisit")
                         .IsRequired()
                         .HasMaxLength(400)
                         .HasColumnType("character varying(400)");
-
-                    b.Property<int>("ServiceDuration")
-                        .HasColumnType("integer");
 
                     b.Property<string>("ServiceName")
                         .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("character varying(50)");
 
-                    b.Property<decimal>("ServicePrice")
-                        .HasColumnType("decimal(10,2)");
+                    b.Property<string>("Status")
+                        .IsRequired()
+                        .HasColumnType("text");
 
                     b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("timestamp with time zone");
 
                     b.HasKey("Id");
 
-                    b.ToTable("MedicalServices");
+                    b.ToTable("MedicalAppointments");
                 });
 #pragma warning restore 612, 618
         }

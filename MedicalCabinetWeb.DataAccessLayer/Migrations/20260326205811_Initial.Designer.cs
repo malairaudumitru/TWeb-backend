@@ -11,9 +11,9 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace MedicalCabinetWeb.DataAccessLayer.Migrations
 {
-    [DbContext(typeof(MedicalAppointmentContext))]
-    [Migration("20260322173544_Initial10")]
-    partial class Initial10
+    [DbContext(typeof(MedicalServiceContext))]
+    [Migration("20260326205811_Initial")]
+    partial class Initial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -25,7 +25,7 @@ namespace MedicalCabinetWeb.DataAccessLayer.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
-            modelBuilder.Entity("MedicalCabinetWeb.Domain.Entities.MedicalAppointment.MedicalAppointmentData", b =>
+            modelBuilder.Entity("MedicalCabinetWeb.Domain.Entities.MedicalService.MedicalServiceData", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -33,59 +33,34 @@ namespace MedicalCabinetWeb.DataAccessLayer.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
-                    b.Property<DateTime>("AppointmentDate")
-                        .HasColumnType("timestamp with time zone");
-
-                    b.Property<string>("AppointmentTime")
-                        .IsRequired()
-                        .HasMaxLength(10)
-                        .HasColumnType("character varying(10)");
-
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("timestamp with time zone");
-
-                    b.Property<string>("DoctorName")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("character varying(50)");
-
-                    b.Property<string>("Email")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("character varying(50)");
 
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("boolean");
 
-                    b.Property<string>("PatientName")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("character varying(50)");
-
-                    b.Property<string>("Phone")
-                        .IsRequired()
-                        .HasMaxLength(15)
-                        .HasColumnType("character varying(15)");
-
-                    b.Property<string>("ReasonForVisit")
+                    b.Property<string>("ServiceDescription")
                         .IsRequired()
                         .HasMaxLength(400)
                         .HasColumnType("character varying(400)");
+
+                    b.Property<int>("ServiceDuration")
+                        .HasColumnType("integer");
 
                     b.Property<string>("ServiceName")
                         .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("character varying(50)");
 
-                    b.Property<int>("Status")
-                        .HasColumnType("integer");
+                    b.Property<decimal>("ServicePrice")
+                        .HasColumnType("decimal(10,2)");
 
                     b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("timestamp with time zone");
 
                     b.HasKey("Id");
 
-                    b.ToTable("MedicalAppointments");
+                    b.ToTable("MedicalServices");
                 });
 #pragma warning restore 612, 618
         }

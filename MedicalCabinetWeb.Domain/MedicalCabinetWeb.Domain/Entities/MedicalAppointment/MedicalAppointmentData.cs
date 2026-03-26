@@ -37,11 +37,11 @@ public class MedicalAppointmentData
     
     [Required]
     [StringLength(10)]
-    public string AppointmentTime { get; set; } 
+    public TimeOnly AppointmentTime { get; set; } 
     
     [Required]
     [DataType(DataType.Date)]
-    public DateTime AppointmentDate { get; set; }
+    public DateOnly AppointmentDate { get; set; }
     
     [DataType(DataType.Date)]
     public DateTime CreatedAt { get; set; } = DateTime.UtcNow;

@@ -11,7 +11,7 @@ public class MedicalAppointmentInfoDto
     public string DoctorName { get; set; }
     public string ServiceName { get; set; }
     public string ReasonForVisit { get; set; }
-    public string AppointmentTime { get; set; } 
-    public DateTime AppointmentDate { get; set; }
+    public TimeOnly AppointmentTime { get; set; } 
+    public DateOnly AppointmentDate { get; set; }
     public AppointmentStatus Status { get; set; }
 }

@@ -7,14 +7,11 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace MedicalCabinetWeb.DataAccessLayer.Migrations
 {
     /// <inheritdoc />
-    public partial class initial6 : Migration
+    public partial class Initial : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropTable(
-                name: "Services");
-
             migrationBuilder.CreateTable(
                 name: "MedicalServices",
                 columns: table => new
@@ -25,7 +22,9 @@ namespace MedicalCabinetWeb.DataAccessLayer.Migrations
                     ServicePrice = table.Column<decimal>(type: "numeric(10,2)", nullable: false),
                     ServiceDescription = table.Column<string>(type: "character varying(400)", maxLength: 400, nullable: false),
                     ServiceDuration = table.Column<int>(type: "integer", nullable: false),
-                    CreatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: false)
+                    CreatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
+                    UpdatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
+                    IsDeleted = table.Column<bool>(type: "boolean", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -38,22 +37,6 @@ namespace MedicalCabinetWeb.DataAccessLayer.Migrations
         {
             migrationBuilder.DropTable(
                 name: "MedicalServices");
-
-            migrationBuilder.CreateTable(
-                name: "Services",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "integer", nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    Description = table.Column<string>(type: "text", nullable: false),
-                    Duration = table.Column<int>(type: "integer", nullable: false),
-                    Name = table.Column<string>(type: "text", nullable: false),
-                    Price = table.Column<decimal>(type: "numeric", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Services", x => x.Id);
-                });
         }
     }
 }

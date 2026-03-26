@@ -3,6 +3,7 @@ using System;
 using MedicalCabinetWeb.DataAccessLayer.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -11,9 +12,11 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace MedicalCabinetWeb.DataAccessLayer.Migrations
 {
     [DbContext(typeof(MedicalAppointmentContext))]
-    partial class MedicalAppointmentsContextModelSnapshot : ModelSnapshot
+    [Migration("20260326210330_Initial1")]
+    partial class Initial1
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -30,13 +33,12 @@ namespace MedicalCabinetWeb.DataAccessLayer.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
-                    b.Property<DateTime>("AppointmentDate")
-                        .HasColumnType("timestamp with time zone");
+                    b.Property<DateOnly>("AppointmentDate")
+                        .HasColumnType("date");
 
-                    b.Property<string>("AppointmentTime")
-                        .IsRequired()
+                    b.Property<TimeOnly>("AppointmentTime")
                         .HasMaxLength(10)
-                        .HasColumnType("character varying(10)");
+                        .HasColumnType("time without time zone");
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("timestamp with time zone");

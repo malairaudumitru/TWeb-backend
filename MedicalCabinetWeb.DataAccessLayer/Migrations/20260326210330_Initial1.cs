@@ -7,7 +7,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace MedicalCabinetWeb.DataAccessLayer.Migrations
 {
     /// <inheritdoc />
-    public partial class Initial : Migration
+    public partial class Initial1 : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -24,11 +24,11 @@ namespace MedicalCabinetWeb.DataAccessLayer.Migrations
                     DoctorName = table.Column<string>(type: "character varying(50)", maxLength: 50, nullable: false),
                     ServiceName = table.Column<string>(type: "character varying(50)", maxLength: 50, nullable: false),
                     ReasonForVisit = table.Column<string>(type: "character varying(400)", maxLength: 400, nullable: false),
-                    AppointmentTime = table.Column<string>(type: "character varying(10)", maxLength: 10, nullable: false),
-                    AppointmentDate = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
+                    AppointmentTime = table.Column<TimeOnly>(type: "time without time zone", maxLength: 10, nullable: false),
+                    AppointmentDate = table.Column<DateOnly>(type: "date", nullable: false),
                     CreatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
                     UpdatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
-                    Status = table.Column<int>(type: "integer", nullable: false),
+                    Status = table.Column<string>(type: "text", nullable: false),
                     IsDeleted = table.Column<bool>(type: "boolean", nullable: false)
                 },
                 constraints: table =>
