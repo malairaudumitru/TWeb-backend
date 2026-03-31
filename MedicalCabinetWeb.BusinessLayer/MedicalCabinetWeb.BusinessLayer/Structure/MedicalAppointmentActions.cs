@@ -139,6 +139,32 @@ public class MedicalAppointmentActions
 
     }
     
+    protected List<MedicalAppointmentInfoDto>? GetMedicalAppointmentByDateAction(DateOnly date)
+    {
+        var appointmentEntities = _context.MedicalAppointments
+            .Where(x => x.AppointmentDate == date && x.IsDeleted == false)
+            .ToList();
+        if (appointmentEntities.Count == 0)
+            return null;
+
+        var appointmentInfoDtos = appointmentEntities
+            .Select(appointmentEntity => new MedicalAppointmentInfoDto
+            {
+                Id = appointmentEntity.Id,
+                PatientName = appointmentEntity.PatientName,
+                Phone = appointmentEntity.Phone,
+                Email = appointmentEntity.Email,
+                DoctorName = appointmentEntity.DoctorName,
+                ServiceName = appointmentEntity.ServiceName,
+                ReasonForVisit = appointmentEntity.ReasonForVisit,
+                AppointmentTime = appointmentEntity.AppointmentTime,
+                AppointmentDate = appointmentEntity.AppointmentDate,
+                Status = appointmentEntity.Status
+            }).ToList();
+
+        return appointmentInfoDtos;
+    }
+    
     protected bool UpdateMedicalAppointmentAction(int id, MedicalAppointmentCreateDto appointmentInfo)
     {
         var appointmentEntity = _context.MedicalAppointments.Find(id);

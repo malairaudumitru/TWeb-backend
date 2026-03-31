@@ -52,4 +52,14 @@ public class MedicalAppointmentLogic : MedicalAppointmentActions, IMedicalAppoin
         return ActionResponse.Ok("Appointment updated successfully");
     }
     
+    public ActionResponse GetMedicalAppointmentByDate(DateOnly date)
+    {
+        var appointment = GetMedicalAppointmentByDateAction(date);
+
+        if (appointment == null)
+            return ActionResponse.NotFound("No appointments found for this date");
+
+        return ActionResponse.Ok(data: appointment);
+    }
+    
 }

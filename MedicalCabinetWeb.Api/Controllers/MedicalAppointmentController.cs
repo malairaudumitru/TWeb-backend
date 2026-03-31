@@ -72,5 +72,15 @@ public class MedicalAppointmentController : ControllerBase
         return Ok(result.Message);
     }
     
+    [HttpGet("by-date/{date}")]
+    public IActionResult GetMedicalAppointmentByDate([FromRoute] DateOnly date)
+    {
+        var result = _medicalAppointmentLogic.GetMedicalAppointmentByDate(date);
+        if (result.IsSuccess == false)
+            return StatusCode((int)result.StatusCode, result.Message);
+        
+        return Ok(result.Data);
+    }
+    
     
 }
