@@ -1,5 +1,6 @@
 ﻿using MedicalCabinetWeb.BusinessLayer;
 using MedicalCabinetWeb.BusinessLayer.Interfaces;
+using MedicalCabinetWeb.Domain.Entities.MedicalAppointment;
 using MedicalCabinetWeb.Domain.Models.MedicalAppointment;
 using Microsoft.AspNetCore.Mvc;
 
@@ -79,6 +80,17 @@ public class MedicalAppointmentController : ControllerBase
         if (result.IsSuccess == false)
             return StatusCode((int)result.StatusCode, result.Message);
         
+        return Ok(result.Data);
+    }
+    
+    [HttpPatch("{id}/status")]
+    public IActionResult UpdateAppointmentsStatus([FromRoute] int id, [FromBody] UpdateAppointmentStatusDto dto)
+    {
+        var result = _medicalAppointmentLogic.UpdateAppointmentStatus(id, dto.Status);
+
+        if (result.IsSuccess == false)
+            return StatusCode((int)result.StatusCode, result.Message);
+
         return Ok(result.Data);
     }
     

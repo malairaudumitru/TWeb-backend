@@ -198,4 +198,30 @@ public class MedicalAppointmentActions
 
     }
     
+    protected string? UpdateAppointmentStatusAction(int id, AppointmentStatus status)
+    {
+        if (!Enum.IsDefined(typeof(AppointmentStatus), status))
+            return "Invalid status value";
+
+        var appointmentEntity = _context.MedicalAppointments
+            .FirstOrDefault(x => x.Id == id && x.IsDeleted == false);
+
+        if (appointmentEntity == null)
+            return "Appointment not found";
+
+        appointmentEntity.Status = status;
+        appointmentEntity.UpdatedAt = DateTime.UtcNow;
+
+        try
+        {
+            _context.MedicalAppointments.Update(appointmentEntity);
+            _context.SaveChanges();
+            return null;
+        }
+        catch (Exception e)
+        {
+            return "Error updating status";
+        }
+    }
+    
 }

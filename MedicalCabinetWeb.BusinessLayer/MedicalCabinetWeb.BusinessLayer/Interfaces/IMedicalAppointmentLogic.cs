@@ -12,6 +12,6 @@ public interface IMedicalAppointmentLogic
     ActionResponse UpdateMedicalAppointment(int id, MedicalAppointmentCreateDto data);
     ActionResponse DeleteMedicalAppointment(int id); 
     ActionResponse GetMedicalAppointmentByDate(DateOnly date);
-   // ActionResponse UpdateAppointmentsStatus(int id, AppointmentStatus status);
+    ActionResponse UpdateAppointmentStatus(int id, AppointmentStatus status);
 
 }

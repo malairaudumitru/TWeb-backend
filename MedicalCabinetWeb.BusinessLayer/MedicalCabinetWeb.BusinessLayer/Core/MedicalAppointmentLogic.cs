@@ -1,5 +1,6 @@
 ﻿using MedicalCabinetWeb.BusinessLayer.Interfaces;
 using MedicalCabinetWeb.BusinessLayer.Structure;
+using MedicalCabinetWeb.Domain.Entities.MedicalAppointment;
 using MedicalCabinetWeb.Domain.Models.MedicalAppointment;
 using MedicalCabinetWeb.Domain.Models.Responses;
 
@@ -60,6 +61,16 @@ public class MedicalAppointmentLogic : MedicalAppointmentActions, IMedicalAppoin
             return ActionResponse.NotFound("No appointments found for this date");
 
         return ActionResponse.Ok(data: appointment);
+    }
+    
+    public ActionResponse UpdateAppointmentStatus(int id, AppointmentStatus status)
+    {
+        var error = UpdateAppointmentStatusAction(id, status);
+
+        if (error != null)
+            return ActionResponse.NotFound(error);
+
+        return ActionResponse.Ok(data: "Status updated successfully");
     }
     
 }
