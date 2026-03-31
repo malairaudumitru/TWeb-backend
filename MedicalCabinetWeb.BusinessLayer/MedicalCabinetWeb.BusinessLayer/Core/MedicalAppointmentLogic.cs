@@ -29,9 +29,18 @@ public class MedicalAppointmentLogic : MedicalAppointmentActions, IMedicalAppoin
     
     public ActionResponse GetMedicalAppointmentList()
     {
-        var serviceList = GetMedicalAppointmentListAction();
+        var appointmentList = GetMedicalAppointmentListAction();
         
-        return ActionResponse.Ok(data: serviceList);
+        return ActionResponse.Ok(data: appointmentList);
+    }
+    
+    public ActionResponse GetMedicalAppointmentById(int id)
+    {
+        var appointment = GetMedicalAppointmentByIdAction(id);
+        if (appointment == null)
+            return ActionResponse.NotFound("Appointment not found");
+        
+        return ActionResponse.Ok(data: appointment);
     }
     
 }

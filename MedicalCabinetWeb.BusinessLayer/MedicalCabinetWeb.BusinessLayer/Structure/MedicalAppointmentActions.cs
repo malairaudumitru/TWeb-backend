@@ -105,13 +105,38 @@ public class MedicalAppointmentActions
                 ReasonForVisit = appointmentEntity.ReasonForVisit,
                 AppointmentTime = appointmentEntity.AppointmentTime,
                 AppointmentDate = appointmentEntity.AppointmentDate,
-                Status = appointmentEntity.Status,
+                Status = appointmentEntity.Status
                 
             })
             .ToList();
             
        
         return appointmentList;
+    }
+    
+    protected MedicalAppointmentInfoDto? GetMedicalAppointmentByIdAction(int id)
+    {
+        var appointmentEntity = _context.MedicalAppointments
+            .FirstOrDefault(x => x.Id == id && x.IsDeleted == false);
+        if(appointmentEntity == null)
+            return null; 
+       
+        var appointmentInfoDto = new MedicalAppointmentInfoDto
+        {
+            Id = appointmentEntity.Id,
+            PatientName = appointmentEntity.PatientName,
+            Phone = appointmentEntity.Phone,
+            Email = appointmentEntity.Email,
+            DoctorName = appointmentEntity.DoctorName,
+            ServiceName = appointmentEntity.ServiceName,
+            ReasonForVisit = appointmentEntity.ReasonForVisit,
+            AppointmentTime = appointmentEntity.AppointmentTime,
+            AppointmentDate = appointmentEntity.AppointmentDate,
+            Status = appointmentEntity.Status
+        };
+       
+        return appointmentInfoDto;
+
     }
     
 }

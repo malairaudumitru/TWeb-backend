@@ -49,5 +49,16 @@ public class MedicalAppointmentController : ControllerBase
     }
     
     
+    [HttpGet("{id}")]
+    public IActionResult GetMedicalAppointmentById([FromRoute] int id)
+    {
+        var result = _medicalAppointmentLogic.GetMedicalAppointmentById(id);
+        if(result.IsSuccess == false)
+            return StatusCode((int)result.StatusCode, result.Message);
+        
+        return Ok(result.Data);
+        
+    }
+    
     
 }

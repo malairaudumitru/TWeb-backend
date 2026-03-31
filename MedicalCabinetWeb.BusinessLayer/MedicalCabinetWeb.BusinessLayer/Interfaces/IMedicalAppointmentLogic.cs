@@ -7,7 +7,7 @@ namespace MedicalCabinetWeb.BusinessLayer.Interfaces;
 public interface IMedicalAppointmentLogic
 {
     ActionResponse GetMedicalAppointmentList();
-    // ActionResponse GetMedicalAppointmentsById(int id);
+    ActionResponse GetMedicalAppointmentById(int id);
     ActionResponse CreateMedicalAppointment(MedicalAppointmentCreateDto data);
     // ActionResponse UpdateMedicalAppointments(int id, MedicalAppointmentCreateDto data);
     ActionResponse DeleteMedicalAppointment(int id);
