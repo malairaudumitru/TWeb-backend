@@ -29,7 +29,7 @@ public class MedicalServiceController : ControllerBase
     }
 
     [HttpGet("list")]
-    public IActionResult GetMedicalProductList()
+    public IActionResult GetMedicalServiceList()
     {
         var result = _medicalServiceLogic.GetMedicalServiceList();
         if(result.IsSuccess == false)

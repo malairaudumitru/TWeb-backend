@@ -38,6 +38,16 @@ public class MedicalAppointmentController : ControllerBase
         return Ok(result.Message);
     }
     
+    [HttpGet("list")]
+    public IActionResult GetMedicalAppointmentList()
+    {
+        var result = _medicalAppointmentLogic.GetMedicalAppointmentList();
+        if(result.IsSuccess == false)
+            return StatusCode((int)result.StatusCode, result.Message);
+        
+        return Ok(result.Data);
+    }
+    
     
     
 }

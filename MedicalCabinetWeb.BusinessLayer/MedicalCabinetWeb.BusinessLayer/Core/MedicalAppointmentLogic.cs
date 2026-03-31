@@ -26,4 +26,12 @@ public class MedicalAppointmentLogic : MedicalAppointmentActions, IMedicalAppoin
         return ActionResponse.Ok("Appointment deleted successfully");
         
     }
+    
+    public ActionResponse GetMedicalAppointmentList()
+    {
+        var serviceList = GetMedicalAppointmentListAction();
+        
+        return ActionResponse.Ok(data: serviceList);
+    }
+    
 }

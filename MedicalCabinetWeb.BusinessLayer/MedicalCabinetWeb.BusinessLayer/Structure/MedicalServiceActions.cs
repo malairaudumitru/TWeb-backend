@@ -79,7 +79,7 @@ public class MedicalServiceActions
 
     protected List<MedicalServiceInfoDto> GetMedicalServiceListAction()
     {
-        var productList = _context.MedicalServices
+        var serviceList = _context.MedicalServices
             .Where(x => x.IsDeleted == false)
             .Select(serviceEntity => new MedicalServiceInfoDto
             
@@ -94,7 +94,7 @@ public class MedicalServiceActions
             .ToList();
             
        
-        return productList;
+        return serviceList;
     }
 
     protected bool DeleteMedicalServiceAction(int id)

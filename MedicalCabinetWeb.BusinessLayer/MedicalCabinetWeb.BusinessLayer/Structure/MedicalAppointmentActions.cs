@@ -88,4 +88,30 @@ public class MedicalAppointmentActions
         }
     }
     
+    
+    protected List<MedicalAppointmentInfoDto> GetMedicalAppointmentListAction()
+    {
+        var appointmentList = _context.MedicalAppointments
+            .Where(x => x.IsDeleted == false)
+            .Select(appointmentEntity => new MedicalAppointmentInfoDto
+            
+            {
+                Id = appointmentEntity.Id,
+                PatientName = appointmentEntity.PatientName,
+                Phone = appointmentEntity.Phone,
+                Email = appointmentEntity.Email,
+                DoctorName = appointmentEntity.DoctorName,
+                ServiceName = appointmentEntity.ServiceName,
+                ReasonForVisit = appointmentEntity.ReasonForVisit,
+                AppointmentTime = appointmentEntity.AppointmentTime,
+                AppointmentDate = appointmentEntity.AppointmentDate,
+                Status = appointmentEntity.Status,
+                
+            })
+            .ToList();
+            
+       
+        return appointmentList;
+    }
+    
 }

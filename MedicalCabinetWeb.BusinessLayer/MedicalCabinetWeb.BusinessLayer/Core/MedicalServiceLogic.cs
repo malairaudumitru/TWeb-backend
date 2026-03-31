@@ -41,6 +41,7 @@ public class MedicalServiceLogic: MedicalServiceActions, IMedicalServiceLogic
     public ActionResponse GetMedicalServiceList()
     {
         var serviceList = GetMedicalServiceListAction();
+        
         return ActionResponse.Ok(data: serviceList);
     }
     
