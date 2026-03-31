@@ -38,6 +38,8 @@ public class MedicalAppointmentController : ControllerBase
         return Ok(result.Message);
     }
     
+    
+    
     [HttpGet("list")]
     public IActionResult GetMedicalAppointmentList()
     {
@@ -58,6 +60,16 @@ public class MedicalAppointmentController : ControllerBase
         
         return Ok(result.Data);
         
+    }
+    
+    [HttpPut("update/{id}")]
+    public IActionResult UpdateMedicalAppointment([FromRoute] int id, [FromBody] MedicalAppointmentCreateDto medicalAppointmentCreate)
+    {
+        var result = _medicalAppointmentLogic.UpdateMedicalAppointment(id, medicalAppointmentCreate);
+        if (result.IsSuccess == false)
+            return StatusCode((int)result.StatusCode, result.Message);
+       
+        return Ok(result.Message);
     }
     
     

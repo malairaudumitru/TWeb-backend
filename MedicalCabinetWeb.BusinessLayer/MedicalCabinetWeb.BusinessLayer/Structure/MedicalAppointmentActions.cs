@@ -139,4 +139,37 @@ public class MedicalAppointmentActions
 
     }
     
+    protected bool UpdateMedicalAppointmentAction(int id, MedicalAppointmentCreateDto appointmentInfo)
+    {
+        var appointmentEntity = _context.MedicalAppointments.Find(id);
+        if(appointmentEntity == null)
+            return false;
+        
+        if (appointmentEntity.IsDeleted == true)
+            return false;
+
+        appointmentEntity.PatientName = appointmentInfo.PatientName;
+        appointmentEntity.Phone = appointmentInfo.Phone;
+        appointmentEntity.Email = appointmentInfo.Email;
+        appointmentEntity.DoctorName = appointmentInfo.DoctorName;
+        appointmentEntity.ServiceName = appointmentInfo.ServiceName;
+        appointmentEntity.ReasonForVisit = appointmentInfo.ReasonForVisit;
+        appointmentEntity.AppointmentTime = appointmentInfo.AppointmentTime;
+        appointmentEntity.AppointmentDate = appointmentInfo.AppointmentDate;
+        appointmentEntity.UpdatedAt = DateTime.UtcNow;
+
+        try
+        {
+            _context.MedicalAppointments.Update(appointmentEntity);
+            _context.SaveChanges();
+            return true;
+        }
+        catch (Exception e)
+        {
+            return false;
+        }
+
+
+    }
+    
 }

@@ -43,4 +43,13 @@ public class MedicalAppointmentLogic : MedicalAppointmentActions, IMedicalAppoin
         return ActionResponse.Ok(data: appointment);
     }
     
+    public ActionResponse UpdateMedicalAppointment(int id, MedicalAppointmentCreateDto data)
+    {
+        var result = UpdateMedicalAppointmentAction(id, data);
+        if (result == false)
+            return ActionResponse.BadRequest("Error updating appointment");
+        
+        return ActionResponse.Ok("Appointment updated successfully");
+    }
+    
 }
