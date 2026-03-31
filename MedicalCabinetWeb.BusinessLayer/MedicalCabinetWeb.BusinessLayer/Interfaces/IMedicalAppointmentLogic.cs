@@ -10,7 +10,7 @@ public interface IMedicalAppointmentLogic
     // ActionResponse GetMedicalAppointmentsById(int id);
     ActionResponse CreateMedicalAppointment(MedicalAppointmentCreateDto data);
     // ActionResponse UpdateMedicalAppointments(int id, MedicalAppointmentCreateDto data);
-    // ActionResponse DeleteMedicalAppointments(int id);
+    ActionResponse DeleteMedicalAppointment(int id);
     // ActionResponse GetMedicalAppointmentsByDate(DateTime date);
    // ActionResponse UpdateAppointmentsStatus(int id, AppointmentStatus status);
 

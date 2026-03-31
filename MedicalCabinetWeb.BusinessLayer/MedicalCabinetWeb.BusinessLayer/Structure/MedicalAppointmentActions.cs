@@ -68,4 +68,24 @@ public class MedicalAppointmentActions
         return new ActionResponse { IsSuccess = true };
     }
     
+    protected bool DeleteMedicalAppointmentAction(int id)
+    {
+        var appointmentEntity = _context.MedicalAppointments.Find(id);
+        {
+            if (appointmentEntity == null)
+                return false;
+        }
+        try
+        {
+            appointmentEntity.IsDeleted = true;
+            _context.MedicalAppointments.Update(appointmentEntity);
+            _context.SaveChanges();
+            return true;
+        }
+        catch (Exception e)
+        {
+            return false;
+        }
+    }
+    
 }

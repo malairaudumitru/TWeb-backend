@@ -18,8 +18,12 @@ public class MedicalAppointmentContext : DbContext
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<MedicalAppointmentData>()
-            .Property(a => a.Status)
-            .HasConversion<string>();
+            .Property(x => x.AppointmentDate)
+            .HasColumnType("date");
+        
+        modelBuilder.Entity<MedicalAppointmentData>()
+            .Property(x => x.AppointmentTime)
+            .HasColumnType("time");
     }
     
 }

@@ -16,7 +16,7 @@ public class MedicalAppointmentData
     [Required]
     [Phone]
     [StringLength(15)]
-    public string Phone { get; set; }
+    public string Phone { get; set; } 
     
     [Required]
     [EmailAddress] 

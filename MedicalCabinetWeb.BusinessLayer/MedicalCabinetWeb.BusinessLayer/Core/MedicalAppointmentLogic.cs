@@ -16,4 +16,14 @@ public class MedicalAppointmentLogic : MedicalAppointmentActions, IMedicalAppoin
         return ActionResponse.Ok("Appointment created successfully");
 
     }
+
+    public ActionResponse DeleteMedicalAppointment(int id)
+    {
+        var result = DeleteMedicalAppointmentAction(id);
+        if (result == false)
+            return ActionResponse.BadRequest("Error deleting appointment");
+
+        return ActionResponse.Ok("Appointment deleted successfully");
+        
+    }
 }
