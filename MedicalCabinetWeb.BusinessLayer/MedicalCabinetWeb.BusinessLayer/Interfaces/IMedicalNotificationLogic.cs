@@ -12,5 +12,6 @@ public interface IMedicalNotificationLogic
     ActionResponse MarkAllAsRead(int userId);
     ActionResponse GetMedicalNotificationList();
     ActionResponse GetMedicalNotificationById(int id);
-    //ActionResponse GetMedicalNotificationByUserId(int userId);
+    ActionResponse GetMedicalNotificationByUserId(int userId);
+    
 }

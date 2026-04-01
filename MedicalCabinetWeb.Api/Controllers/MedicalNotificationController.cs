@@ -28,7 +28,7 @@ public class MedicalNotificationController : ControllerBase
         return Ok(result.Message);
     }
     
-    [HttpDelete("{id}")]
+    [HttpDelete("{id}/delete")]
     public IActionResult DeleteMedicalNotification([FromRoute] int id)
     {
         var result = _medicalNotificationLogic.DeleteMedicalNotification(id);
@@ -68,10 +68,20 @@ public class MedicalNotificationController : ControllerBase
         return Ok(result.Data);
     }
     
-    [HttpGet("{id}")]
+    [HttpGet("{id}/by-id")]
     public IActionResult GetMedicalNotificationById([FromRoute] int id)
     {
         var result = _medicalNotificationLogic.GetMedicalNotificationById(id);
+        if (result.IsSuccess == false)
+            return StatusCode((int)result.StatusCode, result.Message);
+
+        return Ok(result.Data);
+    }
+    
+    [HttpGet("{userId}/by-user-id")]
+    public IActionResult GetMedicalNotificationByUserId([FromRoute] int userId)
+    {
+        var result = _medicalNotificationLogic.GetMedicalNotificationByUserId(userId);
         if (result.IsSuccess == false)
             return StatusCode((int)result.StatusCode, result.Message);
 

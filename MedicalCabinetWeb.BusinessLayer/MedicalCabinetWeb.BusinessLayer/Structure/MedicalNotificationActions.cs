@@ -162,5 +162,23 @@ public class MedicalNotificationActions
 
             return notificationInfoDto;
         }
+        
+        protected List<MedicalNotificationInfoDto> GetMedicalNotificationByUserIdAction(int userId)
+        {
+            var notificationList = _context.MedicalNotifications
+                .Where(x => x.UserId == userId && x.IsDeleted == false)
+                .Select(notificationEntity => new MedicalNotificationInfoDto
+                {
+                    Id = notificationEntity.Id,
+                    UserId = notificationEntity.UserId,
+                    Title = notificationEntity.Title,
+                    Message = notificationEntity.Message,
+                    IsRead = notificationEntity.IsRead,
+                    CreatedAt = notificationEntity.CreatedAt
+                })
+                .ToList();
+
+            return notificationList;
+        }
     
 }

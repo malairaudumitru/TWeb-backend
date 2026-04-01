@@ -61,4 +61,13 @@ public class MedicalNotificationLogic : MedicalNotificationActions, IMedicalNoti
         return ActionResponse.Ok(data: result);
     }
     
+    public ActionResponse GetMedicalNotificationByUserId(int userId)
+    {
+        var result = GetMedicalNotificationByUserIdAction(userId);
+        if (result == null)
+            return ActionResponse.BadRequest("Error getting notifications by user id");
+
+        return ActionResponse.Ok(data: result);
+    }
+    
 }
