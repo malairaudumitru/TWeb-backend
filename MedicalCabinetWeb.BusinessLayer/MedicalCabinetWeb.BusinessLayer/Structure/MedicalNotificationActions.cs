@@ -141,5 +141,26 @@ public class MedicalNotificationActions
 
             return notificationList;
         }
+        
+        protected MedicalNotificationInfoDto? GetMedicalNotificationByIdAction(int id)
+        {
+            var notificationEntity = _context.MedicalNotifications
+                .FirstOrDefault(x => x.Id == id && x.IsDeleted == false);
+    
+            if (notificationEntity == null)
+                return null;
+
+            var notificationInfoDto = new MedicalNotificationInfoDto
+            {
+                Id = notificationEntity.Id,
+                UserId = notificationEntity.UserId,
+                Title = notificationEntity.Title,
+                Message = notificationEntity.Message,
+                IsRead = notificationEntity.IsRead,
+                CreatedAt = notificationEntity.CreatedAt
+            };
+
+            return notificationInfoDto;
+        }
     
 }

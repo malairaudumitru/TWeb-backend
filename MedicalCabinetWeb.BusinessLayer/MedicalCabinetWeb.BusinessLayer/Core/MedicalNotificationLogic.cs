@@ -52,4 +52,13 @@ public class MedicalNotificationLogic : MedicalNotificationActions, IMedicalNoti
         return ActionResponse.Ok(data: notificationList);
     }
     
+    public ActionResponse GetMedicalNotificationById(int id)
+    {
+        var result = GetMedicalNotificationByIdAction(id);
+        if (result == null)
+            return ActionResponse.BadRequest("Notification not found");
+
+        return ActionResponse.Ok(data: result);
+    }
+    
 }

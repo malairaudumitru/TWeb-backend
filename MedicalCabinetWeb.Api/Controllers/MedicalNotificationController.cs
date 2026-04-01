@@ -68,5 +68,15 @@ public class MedicalNotificationController : ControllerBase
         return Ok(result.Data);
     }
     
+    [HttpGet("{id}")]
+    public IActionResult GetMedicalNotificationById([FromRoute] int id)
+    {
+        var result = _medicalNotificationLogic.GetMedicalNotificationById(id);
+        if (result.IsSuccess == false)
+            return StatusCode((int)result.StatusCode, result.Message);
+
+        return Ok(result.Data);
+    }
+    
     
 }
