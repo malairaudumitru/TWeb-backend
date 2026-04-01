@@ -5,6 +5,8 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace MedicalCabinetWeb.Api.Controllers;
 
+[ApiController]
+[Route("api/notification")]
 public class MedicalNotificationController : ControllerBase
 {
     private readonly IMedicalNotificationLogic _medicalNotificationLogic;
@@ -26,5 +28,14 @@ public class MedicalNotificationController : ControllerBase
         return Ok(result.Message);
     }
     
+    [HttpDelete("{id}")]
+    public IActionResult DeleteMedicalNotification([FromRoute] int id)
+    {
+        var result = _medicalNotificationLogic.DeleteMedicalNotification(id);
+        if (result.IsSuccess == false)
+            return StatusCode((int)result.StatusCode, result.Message);
+
+        return Ok(result.Message);
+    }
     
 }

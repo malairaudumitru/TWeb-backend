@@ -16,4 +16,17 @@ public class MedicalNotificationLogic : MedicalNotificationActions, IMedicalNoti
         return ActionResponse.Ok("Notification created successfully");
 
     }
+    
+    public ActionResponse DeleteMedicalNotification(int id)
+    {
+        var result = DeleteMedicalNotificationAction(id);
+        if (result == false)
+            return ActionResponse.BadRequest("Error deleting notification");
+
+        return ActionResponse.Ok("Notification deleted successfully");
+        
+    }
+    
+    
+    
 }

@@ -7,7 +7,7 @@ namespace MedicalCabinetWeb.BusinessLayer.Interfaces;
 public interface IMedicalNotificationLogic
 {
     ActionResponse CreateMedicalNotification(MedicalNotificationCreateDto data);
-    //ActionResponse DeleteMedicalNotification(int id);
+    ActionResponse DeleteMedicalNotification(int id);
     //ActionResponse UpdateReadStatus(int id, NotificationReadStatusDto data);
     //ActionResponse MarkAllAsRead(int userId);
     //ActionResponse GetMedicalNotificationList();

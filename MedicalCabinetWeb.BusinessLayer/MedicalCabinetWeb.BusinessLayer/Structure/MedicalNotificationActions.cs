@@ -55,5 +55,25 @@ public class MedicalNotificationActions
 
             return new ActionResponse { IsSuccess = true };
         }
+        
+        protected bool DeleteMedicalNotificationAction(int id)
+        {
+            var notificationEntity = _context.MedicalNotifications.Find(id);
+            {
+                if (notificationEntity == null)
+                    return false;
+            }
+            try
+            {
+                notificationEntity.IsDeleted = true;
+                _context.MedicalNotifications.Update(notificationEntity);
+                _context.SaveChanges();
+                return true;
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
+        }
     
 }
