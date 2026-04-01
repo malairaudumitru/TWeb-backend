@@ -19,5 +19,11 @@ public class BusinessLogic
     {
         return new MedicalAppointmentLogic();
     }
+
+    public IMedicalNotificationLogic GetNotificationLogic()
+    {
+        return new MedicalNotificationLogic();
+    }
+    
     
 }
