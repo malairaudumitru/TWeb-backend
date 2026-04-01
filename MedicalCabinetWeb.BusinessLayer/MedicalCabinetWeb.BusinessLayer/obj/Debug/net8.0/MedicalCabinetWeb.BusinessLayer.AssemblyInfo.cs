@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MedicalCabinetWeb.BusinessLayer")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a70fc8036ae17c8faf746bf94bd1c7b6e23bdc5c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3b101aa1ebb1159e16547e1cc5da3d1da09165c1")]
 [assembly: System.Reflection.AssemblyProductAttribute("MedicalCabinetWeb.BusinessLayer")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MedicalCabinetWeb.BusinessLayer")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

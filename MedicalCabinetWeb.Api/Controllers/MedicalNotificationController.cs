@@ -58,5 +58,15 @@ public class MedicalNotificationController : ControllerBase
         return Ok(result.Message);
     }
     
+    [HttpGet("list")]
+    public IActionResult GetMedicalNotificationList()
+    {
+        var result = _medicalNotificationLogic.GetMedicalNotificationList();
+        if (result.IsSuccess == false)
+            return StatusCode((int)result.StatusCode, result.Message);
+
+        return Ok(result.Data);
+    }
+    
     
 }

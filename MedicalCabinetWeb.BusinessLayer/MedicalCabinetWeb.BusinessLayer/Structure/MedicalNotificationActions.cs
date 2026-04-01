@@ -123,5 +123,23 @@ public class MedicalNotificationActions
                 return false;
             }
         }
+        
+        protected List<MedicalNotificationInfoDto> GetMedicalNotificationListAction()
+        {
+            var notificationList = _context.MedicalNotifications
+                .Where(x => x.IsDeleted == false)
+                .Select(notificationEntity => new MedicalNotificationInfoDto
+                {
+                    Id = notificationEntity.Id,
+                    UserId = notificationEntity.UserId,
+                    Title = notificationEntity.Title,
+                    Message = notificationEntity.Message,
+                    IsRead = notificationEntity.IsRead,
+                    CreatedAt = notificationEntity.CreatedAt
+                })
+                .ToList();
+
+            return notificationList;
+        }
     
 }

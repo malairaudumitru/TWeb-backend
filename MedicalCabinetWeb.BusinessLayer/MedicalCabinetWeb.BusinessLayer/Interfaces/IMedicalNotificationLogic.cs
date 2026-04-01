@@ -10,7 +10,7 @@ public interface IMedicalNotificationLogic
     ActionResponse DeleteMedicalNotification(int id);
     ActionResponse UpdateReadStatus(int id);
     ActionResponse MarkAllAsRead(int userId);
-    //ActionResponse GetMedicalNotificationList();
+    ActionResponse GetMedicalNotificationList();
     //ActionResponse GetMedicalNotificationById(int id);
     //ActionResponse GetMedicalNotificationByUserId(int userId);
 }

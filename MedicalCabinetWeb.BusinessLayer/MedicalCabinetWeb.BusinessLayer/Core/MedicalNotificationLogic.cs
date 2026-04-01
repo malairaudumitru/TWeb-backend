@@ -45,4 +45,11 @@ public class MedicalNotificationLogic : MedicalNotificationActions, IMedicalNoti
         return ActionResponse.Ok("All notifications marked as read");
     }
     
+    public ActionResponse GetMedicalNotificationList()
+    {
+        var notificationList = GetMedicalNotificationListAction();
+        
+        return ActionResponse.Ok(data: notificationList);
+    }
+    
 }
