@@ -9,6 +9,7 @@ public class MedicalAppointmentData
     [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     
     public int Id { get; set; }
+    
     [Required]
     [StringLength(50)]
     public string PatientName { get; set; }
