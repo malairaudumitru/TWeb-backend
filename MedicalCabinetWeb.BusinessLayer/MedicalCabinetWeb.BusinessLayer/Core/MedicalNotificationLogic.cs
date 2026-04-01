@@ -36,6 +36,13 @@ public class MedicalNotificationLogic : MedicalNotificationActions, IMedicalNoti
         return ActionResponse.Ok("Updated successfully");
     }
     
-    
+    public ActionResponse MarkAllAsRead(int userId)
+    {
+        var result = MarkAllAsReadAction(userId);
+        if (result == false)
+            return ActionResponse.BadRequest("Error marking notifications as read");
+
+        return ActionResponse.Ok("All notifications marked as read");
+    }
     
 }

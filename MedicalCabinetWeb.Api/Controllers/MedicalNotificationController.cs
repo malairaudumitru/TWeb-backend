@@ -48,6 +48,15 @@ public class MedicalNotificationController : ControllerBase
         return Ok(result.Message);
     }
     
+    [HttpPut("{userId}/mark-all-read")]
+    public IActionResult MarkAllAsRead([FromRoute] int userId)
+    {
+        var result = _medicalNotificationLogic.MarkAllAsRead(userId);
+        if (result.IsSuccess == false)
+            return StatusCode((int)result.StatusCode, result.Message);
+
+        return Ok(result.Message);
+    }
     
     
 }

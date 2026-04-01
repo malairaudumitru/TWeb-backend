@@ -97,5 +97,31 @@ public class MedicalNotificationActions
                 return false;
             }
         }
+        
+        protected bool MarkAllAsReadAction(int userId)
+        {
+            var notifications = _context.MedicalNotifications
+                .Where(n => n.UserId == userId && n.IsRead == false && n.IsDeleted == false)
+                .ToList();
+
+            if (!notifications.Any())
+                return false;
+
+            try
+            {
+                foreach (var notification in notifications)
+                {
+                    notification.IsRead = true;
+                    notification.UpdatedAt = DateTime.UtcNow;
+                }
+
+                _context.SaveChanges();
+                return true;
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
+        }
     
 }
