@@ -75,5 +75,27 @@ public class MedicalNotificationActions
                 return false;
             }
         }
+        
+        protected bool UpdateReadStatusAction(int id)
+        {
+            var notificationEntity = _context.MedicalNotifications.Find(id);
+            if (notificationEntity == null)
+                return false;
+            if (notificationEntity.IsRead == true)
+                return false;
+
+            try
+            {
+                notificationEntity.IsRead = true;
+                notificationEntity.UpdatedAt = DateTime.UtcNow;
+                _context.MedicalNotifications.Update(notificationEntity);
+                _context.SaveChanges();
+                return true;
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
+        }
     
 }

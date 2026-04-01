@@ -27,6 +27,15 @@ public class MedicalNotificationLogic : MedicalNotificationActions, IMedicalNoti
         
     }
     
+    public ActionResponse UpdateReadStatus(int id)
+    {
+        var result = UpdateReadStatusAction(id);
+        if (result == false)
+            return ActionResponse.BadRequest("Error updating read status");
+
+        return ActionResponse.Ok("Updated successfully");
+    }
+    
     
     
 }

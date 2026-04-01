@@ -38,4 +38,16 @@ public class MedicalNotificationController : ControllerBase
         return Ok(result.Message);
     }
     
+    [HttpPut("{id}/read-status")]
+    public IActionResult UpdateReadStatus([FromRoute] int id)
+    {
+        var result = _medicalNotificationLogic.UpdateReadStatus(id);
+        if (result.IsSuccess == false)
+            return StatusCode((int)result.StatusCode, result.Message);
+
+        return Ok(result.Message);
+    }
+    
+    
+    
 }

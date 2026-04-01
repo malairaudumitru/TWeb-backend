@@ -4,5 +4,5 @@ namespace MedicalCabinetWeb.Domain.Models.MedicalNotification;
 
 public class NotificationReadStatusDto
 {
-    public NotificationReadStatus Status { get; set; }
+    public bool IsRead { get; set; } 
 }
