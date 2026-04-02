@@ -4,16 +4,10 @@ using Microsoft.EntityFrameworkCore;
 
 namespace MedicalCabinetWeb.DataAccessLayer.Context;
 
-public class NewsDbContext: DbContext
+public class ReviewsDbContext: DbContext
 {
-    public DbSet<NewsEntity> News { get; set; }
+    public DbSet<ReviewsEntity> Reviews { get; set; }
     
-    protected override void OnModelCreating(ModelBuilder modelBuilder)
-    {
-        modelBuilder.Entity<NewsEntity>()
-            .Property(n => n.Type)
-            .HasConversion<string>(); 
-    }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
