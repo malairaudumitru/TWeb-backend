@@ -54,4 +54,11 @@ public class PatientLogic : PatientActions, IPatientLogic
         _context.Patients.Remove(patient);
         _context.SaveChanges();
     }
+
+    public List<Patient> GetByName(string firstName, string lastName)
+    {
+        return  _context.Patients.
+            Where(p => p.FirstName == firstName && p.LastName == lastName).
+            ToList();
+    }
 }

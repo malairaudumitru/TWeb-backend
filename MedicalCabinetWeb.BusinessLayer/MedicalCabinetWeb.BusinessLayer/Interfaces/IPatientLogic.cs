@@ -11,4 +11,6 @@ public interface IPatientLogic
     void Create(Patient patient);
     void Update(int id, Patient patient);
     void Delete(int id);
+    List<Patient> GetByName(string firstName, string lastName);
+    
 }

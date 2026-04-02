@@ -31,14 +31,14 @@ public class PatientController : ControllerBase
         return Ok(patient);
     }
 
-    [HttpPost]
+    [HttpPost("create")]
     public IActionResult Create([FromBody] Patient patient)
     {
         _businessLogic.GetPatientLogic().Create(patient);
         return CreatedAtAction(nameof(GetById), new { id = patient.Id }, patient);
     }
 
-    [HttpPut("{id}")]
+    [HttpPut("update/{id}")]
     public IActionResult Update(int id, [FromBody] Patient patient)
     {
         var existing = _businessLogic.GetPatientLogic().GetById(id);
@@ -56,5 +56,14 @@ public class PatientController : ControllerBase
             return NotFound($"Pacientul cu id {id} nu a fost găsit.");
         _businessLogic.GetPatientLogic().Delete(id);
         return NoContent();
+    }
+
+    [HttpGet("SearchByName")]
+    public IActionResult GetByName([FromQuery] string firstName, [FromQuery] string lastName)
+    {
+        var patients = _businessLogic.GetPatientLogic().GetByName(firstName, lastName);
+        if (patients.Count == 0)
+            return NotFound("Nu a fost gasit nici un pacient cu acest nume");
+        return Ok(patients);
     }
 }
