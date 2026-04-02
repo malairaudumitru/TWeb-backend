@@ -24,6 +24,8 @@ public class MedicalServiceData
     [Range(5, 480)]
     public int ServiceDuration { get; set; }
     
+    public ServiceCategory Category { get; set; } = ServiceCategory.Generala;
+    
     [DataType(DataType.Date)]
     public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
     
