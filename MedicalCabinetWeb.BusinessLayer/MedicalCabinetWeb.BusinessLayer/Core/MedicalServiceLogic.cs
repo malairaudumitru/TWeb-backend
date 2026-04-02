@@ -2,6 +2,7 @@
 using MedicalCabinetWeb.Domain.Models.MedicalService;
 using MedicalCabinetWeb.Domain.Models.Responses;
 using MedicalCabinetWeb.BusinessLayer.Structure;
+using MedicalCabinetWeb.Domain.Entities.MedicalService;
 
 
 namespace MedicalCabinetWeb.BusinessLayer.Core;
@@ -52,6 +53,16 @@ public class MedicalServiceLogic: MedicalServiceActions, IMedicalServiceLogic
             return ActionResponse.BadRequest("Error updating service");
         
         return ActionResponse.Ok("Service updated successfully");
+    }
+    
+    public ActionResponse UpdateMedicalServiceCategory(int id, ServiceCategory status)
+    {
+        var error = UpdateMedicalServiceCategoryAction(id, status);
+
+        if (error != null)
+            return ActionResponse.NotFound("Category not found");
+
+        return ActionResponse.Ok("Status updated successfully");
     }
     
 }

@@ -1,6 +1,7 @@
 ﻿
 using MedicalCabinetWeb.BusinessLayer;
 using MedicalCabinetWeb.BusinessLayer.Interfaces;
+using MedicalCabinetWeb.Domain.Entities.MedicalService;
 using MedicalCabinetWeb.Domain.Models.MedicalService;
 using Microsoft.AspNetCore.Mvc;
 
@@ -69,8 +70,15 @@ public class MedicalServiceController : ControllerBase
        return Ok(result.Message);
     }
     
+    [HttpPatch("{id}/category")]
+    public IActionResult UpdateMedicalServiceCategory(int id, [FromBody] ServiceCategory category)
+    {
+        var result = _medicalServiceLogic.UpdateMedicalServiceCategory(id, category);
+
+        if (!result.IsSuccess)
+            return NotFound("Category not found");
+
+        return Ok("Category updated successfully");
+    }
     
-    //daca modifici de pe front adaug
-    //HttpPut / HttpPatch
-    //HttpDelete
 }

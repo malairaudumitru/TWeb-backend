@@ -142,5 +142,31 @@ public class MedicalServiceActions
 
 
     }
+    
+    protected string? UpdateMedicalServiceCategoryAction(int id, ServiceCategory category)
+    {
+        if (!Enum.IsDefined(typeof(ServiceCategory), category))
+            return "Invalid category value";
+
+        var serviceEntity = _context.MedicalServices
+            .FirstOrDefault(x => x.Id == id && x.IsDeleted == false);
+
+        if (serviceEntity == null)
+            return "Service not found";
+
+        serviceEntity.Category = category;
+        serviceEntity.UpdatedAt = DateTime.UtcNow;
+
+        try
+        {
+            _context.MedicalServices.Update(serviceEntity);
+            _context.SaveChanges();
+            return null;
+        }
+        catch (Exception e)
+        {
+            return "Error updating category";
+        }
+    }
    
 }
