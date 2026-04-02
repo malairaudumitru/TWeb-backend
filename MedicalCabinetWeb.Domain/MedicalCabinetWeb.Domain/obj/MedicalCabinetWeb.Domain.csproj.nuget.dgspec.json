@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Anul 2\\SEM 2\\TWeb backend\\MedicalCabinetWeb\\MedicalCabinetWeb.Domain\\MedicalCabinetWeb.Domain\\MedicalCabinetWeb.Domain.csproj": {}
+    "C:\\Backend TWeb\\MedicalCabinetWeb.Domain\\MedicalCabinetWeb.Domain\\MedicalCabinetWeb.Domain.csproj": {}
   },
   "projects": {
-    "D:\\Anul 2\\SEM 2\\TWeb backend\\MedicalCabinetWeb\\MedicalCabinetWeb.Domain\\MedicalCabinetWeb.Domain\\MedicalCabinetWeb.Domain.csproj": {
+    "C:\\Backend TWeb\\MedicalCabinetWeb.Domain\\MedicalCabinetWeb.Domain\\MedicalCabinetWeb.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Anul 2\\SEM 2\\TWeb backend\\MedicalCabinetWeb\\MedicalCabinetWeb.Domain\\MedicalCabinetWeb.Domain\\MedicalCabinetWeb.Domain.csproj",
+        "projectUniqueName": "C:\\Backend TWeb\\MedicalCabinetWeb.Domain\\MedicalCabinetWeb.Domain\\MedicalCabinetWeb.Domain.csproj",
         "projectName": "MedicalCabinetWeb.Domain",
-        "projectPath": "D:\\Anul 2\\SEM 2\\TWeb backend\\MedicalCabinetWeb\\MedicalCabinetWeb.Domain\\MedicalCabinetWeb.Domain\\MedicalCabinetWeb.Domain.csproj",
-        "packagesPath": "C:\\Users\\пк\\.nuget\\packages\\",
-        "outputPath": "D:\\Anul 2\\SEM 2\\TWeb backend\\MedicalCabinetWeb\\MedicalCabinetWeb.Domain\\MedicalCabinetWeb.Domain\\obj\\",
+        "projectPath": "C:\\Backend TWeb\\MedicalCabinetWeb.Domain\\MedicalCabinetWeb.Domain\\MedicalCabinetWeb.Domain.csproj",
+        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+        "outputPath": "C:\\Backend TWeb\\MedicalCabinetWeb.Domain\\MedicalCabinetWeb.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "D:\\Visual Studio\\Shared\\NuGetPackages"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\пк\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -26,6 +26,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {

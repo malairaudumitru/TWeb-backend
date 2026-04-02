@@ -7,7 +7,7 @@ public class UserDbContext : DbContext
 {
     public DbSet<Patient> Patients { get; set; }
     public DbSet<Admin> Admins { get; set; }
-    public DbSet<Medic> Medici  { get; set; }
+    public DbSet<Medic> Medici { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
@@ -15,5 +15,12 @@ public class UserDbContext : DbContext
         {
             optionsBuilder.UseNpgsql("Host=localhost;Port=5433;Database=MedicalCabinet;Username=postgres;Password=admin");
         }
+    }
+
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        modelBuilder.Entity<Patient>()
+            .Property(p => p.DateOfBirth)
+            .HasColumnType("date");
     }
 }

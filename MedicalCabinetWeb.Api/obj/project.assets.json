@@ -2783,23 +2783,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\пк\\.nuget\\packages\\": {},
-    "D:\\Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\User\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Anul 2\\SEM 2\\TWeb backend\\MedicalCabinetWeb\\MedicalCabinetWeb.Api\\MedicalCabinetWeb.Api.csproj",
+      "projectUniqueName": "C:\\Backend TWeb\\MedicalCabinetWeb.Api\\MedicalCabinetWeb.Api.csproj",
       "projectName": "MedicalCabinetWeb.Api",
-      "projectPath": "D:\\Anul 2\\SEM 2\\TWeb backend\\MedicalCabinetWeb\\MedicalCabinetWeb.Api\\MedicalCabinetWeb.Api.csproj",
-      "packagesPath": "C:\\Users\\пк\\.nuget\\packages\\",
-      "outputPath": "D:\\Anul 2\\SEM 2\\TWeb backend\\MedicalCabinetWeb\\MedicalCabinetWeb.Api\\obj\\",
+      "projectPath": "C:\\Backend TWeb\\MedicalCabinetWeb.Api\\MedicalCabinetWeb.Api.csproj",
+      "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+      "outputPath": "C:\\Backend TWeb\\MedicalCabinetWeb.Api\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "D:\\Visual Studio\\Shared\\NuGetPackages"
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\пк\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -2808,17 +2808,18 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "D:\\Anul 2\\SEM 2\\TWeb backend\\MedicalCabinetWeb\\MedicalCabinetWeb.BusinessLayer\\MedicalCabinetWeb.BusinessLayer\\MedicalCabinetWeb.BusinessLayer.csproj": {
-              "projectPath": "D:\\Anul 2\\SEM 2\\TWeb backend\\MedicalCabinetWeb\\MedicalCabinetWeb.BusinessLayer\\MedicalCabinetWeb.BusinessLayer\\MedicalCabinetWeb.BusinessLayer.csproj"
+            "C:\\Backend TWeb\\MedicalCabinetWeb.BusinessLayer\\MedicalCabinetWeb.BusinessLayer\\MedicalCabinetWeb.BusinessLayer.csproj": {
+              "projectPath": "C:\\Backend TWeb\\MedicalCabinetWeb.BusinessLayer\\MedicalCabinetWeb.BusinessLayer\\MedicalCabinetWeb.BusinessLayer.csproj"
             },
-            "D:\\Anul 2\\SEM 2\\TWeb backend\\MedicalCabinetWeb\\MedicalCabinetWeb.Domain\\MedicalCabinetWeb.Domain\\MedicalCabinetWeb.Domain.csproj": {
-              "projectPath": "D:\\Anul 2\\SEM 2\\TWeb backend\\MedicalCabinetWeb\\MedicalCabinetWeb.Domain\\MedicalCabinetWeb.Domain\\MedicalCabinetWeb.Domain.csproj"
+            "C:\\Backend TWeb\\MedicalCabinetWeb.Domain\\MedicalCabinetWeb.Domain\\MedicalCabinetWeb.Domain.csproj": {
+              "projectPath": "C:\\Backend TWeb\\MedicalCabinetWeb.Domain\\MedicalCabinetWeb.Domain\\MedicalCabinetWeb.Domain.csproj"
             }
           }
         }

@@ -9,3 +9,15 @@ D:\Anul 2\SEM 2\TWeb backend\MedicalCabinetWeb\MedicalCabinetWeb.Domain\MedicalC
 D:\Anul 2\SEM 2\TWeb backend\MedicalCabinetWeb\MedicalCabinetWeb.Domain\MedicalCabinetWeb.Domain\obj\Debug\net8.0\refint\MedicalCabinetWeb.Domain.dll
 D:\Anul 2\SEM 2\TWeb backend\MedicalCabinetWeb\MedicalCabinetWeb.Domain\MedicalCabinetWeb.Domain\obj\Debug\net8.0\MedicalCabinetWeb.Domain.pdb
 D:\Anul 2\SEM 2\TWeb backend\MedicalCabinetWeb\MedicalCabinetWeb.Domain\MedicalCabinetWeb.Domain\obj\Debug\net8.0\ref\MedicalCabinetWeb.Domain.dll
+C:\Backend TWeb\MedicalCabinetWeb.Domain\MedicalCabinetWeb.Domain\bin\Debug\net8.0\MedicalCabinetWeb.Domain.deps.json
+C:\Backend TWeb\MedicalCabinetWeb.Domain\MedicalCabinetWeb.Domain\bin\Debug\net8.0\MedicalCabinetWeb.Domain.dll
+C:\Backend TWeb\MedicalCabinetWeb.Domain\MedicalCabinetWeb.Domain\bin\Debug\net8.0\MedicalCabinetWeb.Domain.pdb
+C:\Backend TWeb\MedicalCabinetWeb.Domain\MedicalCabinetWeb.Domain\obj\Debug\net8.0\MedicalCabinetWeb.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Backend TWeb\MedicalCabinetWeb.Domain\MedicalCabinetWeb.Domain\obj\Debug\net8.0\MedicalCabinetWeb.Domain.AssemblyInfoInputs.cache
+C:\Backend TWeb\MedicalCabinetWeb.Domain\MedicalCabinetWeb.Domain\obj\Debug\net8.0\MedicalCabinetWeb.Domain.AssemblyInfo.cs
+C:\Backend TWeb\MedicalCabinetWeb.Domain\MedicalCabinetWeb.Domain\obj\Debug\net8.0\MedicalCabinetWeb.Domain.csproj.CoreCompileInputs.cache
+C:\Backend TWeb\MedicalCabinetWeb.Domain\MedicalCabinetWeb.Domain\obj\Debug\net8.0\MedicalCabinetWeb.Domain.sourcelink.json
+C:\Backend TWeb\MedicalCabinetWeb.Domain\MedicalCabinetWeb.Domain\obj\Debug\net8.0\MedicalCabinetWeb.Domain.dll
+C:\Backend TWeb\MedicalCabinetWeb.Domain\MedicalCabinetWeb.Domain\obj\Debug\net8.0\refint\MedicalCabinetWeb.Domain.dll
+C:\Backend TWeb\MedicalCabinetWeb.Domain\MedicalCabinetWeb.Domain\obj\Debug\net8.0\MedicalCabinetWeb.Domain.pdb
+C:\Backend TWeb\MedicalCabinetWeb.Domain\MedicalCabinetWeb.Domain\obj\Debug\net8.0\ref\MedicalCabinetWeb.Domain.dll

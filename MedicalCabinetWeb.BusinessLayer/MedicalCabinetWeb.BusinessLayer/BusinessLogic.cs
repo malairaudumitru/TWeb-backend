@@ -1,14 +1,21 @@
 ﻿using MedicalCabinetWeb.BusinessLayer.Core;
 using MedicalCabinetWeb.BusinessLayer.Interfaces;
+using MedicalCabinetWeb.DataAccessLayer.Context;
 
 namespace MedicalCabinetWeb.BusinessLayer;
 
 public class BusinessLogic
 {
-    public BusinessLogic() { }
+    private readonly UserDbContext _context;
 
-    public IServiceLogic GetServiceLogic()
+    public BusinessLogic(UserDbContext context)
     {
-        return new ServiceLogic();
+        _context = context;
     }
+public IPatientLogic GetPatientLogic()
+{
+    return new PatientLogic(_context);
 }
+    
+
+    }
