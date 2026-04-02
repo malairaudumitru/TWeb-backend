@@ -168,5 +168,26 @@ public class MedicalServiceActions
             return "Error updating category";
         }
     }
+    
+    protected List<MedicalServiceInfoDto>? GetMedicalServiceByCategoryAction(ServiceCategory category)
+    {
+        var serviceEntity = _context.MedicalServices
+            .Where(x => x.Category == category && x.IsDeleted == false)
+            .Select(x => new MedicalServiceInfoDto
+            {
+                Id = x.Id,
+                ServiceName = x.ServiceName,
+                ServicePrice = x.ServicePrice,
+                ServiceDescription = x.ServiceDescription,
+                ServiceDuration = x.ServiceDuration,
+                Category = x.Category
+            })
+            .ToList();
+
+        if (serviceEntity == null)
+            return null;
+
+        return serviceEntity;
+    }
    
 }

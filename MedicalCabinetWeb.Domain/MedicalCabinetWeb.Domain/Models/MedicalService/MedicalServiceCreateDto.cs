@@ -9,5 +9,4 @@ public class MedicalServiceCreateDto
     public string ServiceDescription { get; set; }
     public int ServiceDuration { get; set; }
     
-    public ServiceCategory Category { get; set; }
 }

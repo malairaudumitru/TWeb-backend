@@ -80,5 +80,16 @@ public class MedicalServiceController : ControllerBase
 
         return Ok("Category updated successfully");
     }
+
+    [HttpGet("by-category/{category}")]
+    public IActionResult GetMedicalServiceByCategory(ServiceCategory category)
+    {
+        var result = _medicalServiceLogic.GetMedicalServiceByCategory(category);
+
+        if (!result.IsSuccess)
+            return NotFound("No services found for this category");
+
+        return Ok(result.Data);
+    }
     
 }

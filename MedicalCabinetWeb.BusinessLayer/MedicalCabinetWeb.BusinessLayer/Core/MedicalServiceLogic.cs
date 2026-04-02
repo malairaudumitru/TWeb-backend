@@ -65,4 +65,14 @@ public class MedicalServiceLogic: MedicalServiceActions, IMedicalServiceLogic
         return ActionResponse.Ok("Status updated successfully");
     }
     
+    public ActionResponse GetMedicalServiceByCategory(ServiceCategory category)
+    {
+        var serviceList = GetMedicalServiceByCategoryAction(category);
+
+        if (serviceList == null)
+            return ActionResponse.NotFound("No services found for this category");
+
+        return ActionResponse.Ok(data: serviceList);
+    }
+    
 }
