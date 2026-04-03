@@ -12,5 +12,6 @@ public interface IPatientLogic
     void Update(int id, Patient patient);
     void Delete(int id);
     List<Patient> GetByName(string firstName, string lastName);
-    
+    List<Patient> GetByStatus(PatientStatus status);
+    void UpdateStatus(int id, PatientStatus status);
 }

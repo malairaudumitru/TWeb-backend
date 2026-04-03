@@ -66,4 +66,24 @@ public class PatientController : ControllerBase
             return NotFound("Nu a fost gasit nici un pacient cu acest nume");
         return Ok(patients);
     }
+
+    [HttpGet("SearchByStatus")]
+    public IActionResult GetByStatus(PatientStatus status)
+    {
+        var patients = _businessLogic.GetPatientLogic().GetByStatus(status);
+        if (patients.Count == 0)
+            return NotFound("Nu exista pacienti cu statusul dat.");
+        return Ok(patients);
+    }
+
+    [HttpPatch("{id}/status")]
+    public IActionResult UpdateStatus(int id, [FromBody] PatientStatus status)
+    {
+        var patient = _businessLogic.GetPatientLogic().GetById(id);
+        if (patient == null)
+            return NotFound($"Pacientul cu id {id} nu a fost găsit.");
+
+        _businessLogic.GetPatientLogic().UpdateStatus(id, status);
+        return Ok($"Statusul pacientului cu id {id} a fost schimbat.");
+    }
 }

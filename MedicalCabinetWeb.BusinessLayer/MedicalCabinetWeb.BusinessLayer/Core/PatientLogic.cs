@@ -61,4 +61,17 @@ public class PatientLogic : PatientActions, IPatientLogic
             Where(p => p.FirstName == firstName && p.LastName == lastName).
             ToList();
     }
+
+    public List<Patient> GetByStatus(PatientStatus status)
+    {
+        return _context.Patients.Where(p => p.Status == status).ToList();
+    }
+
+    public void UpdateStatus(int id, PatientStatus status)
+    {
+        var existing = _context.Patients.FirstOrDefault(p => p.Id == id);
+        if (existing == null) return;
+        existing.Status =  status;
+        _context.SaveChanges();
+    }
 }

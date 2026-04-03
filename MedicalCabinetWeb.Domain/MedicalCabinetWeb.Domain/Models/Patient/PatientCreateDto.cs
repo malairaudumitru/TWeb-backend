@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MedicalCabinetWeb.Domain.Entities.User;
 
 namespace MedicalCabinetWeb.Domain.Models.Patient
 {
-    internal class PatientCreateDto
+    public class PatientCreateDto
     {
        
         public string LastName { get; set; }
@@ -17,5 +18,6 @@ namespace MedicalCabinetWeb.Domain.Models.Patient
         public string Email { get; set; }
         public string Password { get; set; }
         public string Phone { get; set; }
+       public PatientStatus Status { get; set; }
     }
 }
