@@ -8,9 +8,9 @@ namespace MedicalCabinetWeb.BusinessLayer.Core;
 
 public class MedicalAppointmentLogic : MedicalAppointmentActions, IMedicalAppointmentLogic
 {
-    public ActionResponse CreateMedicalAppointment(MedicalAppointmentCreateDto serviceInfo)
+    public ActionResponse CreateMedicalAppointment(MedicalAppointmentCreateDto appointmentInfo)
     {
-        var result = CreateMedicalAppointmentAction(serviceInfo);
+        var result = CreateMedicalAppointmentAction(appointmentInfo);
         if (result == false)
             return ActionResponse.BadRequest("Error creating appointment");
         
