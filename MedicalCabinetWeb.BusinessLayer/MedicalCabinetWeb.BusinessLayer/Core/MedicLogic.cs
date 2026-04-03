@@ -23,4 +23,9 @@ public class MedicLogic : MedicActions, IMedicLogic
     {
         return _context.Medici.FirstOrDefault(m => m.Id == id);
     }
+    
+    public List<Medic> GetBySpeciality(MedicSpeciality speciality)
+    {
+        return _context.Medici.Where(m => m.Speciality == speciality).ToList();
+    }
 }
