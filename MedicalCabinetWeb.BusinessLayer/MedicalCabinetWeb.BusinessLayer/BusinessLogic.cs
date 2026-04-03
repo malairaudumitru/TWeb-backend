@@ -16,6 +16,11 @@ public IPatientLogic GetPatientLogic()
 {
     return new PatientLogic(_context);
 }
+
+public IMedicLogic GetMedicLogic()
+{
+    return new MedicLogic(_context);
+}
     
 
     }

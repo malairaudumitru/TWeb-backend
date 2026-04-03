@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace MedicalCabinetWeb.Api.Controllers;
 
 [ApiController]
-[Route("api/medic")]
+[Route("api/medici")]
 public class MedicController : ControllerBase
 {
     private readonly BusinessLogic _businessLogic;
@@ -19,6 +19,6 @@ public class MedicController : ControllerBase
     [HttpGet]
     public IActionResult GetAll()
     {
-        return Ok(_businessLogic.GetPatientLogic().GetAll());
+        return Ok(_businessLogic.GetMedicLogic().GetALL());
     }
 }

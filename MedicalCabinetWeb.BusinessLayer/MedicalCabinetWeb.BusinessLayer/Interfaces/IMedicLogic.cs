@@ -1,6 +1,9 @@
-﻿namespace MedicalCabinetWeb.BusinessLayer.Interfaces;
+﻿using MedicalCabinetWeb.Domain.Entities.User;
 
-public class IMedicLogic
+namespace MedicalCabinetWeb.BusinessLayer.Interfaces;
+
+public interface IMedicLogic
 {
-    
+    List<Medic> GetALL();
+    Medic GetById(int id);
 }
