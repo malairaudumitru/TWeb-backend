@@ -28,4 +28,11 @@ public class MedicLogic : MedicActions, IMedicLogic
     {
         return _context.Medici.Where(m => m.Speciality == speciality).ToList();
     }
+
+    public void Create(Medic medic)
+    {
+        _context.Medici.Add(medic);
+        _context.SaveChanges();
+    }
+
 }
