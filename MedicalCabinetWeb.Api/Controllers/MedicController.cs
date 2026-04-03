@@ -19,7 +19,7 @@ public class MedicController : ControllerBase
     [HttpGet]
     public IActionResult GetAll()
     {
-        return Ok(_businessLogic.GetMedicLogic().GetALL());
+        return Ok(_businessLogic.GetMedicLogic().GetAll());
     }
 
     [HttpGet("{id}")]
@@ -39,6 +39,15 @@ public class MedicController : ControllerBase
         var medici = _businessLogic.GetMedicLogic().GetBySpeciality(speciality);
         if (medici.Count == 0)
             return NotFound(" Nu exista medici cu specialitatea {speciality}.");
+        return Ok(medici);
+    }
+    
+    [HttpGet("SearchByName")]
+    public IActionResult GetByName([FromQuery] string firstName, [FromQuery] string lastName)
+    {
+        var medici = _businessLogic.GetMedicLogic().GetByName(firstName, lastName);
+        if (medici.Count == 0)
+            return NotFound("Nu a fost gasit nici un medic cu acest nume");
         return Ok(medici);
     }
     

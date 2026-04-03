@@ -5,7 +5,7 @@ using MedicalCabinetWeb.Domain.Entities.User;
 
 namespace MedicalCabinetWeb.BusinessLayer.Core;
 
-public class MedicLogic : MedicActions, IMedicLogic
+public class MedicLogic : IMedicLogic
 {
     private readonly UserDbContext _context;
 
@@ -14,7 +14,7 @@ public class MedicLogic : MedicActions, IMedicLogic
         _context = context;
     }
     
-    public List<Medic> GetALL()
+    public List<Medic> GetAll()
     {
         return _context.Medici.ToList();
     }
@@ -34,5 +34,12 @@ public class MedicLogic : MedicActions, IMedicLogic
         _context.Medici.Add(medic);
         _context.SaveChanges();
     }
-
+    
+    public List<Medic> GetByName(string firstName, string lastName)
+    {
+        return  _context.Medici.
+            Where(p => p.FirstName == firstName && p.LastName == lastName).
+            ToList();
+    }
+    
 }

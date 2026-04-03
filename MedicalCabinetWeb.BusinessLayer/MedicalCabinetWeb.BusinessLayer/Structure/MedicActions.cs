@@ -1,4 +1,6 @@
-﻿namespace MedicalCabinetWeb.BusinessLayer.Structure;
+﻿using MedicalCabinetWeb.Domain.Entities.User;
+
+namespace MedicalCabinetWeb.BusinessLayer.Structure;
 
 public class MedicActions
 {
@@ -6,5 +8,5 @@ public class MedicActions
     
     public string LastName { get; set; }
     public string FirstName { get; set; }
-    public string Specialty { get; set; }
+    public MedicSpeciality Speciality { get; set; }
 }
