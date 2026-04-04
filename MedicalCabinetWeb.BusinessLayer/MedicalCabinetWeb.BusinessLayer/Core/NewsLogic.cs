@@ -47,5 +47,15 @@ public class NewsLogic : NewsActions, INewsLogic
         if (result == false)
             return ActionResponse.BadRequest("Error deleting news");
 
-        return ActionResponse.Ok(message: "News deleted successfully");    }
+        return ActionResponse.Ok(message: "News deleted successfully");
+    }
+    
+    public ActionResponse UpdateNews(int id, NewsCreateDto data)
+    {
+        var result = UpdateNewsAction(id, data);
+        if (result == false)
+            return ActionResponse.BadRequest("Error updating news");
+
+        return ActionResponse.Ok(message: "News updated successfully");
+    }
 }

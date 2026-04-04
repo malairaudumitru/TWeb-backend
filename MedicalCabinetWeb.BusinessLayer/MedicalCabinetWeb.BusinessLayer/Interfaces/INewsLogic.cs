@@ -9,4 +9,5 @@ public interface INewsLogic
     ActionResponse GetNewsById(int id);
     ActionResponse GetNewsList();
     ActionResponse DeleteNews(int id);
+    ActionResponse UpdateNews(int id, NewsCreateDto data);
 }

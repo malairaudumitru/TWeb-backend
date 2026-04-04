@@ -10,7 +10,7 @@ namespace MedicalCabinetWeb.Api.Controllers;
 [Route("api/news")]
 public class NewsController: ControllerBase
 {
-    private readonly INewsLogic? _newsLogic;
+    private readonly INewsLogic _newsLogic;
 
     public NewsController()
     {
@@ -50,6 +50,16 @@ public class NewsController: ControllerBase
     public IActionResult DeleteNews([FromBody] int id)
     {
         var result = _newsLogic.DeleteNews(id);
+        if (result.IsSuccess == false)
+            return StatusCode((int)result.StatusCode, result.Message);
+
+        return Ok(result.Message);
+    }
+
+    [HttpPut("update")]
+    public IActionResult UpdateNews([FromBody] int id, [FromBody] NewsCreateDto newsCreateDto)
+    {
+        var result = _newsLogic.UpdateNews(id, newsCreateDto);
         if (result.IsSuccess == false)
             return StatusCode((int)result.StatusCode, result.Message);
 

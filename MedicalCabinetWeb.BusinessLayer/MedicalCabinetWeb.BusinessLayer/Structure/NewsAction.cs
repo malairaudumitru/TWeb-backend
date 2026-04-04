@@ -68,4 +68,32 @@ public class NewsActions
             return false;
         }
     }
+
+    protected bool UpdateNewsAction(int id, NewsCreateDto newsInfo)
+    {
+        var newsEntity = _context.News.Find(id);
+        if (newsEntity == null)
+            return false;
+
+        if (newsEntity.IsDeleted)
+            return false;
+
+        newsEntity.Name = newsInfo.Name;
+        newsEntity.Description = newsInfo.Description;
+        newsEntity.Type = newsInfo.Type;
+        newsEntity.Date = DateTime.UtcNow;
+
+        try
+        {
+            _context.News.Update(newsEntity);
+            _context.SaveChanges();
+            return true;
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e.Message);
+            Console.WriteLine(e.InnerException?.Message);
+            return false;
+        }
+    }
 }
