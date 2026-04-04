@@ -9,6 +9,7 @@ public class ActionResponse
     public object? Data { get; set; }
     public HttpStatusCode StatusCode { get; set; }
 
+
     public static ActionResponse NotFound(string? message = null) => new()
     {
         IsSuccess = false,

@@ -15,4 +15,6 @@ public class NewsEntity
     public string Description { get; set; }
     public DateTime Date { get; set; } = DateTime.UtcNow;
     public NewsType Type { get; set; }
+    
+    public bool IsDeleted { get; set; } = false;
 }
