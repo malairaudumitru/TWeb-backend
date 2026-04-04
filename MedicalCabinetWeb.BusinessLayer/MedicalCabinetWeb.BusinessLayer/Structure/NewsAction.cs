@@ -30,8 +30,6 @@ public class NewsActions
         }
         catch (Exception e)
         {
-            Console.WriteLine(e.Message);  
-            Console.WriteLine(e.InnerException?.Message); 
             return false;
         }
     }
@@ -63,8 +61,6 @@ public class NewsActions
         
         catch (Exception e)
         {
-            Console.WriteLine(e.Message);
-            Console.WriteLine(e.InnerException?.Message);
             return false;
         }
     }
@@ -91,8 +87,6 @@ public class NewsActions
         }
         catch (Exception e)
         {
-            Console.WriteLine(e.Message);
-            Console.WriteLine(e.InnerException?.Message);
             return false;
         }
     }

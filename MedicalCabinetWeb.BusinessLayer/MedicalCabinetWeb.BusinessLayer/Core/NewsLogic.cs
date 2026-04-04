@@ -9,7 +9,9 @@ public class NewsLogic : NewsActions, INewsLogic
     public ActionResponse CreateNews(NewsCreateDto newsCreateInfo)
     {
         var result = CreateNewsAction(newsCreateInfo);
-        return !result ? ActionResponse.BadRequest("Error creating news") : ActionResponse.Ok("News created");
+        if (result == false)
+            return ActionResponse.BadRequest("Error creating news");
+        return ActionResponse.Ok(message: "News created successfully");
     }
     
     public ActionResponse GetNewsById(int id)
