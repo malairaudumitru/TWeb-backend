@@ -1,4 +1,3 @@
-using MedicalCabinetWeb.Domain.Entities.News;
 using MedicalCabinetWeb.Domain.Entities.Reviews;
 using Microsoft.EntityFrameworkCore;
 
