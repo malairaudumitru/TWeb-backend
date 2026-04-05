@@ -8,6 +8,5 @@ public class ReviewsEntity
     public int Rating { get; set; } 
     public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
     public bool IsVerifiedPatient { get; set; } = true;
-    
-    
+    public bool IsDeleted { get; set; } = false;
 }

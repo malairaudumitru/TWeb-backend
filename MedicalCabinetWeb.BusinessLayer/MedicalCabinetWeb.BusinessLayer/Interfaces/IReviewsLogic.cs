@@ -8,4 +8,5 @@ public interface IReviewsLogic
     ActionResponse CreateReview(ReviewsCreateDto data);
     ActionResponse GetReviewsList();
     ActionResponse GetReviewById(int id);
+    ActionResponse UpdateReview(int id, ReviewsCreateDto data);
 }

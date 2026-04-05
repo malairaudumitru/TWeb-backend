@@ -44,4 +44,12 @@ public class ReviewsController : ControllerBase
         return Ok(result.Data);
     }
 
+    [HttpPut("update/{id}")]
+    public IActionResult UpdateReview([FromRoute] int id, [FromBody] ReviewsCreateDto reviewInfo)
+    {
+        var result = _reviewsLogic.UpdateReview(id, reviewInfo);
+        if (result.IsSuccess == false)
+            return StatusCode((int)result.StatusCode, result.Message);
+        return Ok(result.Message);
+    }
 }

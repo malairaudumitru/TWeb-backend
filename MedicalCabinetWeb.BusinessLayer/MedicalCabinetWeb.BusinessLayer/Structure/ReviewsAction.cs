@@ -58,4 +58,27 @@ public class ReviewsAction
         return _context.Reviews.ToList();
     }
 
+    protected bool UpdateReviewAction(int id, ReviewsCreateDto reviewInfo)
+    {
+        var reviewEntity = _context.Reviews.Find(id);
+        if (reviewEntity == null) return false;
+        if (reviewEntity.IsDeleted == true) return false;
+
+        reviewEntity.AuthorName = reviewInfo.AuthorName;
+        reviewEntity.ReviewText = reviewInfo.ReviewText;
+        reviewEntity.Rating = reviewInfo.Rating;
+        reviewEntity.IsVerifiedPatient = reviewInfo.IsVerifiedPatient;
+
+        try
+        {
+            _context.Reviews.Update(reviewEntity);
+            _context.SaveChanges();
+            return true;
+        }
+        catch (Exception e)
+        {
+            return false;
+        }
+    }
+
 }  
