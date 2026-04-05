@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MedicalCabinetWeb.DataAccessLayer")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+42f391d6a129fe9043b50cf6e50f5e5ea3965b3f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1f2ae552a8350eb204c1b271ef2805e2dc06a1d5")]
 [assembly: System.Reflection.AssemblyProductAttribute("MedicalCabinetWeb.DataAccessLayer")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MedicalCabinetWeb.DataAccessLayer")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

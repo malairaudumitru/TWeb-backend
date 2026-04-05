@@ -26,4 +26,22 @@ public class ReviewsController : ControllerBase
         return Ok(result.Message);
     }
     
+    [HttpGet("{id}")]
+    public IActionResult GetReviewById([FromRoute] int id)
+    {
+        var result = _reviewsLogic.GetReviewById(id);
+        if (result.IsSuccess == false)
+            return BadRequest(result.Message);
+        return Ok(result.Data);
+    }
+
+    [HttpGet("list")]
+    public IActionResult GetReviewsList()
+    {
+        var result = _reviewsLogic.GetReviewsList();
+        if (result.IsSuccess == false)
+            return BadRequest(result.Message);
+        return Ok(result.Data);
+    }
+
 }

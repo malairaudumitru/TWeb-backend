@@ -47,4 +47,15 @@ public class ReviewsAction
 
         return new ActionResponse { IsSuccess = true };
     }
+    
+    protected ReviewsEntity? GetReviewByIdAction(int id)
+    {
+        return _context.Reviews.Find(id);
+    }
+
+    protected List<ReviewsEntity> GetReviewsListAction()
+    {
+        return _context.Reviews.ToList();
+    }
+
 }  

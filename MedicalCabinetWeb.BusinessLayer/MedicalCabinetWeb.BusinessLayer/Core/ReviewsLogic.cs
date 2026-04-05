@@ -10,8 +10,19 @@ public class ReviewsLogic : ReviewsAction, IReviewsLogic
     public ActionResponse CreateReview(ReviewsCreateDto data)
     {
         var result = CreateReviewAction(data);
-        if (result == false)
-            return ActionResponse.BadRequest("Error creating review");
-        return ActionResponse.Ok(message: "Review created successfully");
+        return result == false ? ActionResponse.BadRequest("Error creating review") : ActionResponse.Ok(message: "Review created successfully");
     }
+    
+    public ActionResponse GetReviewById(int id)
+    {
+        var review = GetReviewByIdAction(id);
+        return review == null ? ActionResponse.BadRequest("Review not found") : new ActionResponse { IsSuccess = true, Message = "Success", Data = review };
+    }
+
+    public ActionResponse GetReviewsList()
+    {
+        var list = GetReviewsListAction();
+        return new ActionResponse { IsSuccess = true, Message = "Success", Data = list };
+    }
+
 }

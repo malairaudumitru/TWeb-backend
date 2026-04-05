@@ -9,4 +9,5 @@ public class ReviewsEntity
     public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
     public bool IsVerifiedPatient { get; set; } = true;
     
+    
 }

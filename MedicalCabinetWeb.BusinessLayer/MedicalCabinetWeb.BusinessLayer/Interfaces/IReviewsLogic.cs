@@ -6,4 +6,6 @@ namespace MedicalCabinetWeb.BusinessLayer.Interfaces;
 public interface IReviewsLogic
 {
     ActionResponse CreateReview(ReviewsCreateDto data);
+    ActionResponse GetReviewsList();
+    ActionResponse GetReviewById(int id);
 }
