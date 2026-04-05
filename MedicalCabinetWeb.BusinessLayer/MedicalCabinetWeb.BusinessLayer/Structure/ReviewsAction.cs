@@ -31,7 +31,6 @@ public class ReviewsAction
         }
         catch (Exception e)
         {
-            Console.WriteLine(e.Message);
             return false;
         }
     }
@@ -48,14 +47,37 @@ public class ReviewsAction
         return new ActionResponse { IsSuccess = true };
     }
 
-    protected ReviewsEntity? GetReviewByIdAction(int id)
+    protected ReviewsInfoDto? GetReviewByIdAction(int id)
     {
-        return _context.Reviews.Find(id);
+        var reviewEntity = _context.Reviews
+            .FirstOrDefault(x => x.Id == id && x.IsDeleted == false);
+        if (reviewEntity == null)
+            return null;
+
+        return new ReviewsInfoDto
+        {
+            Id = reviewEntity.Id,
+            AuthorName = reviewEntity.AuthorName,
+            ReviewText = reviewEntity.ReviewText,
+            Rating = reviewEntity.Rating,
+            CreatedAt = reviewEntity.CreatedAt,
+            IsVerifiedPatient = reviewEntity.IsVerifiedPatient
+        };
     }
 
-    protected List<ReviewsEntity> GetReviewsListAction()
+    protected List<ReviewsInfoDto> GetReviewsListAction()
     {
-        return _context.Reviews.ToList();
+        return _context.Reviews
+            .Where(x => x.IsDeleted == false)
+            .Select(reviewEntity => new ReviewsInfoDto
+            {
+                Id = reviewEntity.Id,
+                AuthorName = reviewEntity.AuthorName,
+                ReviewText = reviewEntity.ReviewText,
+                Rating = reviewEntity.Rating,
+                CreatedAt = reviewEntity.CreatedAt,
+                IsVerifiedPatient = reviewEntity.IsVerifiedPatient
+            }).ToList();
     }
 
     protected bool UpdateReviewAction(int id, ReviewsCreateDto reviewInfo)

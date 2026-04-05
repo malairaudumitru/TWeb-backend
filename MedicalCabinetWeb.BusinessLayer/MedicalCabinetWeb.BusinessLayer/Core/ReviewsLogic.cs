@@ -10,35 +10,40 @@ public class ReviewsLogic : ReviewsAction, IReviewsLogic
     public ActionResponse CreateReview(ReviewsCreateDto data)
     {
         var result = CreateReviewAction(data);
-        return result == false
-            ? ActionResponse.BadRequest("Error creating review")
-            : ActionResponse.Ok(message: "Review created successfully");
+        if (result == false)
+            return ActionResponse.BadRequest("Error creating review");
+        return ActionResponse.Ok(message: "Review created successfully");
     }
 
     public ActionResponse GetReviewById(int id)
     {
         var review = GetReviewByIdAction(id);
-        return review == null
-            ? ActionResponse.BadRequest("Review not found")
-            : new ActionResponse { IsSuccess = true, Message = "Success", Data = review };
+        if (review == null)
+            return ActionResponse.BadRequest("Review not found");
+        return new ActionResponse { IsSuccess = true, Message = "Success", Data = review };
     }
 
     public ActionResponse GetReviewsList()
     {
         var list = GetReviewsListAction();
+        if (list == null)
+            return ActionResponse.BadRequest("Error getting reviews");
         return new ActionResponse { IsSuccess = true, Message = "Success", Data = list };
     }
 
     public ActionResponse UpdateReview(int id, ReviewsCreateDto data)
     {
         var result = UpdateReviewAction(id, data);
-        return result == false
-            ? ActionResponse.BadRequest("Error updating review"): ActionResponse.Ok(message: "Review updated successfully");
+        if (result == false)
+            return ActionResponse.BadRequest("Error updating review");
+        return ActionResponse.Ok(message: "Review updated successfully");
     }
 
     public ActionResponse DeleteReview(int id)
     {
         var result = DeleteReviewAction(id);
-        return result == false ? ActionResponse.BadRequest("Error deleting review") : ActionResponse.Ok(message: "Review deleted successfully");
+        if (result == false)
+            return ActionResponse.BadRequest("Error deleting review");
+        return ActionResponse.Ok(message: "Review deleted successfully");
     }
 }
