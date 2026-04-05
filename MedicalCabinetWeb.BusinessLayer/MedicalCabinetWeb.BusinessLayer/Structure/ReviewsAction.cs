@@ -47,7 +47,7 @@ public class ReviewsAction
 
         return new ActionResponse { IsSuccess = true };
     }
-    
+
     protected ReviewsEntity? GetReviewByIdAction(int id)
     {
         return _context.Reviews.Find(id);
@@ -81,4 +81,22 @@ public class ReviewsAction
         }
     }
 
-}  
+    protected bool DeleteReviewAction(int id)
+    {
+        var reviewEntity = _context.Reviews.Find(id);
+        if (reviewEntity == null) return false;
+
+        try
+        {
+            reviewEntity.IsDeleted = true;
+            _context.Reviews.Update(reviewEntity);
+            _context.SaveChanges();
+            return true;
+        }
+        catch (Exception e)
+        {
+            return false;
+        }
+
+    }
+}

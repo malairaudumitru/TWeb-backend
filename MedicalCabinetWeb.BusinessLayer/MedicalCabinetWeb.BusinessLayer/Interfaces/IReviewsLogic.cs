@@ -9,4 +9,5 @@ public interface IReviewsLogic
     ActionResponse GetReviewsList();
     ActionResponse GetReviewById(int id);
     ActionResponse UpdateReview(int id, ReviewsCreateDto data);
+    ActionResponse DeleteReview(int id);
 }

@@ -33,7 +33,12 @@ public class ReviewsLogic : ReviewsAction, IReviewsLogic
     {
         var result = UpdateReviewAction(id, data);
         return result == false
-            ? ActionResponse.BadRequest("Error updating review")
-            : ActionResponse.Ok(message: "Review updated successfully");
+            ? ActionResponse.BadRequest("Error updating review"): ActionResponse.Ok(message: "Review updated successfully");
+    }
+
+    public ActionResponse DeleteReview(int id)
+    {
+        var result = DeleteReviewAction(id);
+        return result == false ? ActionResponse.BadRequest("Error deleting review") : ActionResponse.Ok(message: "Review deleted successfully");
     }
 }

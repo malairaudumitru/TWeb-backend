@@ -52,4 +52,13 @@ public class ReviewsController : ControllerBase
             return StatusCode((int)result.StatusCode, result.Message);
         return Ok(result.Message);
     }
+    
+    [HttpDelete("{id}")]
+    public IActionResult DeleteReview([FromRoute] int id)
+    {
+        var result = _reviewsLogic.DeleteReview(id);
+        if (result.IsSuccess == false)
+            return StatusCode((int)result.StatusCode, result.Message);
+        return Ok(result.Message);
+    }
 }
