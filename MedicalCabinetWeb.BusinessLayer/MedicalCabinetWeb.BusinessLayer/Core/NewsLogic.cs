@@ -11,36 +11,26 @@ public class NewsLogic : NewsActions, INewsLogic
         var result = CreateNewsAction(newsCreateInfo);
         if (result == false)
             return ActionResponse.BadRequest("Error creating news");
-        return ActionResponse.Ok(message: "News created successfully");
+        return ActionResponse.Ok("News created successfully");
     }
     
     public ActionResponse GetNewsById(int id)
     {
-        var newsInfoDto = GetNewsById(id);
-        if (newsInfoDto == null)
-            return new ActionResponse()
-            {
-                IsSuccess = false,
-                Message = "Error 404"
-            };
-        return new ActionResponse()
-        {
-            IsSuccess = true,
-            Message = "Success",
-            Data = newsInfoDto
-        };
+        var result = GetNewsByIdAction(id);
+        if (result == null)
+            return ActionResponse.BadRequest("Error finding news");
+        
+        return ActionResponse.Ok("News found successfully");
+        
     }
 
     
 
     public  ActionResponse GetNewsList()
     {
-        var productList = GetNewsList();
-        return new ActionResponse()
-        {
-            IsSuccess = true,
-            Data = productList
-        };
+        var result = GetNewsListAction();
+            return ActionResponse.Ok("News found successfully");
+
     }
 
     public ActionResponse DeleteNews(int id)
@@ -49,7 +39,7 @@ public class NewsLogic : NewsActions, INewsLogic
         if (result == false)
             return ActionResponse.BadRequest("Error deleting news");
 
-        return ActionResponse.Ok(message: "News deleted successfully");
+        return ActionResponse.Ok("News deleted successfully");
     }
     
     public ActionResponse UpdateNews(int id, NewsCreateDto data)
@@ -58,6 +48,6 @@ public class NewsLogic : NewsActions, INewsLogic
         if (result == false)
             return ActionResponse.BadRequest("Error updating news");
 
-        return ActionResponse.Ok(message: "News updated successfully");
+        return ActionResponse.Ok("News updated successfully");
     }
 }

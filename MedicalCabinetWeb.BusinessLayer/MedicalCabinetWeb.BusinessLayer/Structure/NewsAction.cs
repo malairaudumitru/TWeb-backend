@@ -90,4 +90,38 @@ public class NewsActions
             return false;
         }
     }
+    
+    protected NewsInfoDto? GetNewsByIdAction(int id)
+    {
+        var newsEntity = _context.News
+            .FirstOrDefault(x => x.Id == id && x.IsDeleted == false);
+        if (newsEntity == null)
+            return null;
+
+        return new NewsInfoDto
+        {
+            Id = newsEntity.Id,
+            Name = newsEntity.Name,
+            Description = newsEntity.Description,
+            Type = newsEntity.Type,
+            Date = newsEntity.Date
+        };
+    }
+
+    protected List<NewsInfoDto> GetNewsListAction()
+    {
+        return _context.News
+            .Where(x => x.IsDeleted == false)
+            .Select(reviewEntity => new NewsInfoDto
+            {
+                
+                Id = reviewEntity.Id,
+                Name = reviewEntity.Name,
+                Description = reviewEntity.Description,
+                Type = reviewEntity.Type,
+                Date = reviewEntity.Date
+                
+            }).ToList();
+    }
+    
 }
