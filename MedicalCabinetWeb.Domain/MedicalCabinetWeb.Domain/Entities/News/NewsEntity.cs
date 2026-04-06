@@ -2,14 +2,6 @@ using System.ComponentModel.DataAnnotations;
 
 namespace MedicalCabinetWeb.Domain.Entities.News;
 
-public enum NewsType
-{
-    ServiciuNou,
-    Promotie,
-    MedicNou,
-    ActualizarePret
-}
-
 public class NewsEntity
 {
     public int Id { get; set; }
