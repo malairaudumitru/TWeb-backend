@@ -1,17 +1,12 @@
-﻿using MedicalCabinetWeb.Domain.Entities.User;
-    
+﻿using MedicalCabinetWeb.Domain.Models.Patient;
+using MedicalCabinetWeb.Domain.Models.Service;
+
 namespace MedicalCabinetWeb.BusinessLayer.Interfaces;
-
-
 
 public interface IPatientLogic
 {
-    List<Patient> GetAll();
-    Patient GetById(int id);
-    void Create(Patient patient);
-    void Update(int id, Patient patient);
-    void Delete(int id);
-    List<Patient> GetByName(string firstName, string lastName);
-    List<Patient> GetByStatus(PatientStatus status);
-    void UpdateStatus(int id, PatientStatus status);
+    ServiceResponse CreatePatient(PatientCreateDto  patient);
+    ServiceResponse GetPatientById(int id);
+    ServiceResponse GetPatientList();
+
 }

@@ -1,89 +1,52 @@
 ﻿using MedicalCabinetWeb.BusinessLayer;
-using MedicalCabinetWeb.DataAccessLayer.Context;
-using MedicalCabinetWeb.Domain.Entities.User;
+using MedicalCabinetWeb.BusinessLayer.Interfaces;
+using MedicalCabinetWeb.Domain.Models.Patient;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MedicalCabinetWeb.Api.Controllers;
 
 [ApiController]
 [Route("api/patients")]
-public class PatientController : ControllerBase
+public class PatientController: ControllerBase
 {
-    private readonly BusinessLogic _businessLogic;
+    private readonly IPatientLogic _patientLogic;
 
     public PatientController()
     {
-        _businessLogic = new BusinessLogic(new UserDbContext());
-    }
-
-    [HttpGet]
-    public IActionResult GetAll()
-    {
-        return Ok(_businessLogic.GetPatientLogic().GetAll());
+        var bl = new BusinessLogic();
+        _patientLogic = bl.GetPatientLogic();
     }
 
     [HttpGet("{id}")]
-    public IActionResult GetById(int id)
+    public IActionResult GetPatientById([FromRoute] int id)
     {
-        var patient = _businessLogic.GetPatientLogic().GetById(id);
-        if (patient == null)
-            return NotFound($"Pacientul cu id {id} nu a fost găsit.");
-        return Ok(patient);
+        var result = _patientLogic.GetPatientById(id);
+        if (result.IsSuccess == false)
+            return  BadRequest(result.Message);
+        
+        return Ok(result.Data);
+        
     }
 
-    [HttpPost("create")]
-    public IActionResult Create([FromBody] Patient patient)
+    [HttpGet("list")]
+    public IActionResult GetPatientList()
     {
-        _businessLogic.GetPatientLogic().Create(patient);
-        return CreatedAtAction(nameof(GetById), new { id = patient.Id }, patient);
+        var result = _patientLogic.GetPatientList();
+        if (result.IsSuccess == false)
+            return BadRequest(result.Message);
+        return Ok(result.Data);
     }
 
-    [HttpPut("update/{id}")]
-    public IActionResult Update(int id, [FromBody] Patient patient)
+    [HttpPost("Create")]
+    public IActionResult CreatePatient([FromBody] PatientCreateDto patient)
     {
-        var existing = _businessLogic.GetPatientLogic().GetById(id);
-        if (existing == null)
-            return NotFound($"Pacientul cu id {id} nu a fost găsit.");
-        _businessLogic.GetPatientLogic().Update(id, patient);
-        return NoContent();
-    }
-
-    [HttpDelete("{id}")]
-    public IActionResult Delete(int id)
-    {
-        var patient = _businessLogic.GetPatientLogic().GetById(id);
-        if (patient == null)
-            return NotFound($"Pacientul cu id {id} nu a fost găsit.");
-        _businessLogic.GetPatientLogic().Delete(id);
-        return NoContent();
-    }
-
-    [HttpGet("SearchByName")]
-    public IActionResult GetByName([FromQuery] string firstName, [FromQuery] string lastName)
-    {
-        var patients = _businessLogic.GetPatientLogic().GetByName(firstName, lastName);
-        if (patients.Count == 0)
-            return NotFound("Nu a fost gasit nici un pacient cu acest nume");
-        return Ok(patients);
-    }
-
-    [HttpGet("SearchByStatus")]
-    public IActionResult GetByStatus(PatientStatus status)
-    {
-        var patients = _businessLogic.GetPatientLogic().GetByStatus(status);
-        if (patients.Count == 0)
-            return NotFound("Nu exista pacienti cu statusul dat.");
-        return Ok(patients);
-    }
-
-    [HttpPatch("{id}/status")]
-    public IActionResult UpdateStatus(int id, [FromBody] PatientStatus status)
-    {
-        var patient = _businessLogic.GetPatientLogic().GetById(id);
-        if (patient == null)
-            return NotFound($"Pacientul cu id {id} nu a fost găsit.");
-
-        _businessLogic.GetPatientLogic().UpdateStatus(id, status);
-        return Ok($"Statusul pacientului cu id {id} a fost schimbat.");
+        var result = _patientLogic.CreatePatient(patient);
+        if (result.IsSuccess == false)
+            return BadRequest(result.Message);
+        
+        return Ok(result.Message);
+        {
+            
+        }
     }
 }

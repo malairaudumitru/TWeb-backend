@@ -1,77 +1,53 @@
 ﻿using MedicalCabinetWeb.BusinessLayer.Interfaces;
 using MedicalCabinetWeb.BusinessLayer.Structure;
-using MedicalCabinetWeb.DataAccessLayer.Context;
-using MedicalCabinetWeb.Domain.Entities.User;
+using MedicalCabinetWeb.Domain.Models.Patient;
+using MedicalCabinetWeb.Domain.Models.Service;
 
 namespace MedicalCabinetWeb.BusinessLayer.Core;
 
-public class PatientLogic : PatientActions, IPatientLogic
+public class PatientLogic: PatientActions, IPatientLogic
 {
-    private readonly UserDbContext _context;
-
-    public PatientLogic(UserDbContext context)
+    public ServiceResponse CreatePatient(PatientCreateDto patient)
     {
-        _context = context;
+       var result = CreatePatientAction(patient);
+       if(result == false)
+           return new ServiceResponse
+           {
+               IsSuccess = false, 
+               Message = "Error creating Patient"
+           };
+       return new ServiceResponse
+       {
+           IsSuccess = true,
+           Message = "Patient created successfully"
+       };
+
+
     }
 
-    public List<Patient> GetAll()
+    public ServiceResponse GetPatientById(int id)
     {
-        return _context.Patients.ToList();
+        var patient = GetPatientByIdAction(id);
+        if (patient == null)
+            return new ServiceResponse
+            {
+                IsSuccess = false,
+                Message = "Patient not found"
+            };
+        return new ServiceResponse
+        {
+            IsSuccess = true,
+            Data = patient
+        };
     }
 
-    public Patient GetById(int id)
+    public ServiceResponse GetPatientList()
     {
-        return _context.Patients.FirstOrDefault(p => p.Id == id);
-    }
-
-    public void Create(Patient patient)
-    {
-        _context.Patients.Add(patient);
-        _context.SaveChanges();
-    }
-
-    public void Update(int id, Patient patient)
-    {
-        var existing = _context.Patients.FirstOrDefault(p => p.Id == id);
-        if (existing == null) return;
-
-        existing.FirstName = patient.FirstName;
-        existing.LastName = patient.LastName;
-        existing.DateOfBirth = patient.DateOfBirth;
-        existing.Sex = patient.Sex;
-        existing.Email = patient.Email;
-        existing.Password = patient.Password;
-        existing.Phone = patient.Phone;
-
-        _context.SaveChanges();
-    }
-
-    public void Delete(int id)
-    {
-        var patient = _context.Patients.FirstOrDefault(p => p.Id == id);
-        if (patient == null) return;
-
-        _context.Patients.Remove(patient);
-        _context.SaveChanges();
-    }
-
-    public List<Patient> GetByName(string firstName, string lastName)
-    {
-        return  _context.Patients.
-            Where(p => p.FirstName == firstName && p.LastName == lastName).
-            ToList();
-    }
-
-    public List<Patient> GetByStatus(PatientStatus status)
-    {
-        return _context.Patients.Where(p => p.Status == status).ToList();
-    }
-
-    public void UpdateStatus(int id, PatientStatus status)
-    {
-        var existing = _context.Patients.FirstOrDefault(p => p.Id == id);
-        if (existing == null) return;
-        existing.Status =  status;
-        _context.SaveChanges();
+        var patientList = GetPatientListAction();
+        return new ServiceResponse
+        {
+            IsSuccess = true,
+            Data = patientList
+        };
     }
 }
