@@ -14,4 +14,10 @@ public class BusinessLogic
 
 
     }
+    
+    //MedicLogic
+    public IMedicLogic GetMedicLogic()
+    {
+        return new MedicLogic();
+    }
 }
