@@ -32,4 +32,12 @@ public class MedicLogic: MedicActions, IMedicLogic
         
         return ServiceResponse.Ok(data: medic);
     }
+
+    public ServiceResponse GetMedicList()
+    {
+        var medicList = GetMedicListAction();
+        
+        return ServiceResponse.Ok(data: medicList);
+    }
+    
 }

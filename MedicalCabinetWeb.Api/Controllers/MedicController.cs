@@ -36,4 +36,15 @@ public class MedicController : ControllerBase
         
         return Ok(result.Data);
     }
+
+    [HttpGet("list")]
+    public IActionResult GetMedicList()
+    {
+        var result = _medicLogic.GetMedicList();
+        if (result.IsSuccess == false)
+            return StatusCode((int)result.StatusCode, result.Message);
+        
+        return Ok(result.Data);
+    }
+    
 }

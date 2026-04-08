@@ -7,5 +7,6 @@ public interface IMedicLogic
 {
     ServiceResponse CreateMedic(MedicCreateDto data);
     ServiceResponse GetMedicById(int id);
-    
+    ServiceResponse GetMedicList();
+
 }
