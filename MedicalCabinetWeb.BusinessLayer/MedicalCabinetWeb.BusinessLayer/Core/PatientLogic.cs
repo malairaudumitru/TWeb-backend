@@ -50,4 +50,15 @@ public class PatientLogic: PatientActions, IPatientLogic
             Data = patientList
         };
     }
+
+    public ServiceResponse UpdatePatient(int id, PatientCreateDto data)
+    {
+        var result = UpdatePatientAction(id, data);
+        if (result == false)
+            return ServiceResponse.BadRequest("Error updating Patient");
+        
+        return ServiceResponse.Ok("Patient updated successfully");
+    }
+    
+    
 }

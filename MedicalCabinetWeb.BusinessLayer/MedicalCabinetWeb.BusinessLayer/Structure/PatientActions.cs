@@ -54,7 +54,7 @@ public class PatientActions
             DateOfBirth = patientEntity.DateOfBirth,
             Sex = patientEntity.Sex,
             Email = patientEntity.Email,
-            Password =  patientEntity.Password,
+            Password = patientEntity.Password,
             Phone = patientEntity.Phone,
             Status = patientEntity.Status
 
@@ -66,19 +66,47 @@ public class PatientActions
     public List<PatientInfoDto> GetPatientListAction()
     {
         var patientList = _context.Patients.Select(patientEntity => new PatientInfoDto()
-        {
-            Id = patientEntity.Id,
-            LastName =  patientEntity.LastName,
-            FirstName = patientEntity.FirstName,
-            DateOfBirth = patientEntity.DateOfBirth,
-            Sex = patientEntity.Sex,
-            Email =  patientEntity.Email,
-            Password =  patientEntity.Password,
-            Phone =  patientEntity.Phone,
-            Status = patientEntity.Status
-        }   )
+            {
+                Id = patientEntity.Id,
+                LastName = patientEntity.LastName,
+                FirstName = patientEntity.FirstName,
+                DateOfBirth = patientEntity.DateOfBirth,
+                Sex = patientEntity.Sex,
+                Email = patientEntity.Email,
+                Password = patientEntity.Password,
+                Phone = patientEntity.Phone,
+                Status = patientEntity.Status
+            })
             .ToList();
         return patientList;
+    }
+
+    protected bool UpdatePatientAction(int id, PatientCreateDto patient)
+    {
+        var patientEntity = _context.Patients.Find(id);
+        if (patientEntity == null)
+            return false;
+
+        patientEntity.LastName = patient.LastName;
+        patientEntity.FirstName = patient.FirstName;
+        patientEntity.DateOfBirth = patient.DateOfBirth;
+        patientEntity.Sex = patient.Sex;
+        patientEntity.Email = patient.Email;
+        patientEntity.Password = patient.Password;
+        patientEntity.Phone = patient.Phone;
+        patientEntity.Status = patientEntity.Status;
+
+        try
+        {
+            _context.Patients.Update(patientEntity);
+            _context.SaveChanges();
+            return true;
+        }
+        catch (Exception e)
+        {
+            return false;
+        }
+
     }
     
 }

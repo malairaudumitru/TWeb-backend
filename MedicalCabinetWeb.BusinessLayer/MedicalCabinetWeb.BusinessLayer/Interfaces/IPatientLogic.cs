@@ -8,5 +8,6 @@ public interface IPatientLogic
     ServiceResponse CreatePatient(PatientCreateDto  patient);
     ServiceResponse GetPatientById(int id);
     ServiceResponse GetPatientList();
+    ServiceResponse UpdatePatient(int id, PatientCreateDto data);
 
 }

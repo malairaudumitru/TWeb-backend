@@ -7,7 +7,7 @@ namespace MedicalCabinetWeb.Api.Controllers;
 
 [ApiController]
 [Route("api/patients")]
-public class PatientController: ControllerBase
+public class PatientController : ControllerBase
 {
     private readonly IPatientLogic _patientLogic;
 
@@ -22,10 +22,10 @@ public class PatientController: ControllerBase
     {
         var result = _patientLogic.GetPatientById(id);
         if (result.IsSuccess == false)
-            return  BadRequest(result.Message);
-        
+            return BadRequest(result.Message);
+
         return Ok(result.Data);
-        
+
     }
 
     [HttpGet("list")]
@@ -43,10 +43,22 @@ public class PatientController: ControllerBase
         var result = _patientLogic.CreatePatient(patient);
         if (result.IsSuccess == false)
             return BadRequest(result.Message);
+
+        return Ok(result.Message);
+    }
+
+    [HttpPut("Update/{id}")]
+    public IActionResult UpdatePatient([FromRoute] int id, [FromBody] PatientCreateDto patientCreate)
+    {
+        var result = _patientLogic.UpdatePatient(id, patientCreate);
+        if (result.IsSuccess == false)
+            return StatusCode((int)result.StatusCode, result.Message);
         
         return Ok(result.Message);
-        {
-            
-        }
     }
 }
+   
+    
+    
+
+  
