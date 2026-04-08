@@ -46,5 +46,15 @@ public class MedicController : ControllerBase
         
         return Ok(result.Data);
     }
+
+    [HttpPut("update/{id}")]
+    public IActionResult UpdateMedic([FromRoute] int id, [FromBody] MedicCreateDto medicCreate)
+    {
+        var result = _medicLogic.UpdateMedic(id, medicCreate);
+        if (result.IsSuccess  == false)
+            return StatusCode((int)result.StatusCode, result.Message);
+        
+        return Ok(result.Message);
+    }
     
 }

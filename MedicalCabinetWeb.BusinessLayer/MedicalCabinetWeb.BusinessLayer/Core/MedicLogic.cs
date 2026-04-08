@@ -39,5 +39,13 @@ public class MedicLogic: MedicActions, IMedicLogic
         
         return ServiceResponse.Ok(data: medicList);
     }
-    
+
+    public ServiceResponse UpdateMedic(int id, MedicCreateDto data)
+    {
+        var result = UpdateMedicAction(id, data);
+        if (result == false)
+            return ServiceResponse.BadRequest("Error updating Medic");
+        
+        return ServiceResponse.Ok("Medic updated successfully");
+    }
 }

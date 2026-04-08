@@ -65,6 +65,31 @@ public class MedicActions
         return medicList;
     }
 
+    protected bool UpdateMedicAction(int id, MedicCreateDto medicInfo)
+    {
+        var medicEntity = _context.Medics.Find(id);
+        if(medicEntity == null)
+            return false;
+        
+        if (medicEntity.IsDeleted == true)
+            return  false;
+
+        medicEntity.LastName = medicInfo.LastName;
+        medicEntity.FirstName = medicInfo.FirstName;
+        medicEntity.Speciality = medicInfo.Speciality;
+
+        try
+        {
+            _context.Medics.Update(medicEntity);
+            _context.SaveChanges();
+            return true;
+        }
+        catch (Exception e)
+        {
+            return false;
+        }
+
+    }
 
 
 
