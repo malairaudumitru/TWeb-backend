@@ -65,7 +65,9 @@ public class PatientActions
 
     public List<PatientInfoDto> GetPatientListAction()
     {
-        var patientList = _context.Patients.Select(patientEntity => new PatientInfoDto()
+        var patientList = _context.Patients
+             .Where(p => p.IsDeleted == false)
+             .Select(patientEntity => new PatientInfoDto()
             {
                 Id = patientEntity.Id,
                 LastName = patientEntity.LastName,
@@ -108,5 +110,26 @@ public class PatientActions
         }
 
     }
+
+    protected bool DeletePatientAction(int id)
+    {
+        var patientEntity = _context.Patients.Find(id);
+        {
+            if (patientEntity == null)
+                return false;
+        }
+        try
+        {
+            patientEntity.IsDeleted = true;
+            _context.Patients.Update(patientEntity);
+            _context.SaveChanges();
+            return true;
+        }
+        catch (Exception e)
+        {
+            return false;
+        }
+    }
+    
     
 }

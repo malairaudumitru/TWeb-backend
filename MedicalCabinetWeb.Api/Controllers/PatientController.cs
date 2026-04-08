@@ -22,7 +22,7 @@ public class PatientController : ControllerBase
     {
         var result = _patientLogic.GetPatientById(id);
         if (result.IsSuccess == false)
-            return BadRequest(result.Message);
+            return StatusCode((int)result.StatusCode, result.Message);
 
         return Ok(result.Data);
 
@@ -33,7 +33,8 @@ public class PatientController : ControllerBase
     {
         var result = _patientLogic.GetPatientList();
         if (result.IsSuccess == false)
-            return BadRequest(result.Message);
+            return StatusCode((int)result.StatusCode, result.Message);
+        
         return Ok(result.Data);
     }
 
@@ -42,7 +43,7 @@ public class PatientController : ControllerBase
     {
         var result = _patientLogic.CreatePatient(patient);
         if (result.IsSuccess == false)
-            return BadRequest(result.Message);
+            return StatusCode((int)result.StatusCode, result.Message);
 
         return Ok(result.Message);
     }
@@ -56,6 +57,17 @@ public class PatientController : ControllerBase
         
         return Ok(result.Message);
     }
+
+    [HttpDelete("{id}")]
+    public IActionResult DeletePatient([FromRoute] int id)
+    {
+        var result = _patientLogic.DeletePatient(id);
+        if (result.IsSuccess == false)
+            return StatusCode((int)result.StatusCode, result.Message);
+        
+        return Ok(result.Message);
+    }
+    
 }
    
     

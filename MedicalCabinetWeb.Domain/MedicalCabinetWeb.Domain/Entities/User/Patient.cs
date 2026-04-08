@@ -20,6 +20,6 @@ namespace MedicalCabinetWeb.Domain.Entities.User
         public string Password { get; set; }
         public string Phone { get; set; }
        public PatientStatus Status { get; set; }
-
+       public bool IsDeleted { get; set; }
     }
 }

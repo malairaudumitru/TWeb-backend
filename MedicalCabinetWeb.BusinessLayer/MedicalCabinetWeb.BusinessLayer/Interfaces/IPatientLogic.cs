@@ -1,5 +1,5 @@
 ﻿using MedicalCabinetWeb.Domain.Models.Patient;
-using MedicalCabinetWeb.Domain.Models.Service;
+using MedicalCabinetWeb.Domain.Models.Responses;
 
 namespace MedicalCabinetWeb.BusinessLayer.Interfaces;
 
@@ -9,5 +9,7 @@ public interface IPatientLogic
     ServiceResponse GetPatientById(int id);
     ServiceResponse GetPatientList();
     ServiceResponse UpdatePatient(int id, PatientCreateDto data);
-
+    ServiceResponse DeletePatient(int id);
+    
+    
 }
