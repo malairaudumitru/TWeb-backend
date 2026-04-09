@@ -7,7 +7,7 @@ public class BusinessLogic
 {
     public BusinessLogic(){}
     
-    //PatientLogic
+    
     public IPatientLogic GetPatientLogic()
     {
         return new PatientLogic();
@@ -15,7 +15,7 @@ public class BusinessLogic
 
     }
     
-    //MedicLogic
+    
     public IMedicLogic GetMedicLogic()
     {
         return new MedicLogic();

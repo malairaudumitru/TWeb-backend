@@ -88,7 +88,28 @@ public class MedicActions
         {
             return false;
         }
+        
 
+    }
+
+    protected bool DeleteMedicAction(int id)
+    {
+        var medicEntity = _context.Medics.Find(id);
+        {
+            if (medicEntity == null)
+                return false;
+        }
+        try
+        {
+            medicEntity.IsDeleted = true;
+            _context.Medics.Update(medicEntity);
+            _context.SaveChanges();
+            return true;
+        }
+        catch (Exception e)
+        {
+            return false;
+        }
     }
 
 

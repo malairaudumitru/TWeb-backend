@@ -9,5 +9,6 @@ public interface IMedicLogic
     ServiceResponse GetMedicById(int id);
     ServiceResponse GetMedicList();
     ServiceResponse UpdateMedic(int id, MedicCreateDto data);
+    ServiceResponse DeleteMedic(int id);
 
 }

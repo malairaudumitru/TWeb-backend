@@ -56,5 +56,15 @@ public class MedicController : ControllerBase
         
         return Ok(result.Message);
     }
+
+    [HttpDelete("{id}")]
+    public IActionResult DeleteMedic([FromRoute] int id)
+    {
+        var result = _medicLogic.DeleteMedic(id);
+        if (result.IsSuccess == false)
+            return StatusCode((int)result.StatusCode, result.Message);
+        
+        return Ok(result.Message);
+    }
     
 }

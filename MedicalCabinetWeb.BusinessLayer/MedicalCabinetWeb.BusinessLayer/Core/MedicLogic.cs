@@ -11,16 +11,9 @@ public class MedicLogic: MedicActions, IMedicLogic
     {
         var result = CreateMedicAction(patient);
         if (result == false)
-            return new ServiceResponse
-            {
-                IsSuccess = false,
-                Message = "Error creating Medic"
-            };
-        return new ServiceResponse
-        {
-            IsSuccess = true,
-            Message = "Medic created successfully"
-        };
+            return ServiceResponse.BadRequest("Error updating Medic");
+        
+        return ServiceResponse.Ok("Medic created successfully");
 
     }
 
@@ -48,4 +41,15 @@ public class MedicLogic: MedicActions, IMedicLogic
         
         return ServiceResponse.Ok("Medic updated successfully");
     }
+
+    public ServiceResponse DeleteMedic(int id)
+    {
+        var result = DeleteMedicAction(id);
+        if (result == false)
+            return  ServiceResponse.NotFound("Medic not found");
+        
+        return ServiceResponse.Ok("Medic deleted successfully");
+        
+    }
+    
 }
