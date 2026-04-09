@@ -7,7 +7,8 @@ namespace MedicalCabinetWeb.BusinessLayer.Interfaces;
 public interface IAdminLogic
 {
     ServiceResponse CreateAdmin(AdminCreateDto data);
-    
+    ServiceResponse GetAdminList();
+   
     
     
     

@@ -13,6 +13,6 @@ namespace MedicalCabinetWeb.Domain.Entities.User
         public string FirstName { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }
-        
+        public bool IsDeleted { get; set; }
     }
 }

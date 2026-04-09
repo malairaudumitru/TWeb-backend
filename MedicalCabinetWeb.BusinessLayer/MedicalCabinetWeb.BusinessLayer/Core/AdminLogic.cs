@@ -16,4 +16,12 @@ public class AdminLogic : AdminActions, IAdminLogic
         return ServiceResponse.Ok("Medic created successfully");
 
     }
+
+    public ServiceResponse GetAdminList()
+    {
+        var adminList = GetAdminListAction();
+        
+        return ServiceResponse.Ok(data: adminList);
+    }
+    
 }

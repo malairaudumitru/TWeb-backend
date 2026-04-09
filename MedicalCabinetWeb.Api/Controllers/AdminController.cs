@@ -27,5 +27,15 @@ public class AdminController : ControllerBase
 
         return Ok(result.Message);
     }
+
+    [HttpGet("list")]
+    public IActionResult GetAdminList()
+    {
+        var result = _adminLogic.GetAdminList();
+        if(result.IsSuccess == false)
+            return StatusCode((int)result.StatusCode, result.Message);
+        
+        return Ok(result.Data);
+    }
     
 }
