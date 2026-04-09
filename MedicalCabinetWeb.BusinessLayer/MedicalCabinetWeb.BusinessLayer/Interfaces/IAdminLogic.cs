@@ -8,6 +8,7 @@ public interface IAdminLogic
 {
     ServiceResponse CreateAdmin(AdminCreateDto data);
     ServiceResponse GetAdminList();
+    ServiceResponse GetAdminById(int id);
    
     
     

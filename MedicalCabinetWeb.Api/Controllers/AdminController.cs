@@ -37,5 +37,15 @@ public class AdminController : ControllerBase
         
         return Ok(result.Data);
     }
+
+    [HttpGet("{id}")]
+    public IActionResult GetAdminById([FromRoute] int id)
+    {
+        var result = _adminLogic.GetAdminById(id);
+        if(result.IsSuccess == false)
+            return StatusCode((int)result.StatusCode, result.Message);
+        
+        return Ok(result.Data);
+    }
     
 }

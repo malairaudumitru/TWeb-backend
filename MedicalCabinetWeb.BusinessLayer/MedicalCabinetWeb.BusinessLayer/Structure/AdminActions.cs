@@ -52,6 +52,24 @@ public class AdminActions
         return adminList;
     
     }
-    
+
+    protected AdminInfoDto GetAdminByIdAction(int id)
+    {
+        var adminEntity = _context.Admins
+            .FirstOrDefault(x =>  x.Id == id && x.IsDeleted == false);
+        if(adminEntity == null)
+            return null;
+
+        var adminInfoDto = new AdminInfoDto
+        {
+            Id = adminEntity.Id,
+            LastName = adminEntity.LastName,
+            FirstName = adminEntity.FirstName,
+            Email = adminEntity.Email,
+            Password = adminEntity.Password
+        };
+        
+        return adminInfoDto;
+    }
     
 }

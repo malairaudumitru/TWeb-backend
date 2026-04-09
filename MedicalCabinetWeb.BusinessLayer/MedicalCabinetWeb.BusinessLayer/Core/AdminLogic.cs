@@ -23,5 +23,13 @@ public class AdminLogic : AdminActions, IAdminLogic
         
         return ServiceResponse.Ok(data: adminList);
     }
-    
+
+    public ServiceResponse GetAdminById(int id)
+    {
+        var admin = GetAdminByIdAction(id);
+        if (admin == null)
+            return ServiceResponse.NotFound("Admin not found");
+        
+        return ServiceResponse.Ok(data: admin);
+    }
 }
