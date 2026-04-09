@@ -11,7 +11,7 @@ public class MedicLogic: MedicActions, IMedicLogic
     {
         var result = CreateMedicAction(patient);
         if (result == false)
-            return ServiceResponse.BadRequest("Error updating Medic");
+            return ServiceResponse.BadRequest("Error creating Medic");
         
         return ServiceResponse.Ok("Medic created successfully");
 

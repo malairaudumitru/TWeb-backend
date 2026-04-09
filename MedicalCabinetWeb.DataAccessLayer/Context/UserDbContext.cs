@@ -7,6 +7,7 @@ public class UserDbContext : DbContext
 {
     public DbSet<Patient> Patients { get; set; }
     public DbSet<Medic> Medics { get; set; }
+    public DbSet<Admin> Admins { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {

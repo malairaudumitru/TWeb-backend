@@ -1,0 +1,19 @@
+﻿using MedicalCabinetWeb.BusinessLayer.Interfaces;
+using MedicalCabinetWeb.BusinessLayer.Structure;
+using MedicalCabinetWeb.Domain.Models.Admin;
+using MedicalCabinetWeb.Domain.Models.Responses;
+
+namespace MedicalCabinetWeb.BusinessLayer.Core;
+
+public class AdminLogic : AdminActions, IAdminLogic
+{
+    public ServiceResponse CreateAdmin(AdminCreateDto admin)
+    {
+        var result = CreateAdminAction(admin);
+        if (result == false)
+            return ServiceResponse.BadRequest("Error creating Medic");
+
+        return ServiceResponse.Ok("Medic created successfully");
+
+    }
+}

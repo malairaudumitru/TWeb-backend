@@ -20,4 +20,10 @@ public class BusinessLogic
     {
         return new MedicLogic();
     }
+
+    public IAdminLogic GetAdminLogic()
+    {
+        return new AdminLogic();
+    }
+    
 }
