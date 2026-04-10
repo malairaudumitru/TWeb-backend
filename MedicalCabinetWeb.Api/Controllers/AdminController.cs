@@ -47,5 +47,26 @@ public class AdminController : ControllerBase
         
         return Ok(result.Data);
     }
+
+    [HttpPut("update/{id}")]
+    public IActionResult UpdateAdmin([FromRoute] int id, [FromBody] AdminCreateDto adminCreate)
+    {
+        var result = _adminLogic.UpdateAdmin(id, adminCreate);
+        if (result.IsSuccess ==  false)
+            return StatusCode((int)result.StatusCode, result.Message);
+        
+        return Ok(result.Message);
+    }
+
+    [HttpDelete("{id}")]
+    public IActionResult DeleteAdmin([FromRoute] int id)
+    {
+        var result = _adminLogic.DeleteAdmin(id);
+        if (result.IsSuccess == false)
+            return StatusCode((int)result.StatusCode, result.Message);
+        
+        return Ok(result.Message);
+    }
+    
     
 }

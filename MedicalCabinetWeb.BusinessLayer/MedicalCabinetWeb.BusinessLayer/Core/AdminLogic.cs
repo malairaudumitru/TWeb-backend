@@ -32,4 +32,24 @@ public class AdminLogic : AdminActions, IAdminLogic
         
         return ServiceResponse.Ok(data: admin);
     }
+
+    public ServiceResponse UpdateAdmin(int id, AdminCreateDto data)
+    {
+        var result = UpdateAdminAction(id, data);
+        if (result == false)
+            return ServiceResponse.BadRequest("Error updating  Admin");
+        
+        return ServiceResponse.Ok("Admin updated successfully");
+    }
+
+    public ServiceResponse DeleteAdmin(int id)
+    {
+        var result = DeleteAdminAction(id);
+            if (result == false)
+                return ServiceResponse.BadRequest("Error deleting Admin");
+            
+            return ServiceResponse.Ok("Admin deleted successfully");
+            
+    }
+    
 }

@@ -71,5 +71,52 @@ public class AdminActions
         
         return adminInfoDto;
     }
+
+    protected bool UpdateAdminAction(int id, AdminCreateDto adminInfo)
+    {
+        var adminEntity = _context.Admins.Find(id);
+        if(adminEntity == null)
+            return false;
+        
+        if (adminEntity.IsDeleted == true)
+            return false;
+        
+        adminEntity.LastName = adminInfo.LastName;
+        adminEntity.FirstName = adminInfo.FirstName;
+        adminEntity.Email = adminInfo.Email;
+        adminEntity.Password = adminInfo.Password;
+
+        try
+        {
+            _context.Admins.Update(adminEntity);
+            _context.SaveChanges();
+            return true;
+        }
+        catch (Exception e)
+        {
+            return false;
+        }
+    }
+
+    protected bool DeleteAdminAction(int id)
+    {
+        var adminEntity = _context.Admins.Find(id);
+        {
+            if (adminEntity == null)
+                return false;
+        }
+        try
+        {
+            adminEntity.IsDeleted = true;
+            _context.Admins.Update(adminEntity);
+            _context.SaveChanges();
+            return true;
+        }
+        catch (Exception e)
+        {
+            return false;
+        }
+    }
+    
     
 }

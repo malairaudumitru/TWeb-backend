@@ -9,6 +9,9 @@ public interface IAdminLogic
     ServiceResponse CreateAdmin(AdminCreateDto data);
     ServiceResponse GetAdminList();
     ServiceResponse GetAdminById(int id);
+    ServiceResponse UpdateAdmin (int id, AdminCreateDto data);
+    ServiceResponse DeleteAdmin(int id);
+    
    
     
     
