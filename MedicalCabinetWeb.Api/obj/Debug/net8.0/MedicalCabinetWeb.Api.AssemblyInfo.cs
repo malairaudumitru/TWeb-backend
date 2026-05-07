@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MedicalCabinetWeb.Api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b0f6ae24f1f3c873b9c472eb38db7ad8731a4d00")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ab37bdc28af20d6d33312fe791ec451d7d4a6b8d")]
 [assembly: System.Reflection.AssemblyProductAttribute("MedicalCabinetWeb.Api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MedicalCabinetWeb.Api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
