@@ -5,10 +5,25 @@ namespace MedicalCabinetWeb.BusinessLayer;
 
 public class BusinessLogic
 {
-    public BusinessLogic() { }
-
-    public IServiceLogic GetServiceLogic()
+    public BusinessLogic(){}
+    
+    
+    public IPatientLogic GetPatientLogic()
     {
-        return new ServiceLogic();
+        return new PatientLogic();
+
+
     }
+    
+    
+    public IMedicLogic GetMedicLogic()
+    {
+        return new MedicLogic();
+    }
+
+    public IAdminLogic GetAdminLogic()
+    {
+        return new AdminLogic();
+    }
+    
 }

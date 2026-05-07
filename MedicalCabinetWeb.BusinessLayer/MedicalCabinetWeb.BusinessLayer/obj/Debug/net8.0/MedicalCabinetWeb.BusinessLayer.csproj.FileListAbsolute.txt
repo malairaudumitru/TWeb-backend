@@ -1,0 +1,35 @@
+D:\Anul 2\SEM 2\TWeb backend\MedicalCabinetWeb\MedicalCabinetWeb.BusinessLayer\MedicalCabinetWeb.BusinessLayer\bin\Debug\net8.0\MedicalCabinetWeb.BusinessLayer.deps.json
+D:\Anul 2\SEM 2\TWeb backend\MedicalCabinetWeb\MedicalCabinetWeb.BusinessLayer\MedicalCabinetWeb.BusinessLayer\bin\Debug\net8.0\MedicalCabinetWeb.BusinessLayer.dll
+D:\Anul 2\SEM 2\TWeb backend\MedicalCabinetWeb\MedicalCabinetWeb.BusinessLayer\MedicalCabinetWeb.BusinessLayer\bin\Debug\net8.0\MedicalCabinetWeb.BusinessLayer.pdb
+D:\Anul 2\SEM 2\TWeb backend\MedicalCabinetWeb\MedicalCabinetWeb.BusinessLayer\MedicalCabinetWeb.BusinessLayer\bin\Debug\net8.0\MedicalCabinetWeb.DataAccessLayer.dll
+D:\Anul 2\SEM 2\TWeb backend\MedicalCabinetWeb\MedicalCabinetWeb.BusinessLayer\MedicalCabinetWeb.BusinessLayer\bin\Debug\net8.0\MedicalCabinetWeb.Domain.dll
+D:\Anul 2\SEM 2\TWeb backend\MedicalCabinetWeb\MedicalCabinetWeb.BusinessLayer\MedicalCabinetWeb.BusinessLayer\bin\Debug\net8.0\MedicalCabinetWeb.DataAccessLayer.pdb
+D:\Anul 2\SEM 2\TWeb backend\MedicalCabinetWeb\MedicalCabinetWeb.BusinessLayer\MedicalCabinetWeb.BusinessLayer\bin\Debug\net8.0\MedicalCabinetWeb.Domain.pdb
+D:\Anul 2\SEM 2\TWeb backend\MedicalCabinetWeb\MedicalCabinetWeb.BusinessLayer\MedicalCabinetWeb.BusinessLayer\obj\Debug\net8.0\MedicalCabinetWeb.BusinessLayer.csproj.AssemblyReference.cache
+D:\Anul 2\SEM 2\TWeb backend\MedicalCabinetWeb\MedicalCabinetWeb.BusinessLayer\MedicalCabinetWeb.BusinessLayer\obj\Debug\net8.0\MedicalCabinetWeb.BusinessLayer.GeneratedMSBuildEditorConfig.editorconfig
+D:\Anul 2\SEM 2\TWeb backend\MedicalCabinetWeb\MedicalCabinetWeb.BusinessLayer\MedicalCabinetWeb.BusinessLayer\obj\Debug\net8.0\MedicalCabinetWeb.BusinessLayer.AssemblyInfoInputs.cache
+D:\Anul 2\SEM 2\TWeb backend\MedicalCabinetWeb\MedicalCabinetWeb.BusinessLayer\MedicalCabinetWeb.BusinessLayer\obj\Debug\net8.0\MedicalCabinetWeb.BusinessLayer.AssemblyInfo.cs
+D:\Anul 2\SEM 2\TWeb backend\MedicalCabinetWeb\MedicalCabinetWeb.BusinessLayer\MedicalCabinetWeb.BusinessLayer\obj\Debug\net8.0\MedicalCabinetWeb.BusinessLayer.csproj.CoreCompileInputs.cache
+D:\Anul 2\SEM 2\TWeb backend\MedicalCabinetWeb\MedicalCabinetWeb.BusinessLayer\MedicalCabinetWeb.BusinessLayer\obj\Debug\net8.0\MedicalC.04FF750A.Up2Date
+D:\Anul 2\SEM 2\TWeb backend\MedicalCabinetWeb\MedicalCabinetWeb.BusinessLayer\MedicalCabinetWeb.BusinessLayer\obj\Debug\net8.0\MedicalCabinetWeb.BusinessLayer.dll
+D:\Anul 2\SEM 2\TWeb backend\MedicalCabinetWeb\MedicalCabinetWeb.BusinessLayer\MedicalCabinetWeb.BusinessLayer\obj\Debug\net8.0\refint\MedicalCabinetWeb.BusinessLayer.dll
+D:\Anul 2\SEM 2\TWeb backend\MedicalCabinetWeb\MedicalCabinetWeb.BusinessLayer\MedicalCabinetWeb.BusinessLayer\obj\Debug\net8.0\MedicalCabinetWeb.BusinessLayer.pdb
+D:\Anul 2\SEM 2\TWeb backend\MedicalCabinetWeb\MedicalCabinetWeb.BusinessLayer\MedicalCabinetWeb.BusinessLayer\obj\Debug\net8.0\ref\MedicalCabinetWeb.BusinessLayer.dll
+C:\Backend TWeb\MedicalCabinetWeb.BusinessLayer\MedicalCabinetWeb.BusinessLayer\bin\Debug\net8.0\MedicalCabinetWeb.BusinessLayer.deps.json
+C:\Backend TWeb\MedicalCabinetWeb.BusinessLayer\MedicalCabinetWeb.BusinessLayer\bin\Debug\net8.0\MedicalCabinetWeb.BusinessLayer.dll
+C:\Backend TWeb\MedicalCabinetWeb.BusinessLayer\MedicalCabinetWeb.BusinessLayer\bin\Debug\net8.0\MedicalCabinetWeb.BusinessLayer.pdb
+C:\Backend TWeb\MedicalCabinetWeb.BusinessLayer\MedicalCabinetWeb.BusinessLayer\bin\Debug\net8.0\MedicalCabinetWeb.DataAccessLayer.dll
+C:\Backend TWeb\MedicalCabinetWeb.BusinessLayer\MedicalCabinetWeb.BusinessLayer\bin\Debug\net8.0\MedicalCabinetWeb.Domain.dll
+C:\Backend TWeb\MedicalCabinetWeb.BusinessLayer\MedicalCabinetWeb.BusinessLayer\bin\Debug\net8.0\MedicalCabinetWeb.DataAccessLayer.pdb
+C:\Backend TWeb\MedicalCabinetWeb.BusinessLayer\MedicalCabinetWeb.BusinessLayer\bin\Debug\net8.0\MedicalCabinetWeb.Domain.pdb
+C:\Backend TWeb\MedicalCabinetWeb.BusinessLayer\MedicalCabinetWeb.BusinessLayer\obj\Debug\net8.0\MedicalCabinetWeb.BusinessLayer.csproj.AssemblyReference.cache
+C:\Backend TWeb\MedicalCabinetWeb.BusinessLayer\MedicalCabinetWeb.BusinessLayer\obj\Debug\net8.0\MedicalCabinetWeb.BusinessLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Backend TWeb\MedicalCabinetWeb.BusinessLayer\MedicalCabinetWeb.BusinessLayer\obj\Debug\net8.0\MedicalCabinetWeb.BusinessLayer.AssemblyInfoInputs.cache
+C:\Backend TWeb\MedicalCabinetWeb.BusinessLayer\MedicalCabinetWeb.BusinessLayer\obj\Debug\net8.0\MedicalCabinetWeb.BusinessLayer.AssemblyInfo.cs
+C:\Backend TWeb\MedicalCabinetWeb.BusinessLayer\MedicalCabinetWeb.BusinessLayer\obj\Debug\net8.0\MedicalCabinetWeb.BusinessLayer.csproj.CoreCompileInputs.cache
+C:\Backend TWeb\MedicalCabinetWeb.BusinessLayer\MedicalCabinetWeb.BusinessLayer\obj\Debug\net8.0\MedicalCabinetWeb.BusinessLayer.sourcelink.json
+C:\Backend TWeb\MedicalCabinetWeb.BusinessLayer\MedicalCabinetWeb.BusinessLayer\obj\Debug\net8.0\MedicalC.04FF750A.Up2Date
+C:\Backend TWeb\MedicalCabinetWeb.BusinessLayer\MedicalCabinetWeb.BusinessLayer\obj\Debug\net8.0\MedicalCabinetWeb.BusinessLayer.dll
+C:\Backend TWeb\MedicalCabinetWeb.BusinessLayer\MedicalCabinetWeb.BusinessLayer\obj\Debug\net8.0\refint\MedicalCabinetWeb.BusinessLayer.dll
+C:\Backend TWeb\MedicalCabinetWeb.BusinessLayer\MedicalCabinetWeb.BusinessLayer\obj\Debug\net8.0\MedicalCabinetWeb.BusinessLayer.pdb
+C:\Backend TWeb\MedicalCabinetWeb.BusinessLayer\MedicalCabinetWeb.BusinessLayer\obj\Debug\net8.0\ref\MedicalCabinetWeb.BusinessLayer.dll
