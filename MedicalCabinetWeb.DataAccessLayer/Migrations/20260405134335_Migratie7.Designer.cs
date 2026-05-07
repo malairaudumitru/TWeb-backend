@@ -11,15 +11,9 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace MedicalCabinetWeb.DataAccessLayer.Migrations
 {
-<<<<<<<< HEAD:MedicalCabinetWeb.DataAccessLayer/Migrations/20260405134335_Migratie7.Designer.cs
     [DbContext(typeof(UserDbContext))]
     [Migration("20260405134335_Migratie7")]
     partial class Migratie7
-========
-    [DbContext(typeof(MedicalServiceContext))]
-    [Migration("20260326205811_Initial")]
-    partial class Initial
->>>>>>>> malairaudumitru:MedicalCabinetWeb.DataAccessLayer/Migrations/20260326205811_Initial.Designer.cs
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -31,11 +25,7 @@ namespace MedicalCabinetWeb.DataAccessLayer.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
-<<<<<<<< HEAD:MedicalCabinetWeb.DataAccessLayer/Migrations/20260405134335_Migratie7.Designer.cs
             modelBuilder.Entity("MedicalCabinetWeb.Domain.Entities.User.Patient", b =>
-========
-            modelBuilder.Entity("MedicalCabinetWeb.Domain.Entities.MedicalService.MedicalServiceData", b =>
->>>>>>>> malairaudumitru:MedicalCabinetWeb.DataAccessLayer/Migrations/20260326205811_Initial.Designer.cs
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -43,7 +33,6 @@ namespace MedicalCabinetWeb.DataAccessLayer.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
-<<<<<<<< HEAD:MedicalCabinetWeb.DataAccessLayer/Migrations/20260405134335_Migratie7.Designer.cs
                     b.Property<DateOnly>("DateOfBirth")
                         .HasColumnType("date");
 
@@ -77,36 +66,6 @@ namespace MedicalCabinetWeb.DataAccessLayer.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Patients");
-========
-                    b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("timestamp with time zone");
-
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("boolean");
-
-                    b.Property<string>("ServiceDescription")
-                        .IsRequired()
-                        .HasMaxLength(400)
-                        .HasColumnType("character varying(400)");
-
-                    b.Property<int>("ServiceDuration")
-                        .HasColumnType("integer");
-
-                    b.Property<string>("ServiceName")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("character varying(50)");
-
-                    b.Property<decimal>("ServicePrice")
-                        .HasColumnType("decimal(10,2)");
-
-                    b.Property<DateTime?>("UpdatedAt")
-                        .HasColumnType("timestamp with time zone");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("MedicalServices");
->>>>>>>> malairaudumitru:MedicalCabinetWeb.DataAccessLayer/Migrations/20260326205811_Initial.Designer.cs
                 });
 #pragma warning restore 612, 618
         }
