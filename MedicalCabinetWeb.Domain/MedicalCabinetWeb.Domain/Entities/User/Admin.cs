@@ -1,8 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
 
 namespace MedicalCabinetWeb.Domain.Entities.User
 {
@@ -14,5 +13,11 @@ namespace MedicalCabinetWeb.Domain.Entities.User
         public string Email { get; set; }
         public string Password { get; set; }
         public bool IsDeleted { get; set; }
+        
+        [Required]
+        public int UserAccountId { get; set; }
+
+        [ForeignKey(nameof(UserAccountId))]
+        public UserAccount UserAccount { get; set; } = null!;
     }
 }
