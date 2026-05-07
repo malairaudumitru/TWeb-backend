@@ -33,3 +33,4 @@ D:\laburi_anu_2_sem_2\TWeb_project\Tweb Backend\MedicalCabinetWeb.BusinessLayer\
 D:\laburi_anu_2_sem_2\TWeb_project\Tweb Backend\MedicalCabinetWeb.BusinessLayer\MedicalCabinetWeb.BusinessLayer\obj\Debug\net8.0\refint\MedicalCabinetWeb.BusinessLayer.dll
 D:\laburi_anu_2_sem_2\TWeb_project\Tweb Backend\MedicalCabinetWeb.BusinessLayer\MedicalCabinetWeb.BusinessLayer\obj\Debug\net8.0\MedicalCabinetWeb.BusinessLayer.pdb
 D:\laburi_anu_2_sem_2\TWeb_project\Tweb Backend\MedicalCabinetWeb.BusinessLayer\MedicalCabinetWeb.BusinessLayer\obj\Debug\net8.0\ref\MedicalCabinetWeb.BusinessLayer.dll
+D:\Anul 2\SEM 2\TWeb backend\MedicalCabinetWeb\MedicalCabinetWeb.BusinessLayer\MedicalCabinetWeb.BusinessLayer\obj\Debug\net8.0\MedicalCabinetWeb.BusinessLayer.sourcelink.json

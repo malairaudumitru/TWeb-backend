@@ -33,3 +33,4 @@ D:\laburi_anu_2_sem_2\TWeb_project\Tweb Backend\MedicalCabinetWeb.DataAccessLaye
 D:\laburi_anu_2_sem_2\TWeb_project\Tweb Backend\MedicalCabinetWeb.DataAccessLayer\obj\Debug\net8.0\MedicalCabinetWeb.DataAccessLayer.pdb
 D:\laburi_anu_2_sem_2\TWeb_project\Tweb Backend\MedicalCabinetWeb.DataAccessLayer\obj\Debug\net8.0\MedicalCabinetWeb.DataAccessLayer.genruntimeconfig.cache
 D:\laburi_anu_2_sem_2\TWeb_project\Tweb Backend\MedicalCabinetWeb.DataAccessLayer\obj\Debug\net8.0\ref\MedicalCabinetWeb.DataAccessLayer.dll
+D:\Anul 2\SEM 2\TWeb backend\MedicalCabinetWeb\MedicalCabinetWeb.DataAccessLayer\obj\Debug\net8.0\MedicalCabinetWeb.DataAccessLayer.sourcelink.json
