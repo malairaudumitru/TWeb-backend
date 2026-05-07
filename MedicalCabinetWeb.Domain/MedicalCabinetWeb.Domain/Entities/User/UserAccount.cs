@@ -16,6 +16,10 @@ public class UserAccount
     public string FirstName { get; set; }
     
     [Required]
+    [StringLength(100)]
+    public string Email { get; set; }
+    
+    [Required]
     public string PasswordHash { get; set; }
 
     [Required]

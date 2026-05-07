@@ -23,7 +23,6 @@ public class PatientActions
             Phone = patient.Phone,
             DateOfBirth = patient.DateOfBirth,
             Sex = patient.Sex,
-            Password = patient.Password,
             Status = patient.Status
         };
 
@@ -54,7 +53,6 @@ public class PatientActions
             DateOfBirth = patientEntity.DateOfBirth,
             Sex = patientEntity.Sex,
             Email = patientEntity.Email,
-            Password = patientEntity.Password,
             Phone = patientEntity.Phone,
             Status = patientEntity.Status
 
@@ -75,7 +73,6 @@ public class PatientActions
                 DateOfBirth = patientEntity.DateOfBirth,
                 Sex = patientEntity.Sex,
                 Email = patientEntity.Email,
-                Password = patientEntity.Password,
                 Phone = patientEntity.Phone,
                 Status = patientEntity.Status
             })
@@ -94,7 +91,6 @@ public class PatientActions
         patientEntity.DateOfBirth = patient.DateOfBirth;
         patientEntity.Sex = patient.Sex;
         patientEntity.Email = patient.Email;
-        patientEntity.Password = patient.Password;
         patientEntity.Phone = patient.Phone;
         patientEntity.Status = patientEntity.Status;
 

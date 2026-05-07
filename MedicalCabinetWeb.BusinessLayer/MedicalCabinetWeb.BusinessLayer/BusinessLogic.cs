@@ -55,5 +55,16 @@ public class BusinessLogic
     {
         return new ReviewsLogic();
     }   
+    
+    public IUserLoginLogic GetUserLoginLogic()
+    {
+        return new UserAuthActions();
+    }
+    
+    public IUserRegLogic GetUserRegLogic()
+    {
+        return new UserRegLogic();
+    }
+    
 }
 

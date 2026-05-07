@@ -20,8 +20,7 @@ public class AdminActions
         {
            LastName = admin.LastName,
            FirstName = admin.FirstName,
-           Email = admin.Email,
-           Password = admin.Password
+           Email = admin.Email
         };
         try
         {
@@ -44,8 +43,8 @@ public class AdminActions
                 Id = adminEntity.Id,
                 LastName =  adminEntity.LastName,
                 FirstName =  adminEntity.FirstName,
-                Email = adminEntity.Email,
-                Password = adminEntity.Password
+                Email = adminEntity.Email
+                
             })
             .ToList();
         
@@ -65,8 +64,8 @@ public class AdminActions
             Id = adminEntity.Id,
             LastName = adminEntity.LastName,
             FirstName = adminEntity.FirstName,
-            Email = adminEntity.Email,
-            Password = adminEntity.Password
+            Email = adminEntity.Email
+            
         };
         
         return adminInfoDto;
@@ -84,7 +83,7 @@ public class AdminActions
         adminEntity.LastName = adminInfo.LastName;
         adminEntity.FirstName = adminInfo.FirstName;
         adminEntity.Email = adminInfo.Email;
-        adminEntity.Password = adminInfo.Password;
+        
 
         try
         {
