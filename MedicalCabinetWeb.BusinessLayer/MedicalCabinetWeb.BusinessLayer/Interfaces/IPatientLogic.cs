@@ -5,11 +5,11 @@ namespace MedicalCabinetWeb.BusinessLayer.Interfaces;
 
 public interface IPatientLogic
 {
-    ServiceResponse CreatePatient(PatientCreateDto  data);
-    ServiceResponse GetPatientById(int id);
-    ServiceResponse GetPatientList();
-    ServiceResponse UpdatePatient(int id, PatientCreateDto data);
-    ServiceResponse DeletePatient(int id);
+    ActionResponse CreatePatient(PatientCreateDto  data);
+    ActionResponse GetPatientById(int id);
+    ActionResponse GetPatientList();
+    ActionResponse UpdatePatient(int id, PatientCreateDto data);
+    ActionResponse DeletePatient(int id);
     
     
 }

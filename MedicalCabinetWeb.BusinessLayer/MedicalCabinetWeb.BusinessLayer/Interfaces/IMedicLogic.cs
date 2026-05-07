@@ -5,10 +5,10 @@ namespace MedicalCabinetWeb.BusinessLayer.Interfaces;
 
 public interface IMedicLogic
 {
-    ServiceResponse CreateMedic(MedicCreateDto data);
-    ServiceResponse GetMedicById(int id);
-    ServiceResponse GetMedicList();
-    ServiceResponse UpdateMedic(int id, MedicCreateDto data);
-    ServiceResponse DeleteMedic(int id);
+    ActionResponse CreateMedic(MedicCreateDto data);
+    ActionResponse GetMedicById(int id);
+    ActionResponse GetMedicList();
+    ActionResponse UpdateMedic(int id, MedicCreateDto data);
+    ActionResponse DeleteMedic(int id);
 
 }

@@ -7,48 +7,48 @@ namespace MedicalCabinetWeb.BusinessLayer.Core;
 
 public class AdminLogic : AdminActions, IAdminLogic
 {
-    public ServiceResponse CreateAdmin(AdminCreateDto admin)
+    public ActionResponse CreateAdmin(AdminCreateDto admin)
     {
         var result = CreateAdminAction(admin);
         if (result == false)
-            return ServiceResponse.BadRequest("Error creating Medic");
+            return ActionResponse.BadRequest("Error creating Medic");
 
-        return ServiceResponse.Ok("Medic created successfully");
+        return ActionResponse.Ok("Medic created successfully");
 
     }
 
-    public ServiceResponse GetAdminList()
+    public ActionResponse GetAdminList()
     {
         var adminList = GetAdminListAction();
         
-        return ServiceResponse.Ok(data: adminList);
+        return ActionResponse.Ok(data: adminList);
     }
 
-    public ServiceResponse GetAdminById(int id)
+    public ActionResponse GetAdminById(int id)
     {
         var admin = GetAdminByIdAction(id);
         if (admin == null)
-            return ServiceResponse.NotFound("Admin not found");
+            return ActionResponse.NotFound("Admin not found");
         
-        return ServiceResponse.Ok(data: admin);
+        return ActionResponse.Ok(data: admin);
     }
 
-    public ServiceResponse UpdateAdmin(int id, AdminCreateDto data)
+    public ActionResponse UpdateAdmin(int id, AdminCreateDto data)
     {
         var result = UpdateAdminAction(id, data);
         if (result == false)
-            return ServiceResponse.BadRequest("Error updating  Admin");
+            return ActionResponse.BadRequest("Error updating  Admin");
         
-        return ServiceResponse.Ok("Admin updated successfully");
+        return ActionResponse.Ok("Admin updated successfully");
     }
 
-    public ServiceResponse DeleteAdmin(int id)
+    public ActionResponse DeleteAdmin(int id)
     {
         var result = DeleteAdminAction(id);
             if (result == false)
-                return ServiceResponse.BadRequest("Error deleting Admin");
+                return ActionResponse.BadRequest("Error deleting Admin");
             
-            return ServiceResponse.Ok("Admin deleted successfully");
+            return ActionResponse.Ok("Admin deleted successfully");
             
     }
     

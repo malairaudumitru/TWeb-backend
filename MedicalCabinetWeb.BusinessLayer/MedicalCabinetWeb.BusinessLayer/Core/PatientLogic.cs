@@ -7,48 +7,48 @@ namespace MedicalCabinetWeb.BusinessLayer.Core;
 
 public class PatientLogic: PatientActions, IPatientLogic
 {
-    public ServiceResponse CreatePatient(PatientCreateDto patient)
+    public ActionResponse CreatePatient(PatientCreateDto patient)
     {
        var result = CreatePatientAction(patient);
        if(result == false)
-           return  ServiceResponse.BadRequest("Error updating Patient");
+           return  ActionResponse.BadRequest("Error updating Patient");
        
-       return ServiceResponse.Ok("Patient created successfully");
+       return ActionResponse.Ok("Patient created successfully");
        
     }
 
-    public ServiceResponse GetPatientById(int id)
+    public ActionResponse GetPatientById(int id)
     {
         var patient = GetPatientByIdAction(id);
         if (patient == null)
-            return  ServiceResponse.BadRequest("Error getting Patient");
+            return  ActionResponse.BadRequest("Error getting Patient");
         
-        return ServiceResponse.Ok(data: patient);
+        return ActionResponse.Ok(data: patient);
     }
 
-    public ServiceResponse GetPatientList()
+    public ActionResponse GetPatientList()
     {
         var patientList = GetPatientListAction();
         
-        return ServiceResponse.Ok(data: patientList);
+        return ActionResponse.Ok(data: patientList);
     }
 
-    public ServiceResponse UpdatePatient(int id, PatientCreateDto data)
+    public ActionResponse UpdatePatient(int id, PatientCreateDto data)
     {
         var result = UpdatePatientAction(id, data);
         if (result == false)
-            return ServiceResponse.BadRequest("Error updating Patient");
+            return ActionResponse.BadRequest("Error updating Patient");
         
-        return ServiceResponse.Ok("Patient updated successfully");
+        return ActionResponse.Ok("Patient updated successfully");
     }
 
-    public ServiceResponse DeletePatient(int id)
+    public ActionResponse DeletePatient(int id)
     {
         var result = DeletePatientAction(id);
         if (result == false)
-            return ServiceResponse.BadRequest("Error deleting Patient");
+            return ActionResponse.BadRequest("Error deleting Patient");
         
-        return ServiceResponse.Ok("Patient deleted successfully");
+        return ActionResponse.Ok("Patient deleted successfully");
     }
     
     

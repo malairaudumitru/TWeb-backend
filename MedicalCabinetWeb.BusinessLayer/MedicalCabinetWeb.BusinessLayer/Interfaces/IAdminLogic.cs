@@ -6,11 +6,11 @@ namespace MedicalCabinetWeb.BusinessLayer.Interfaces;
 
 public interface IAdminLogic
 {
-    ServiceResponse CreateAdmin(AdminCreateDto data);
-    ServiceResponse GetAdminList();
-    ServiceResponse GetAdminById(int id);
-    ServiceResponse UpdateAdmin (int id, AdminCreateDto data);
-    ServiceResponse DeleteAdmin(int id);
+    ActionResponse CreateAdmin(AdminCreateDto data);
+    ActionResponse GetAdminList();
+    ActionResponse GetAdminById(int id);
+    ActionResponse UpdateAdmin (int id, AdminCreateDto data);
+    ActionResponse DeleteAdmin(int id);
     
    
     

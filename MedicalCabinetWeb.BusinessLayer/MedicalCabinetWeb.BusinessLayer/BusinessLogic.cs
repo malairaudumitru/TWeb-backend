@@ -45,6 +45,15 @@ public class BusinessLogic
         return new MedicalNotificationLogic();
     }
     
-    
+
+        public INewsLogic GetNewsLogic()
+        {
+            return new NewsLogic();
+        }
+        
+    public IReviewsLogic GetReviewsLogic()
+    {
+        return new ReviewsLogic();
+    }   
 }
 

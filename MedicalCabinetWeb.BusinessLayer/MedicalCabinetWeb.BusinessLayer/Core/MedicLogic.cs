@@ -7,48 +7,48 @@ namespace MedicalCabinetWeb.BusinessLayer.Core;
 
 public class MedicLogic: MedicActions, IMedicLogic
 {
-    public ServiceResponse CreateMedic(MedicCreateDto patient)
+    public ActionResponse CreateMedic(MedicCreateDto patient)
     {
         var result = CreateMedicAction(patient);
         if (result == false)
-            return ServiceResponse.BadRequest("Error creating Medic");
+            return ActionResponse.BadRequest("Error creating Medic");
         
-        return ServiceResponse.Ok("Medic created successfully");
+        return ActionResponse.Ok("Medic created successfully");
 
     }
 
-    public ServiceResponse GetMedicById(int id)
+    public ActionResponse GetMedicById(int id)
     {
         var medic = GetMedicByIdAction(id);
         if (medic == null)
-            return ServiceResponse.NotFound("Medic not found");
+            return ActionResponse.NotFound("Medic not found");
         
-        return ServiceResponse.Ok(data: medic);
+        return ActionResponse.Ok(data: medic);
     }
 
-    public ServiceResponse GetMedicList()
+    public ActionResponse GetMedicList()
     {
         var medicList = GetMedicListAction();
         
-        return ServiceResponse.Ok(data: medicList);
+        return ActionResponse.Ok(data: medicList);
     }
 
-    public ServiceResponse UpdateMedic(int id, MedicCreateDto data)
+    public ActionResponse UpdateMedic(int id, MedicCreateDto data)
     {
         var result = UpdateMedicAction(id, data);
         if (result == false)
-            return ServiceResponse.BadRequest("Error updating Medic");
+            return ActionResponse.BadRequest("Error updating Medic");
         
-        return ServiceResponse.Ok("Medic updated successfully");
+        return ActionResponse.Ok("Medic updated successfully");
     }
 
-    public ServiceResponse DeleteMedic(int id)
+    public ActionResponse DeleteMedic(int id)
     {
         var result = DeleteMedicAction(id);
         if (result == false)
-            return  ServiceResponse.NotFound("Medic not found");
+            return  ActionResponse.NotFound("Medic not found");
         
-        return ServiceResponse.Ok("Medic deleted successfully");
+        return ActionResponse.Ok("Medic deleted successfully");
         
     }
     
