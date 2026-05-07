@@ -1,9 +1,9 @@
+
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-
 //Toate de mai jos nu se permite
 // AddScoped
 // AddTransient

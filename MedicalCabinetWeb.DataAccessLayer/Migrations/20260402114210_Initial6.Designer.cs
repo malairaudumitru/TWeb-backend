@@ -11,15 +11,9 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace MedicalCabinetWeb.DataAccessLayer.Migrations
 {
-<<<<<<<< HEAD:MedicalCabinetWeb.DataAccessLayer/Migrations/20260405134335_Migratie7.Designer.cs
-    [DbContext(typeof(UserDbContext))]
-    [Migration("20260405134335_Migratie7")]
-    partial class Migratie7
-========
     [DbContext(typeof(MedicalServiceContext))]
-    [Migration("20260326205811_Initial")]
-    partial class Initial
->>>>>>>> malairaudumitru:MedicalCabinetWeb.DataAccessLayer/Migrations/20260326205811_Initial.Designer.cs
+    [Migration("20260402114210_Initial6")]
+    partial class Initial6
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -31,11 +25,7 @@ namespace MedicalCabinetWeb.DataAccessLayer.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
-<<<<<<<< HEAD:MedicalCabinetWeb.DataAccessLayer/Migrations/20260405134335_Migratie7.Designer.cs
-            modelBuilder.Entity("MedicalCabinetWeb.Domain.Entities.User.Patient", b =>
-========
             modelBuilder.Entity("MedicalCabinetWeb.Domain.Entities.MedicalService.MedicalServiceData", b =>
->>>>>>>> malairaudumitru:MedicalCabinetWeb.DataAccessLayer/Migrations/20260326205811_Initial.Designer.cs
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -43,41 +33,9 @@ namespace MedicalCabinetWeb.DataAccessLayer.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
-<<<<<<<< HEAD:MedicalCabinetWeb.DataAccessLayer/Migrations/20260405134335_Migratie7.Designer.cs
-                    b.Property<DateOnly>("DateOfBirth")
-                        .HasColumnType("date");
-
-                    b.Property<string>("Email")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("FirstName")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("LastName")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("Password")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("Phone")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("Sex")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<int>("Status")
+                    b.Property<int>("Category")
                         .HasColumnType("integer");
 
-                    b.HasKey("Id");
-
-                    b.ToTable("Patients");
-========
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("timestamp with time zone");
 
@@ -106,7 +64,6 @@ namespace MedicalCabinetWeb.DataAccessLayer.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("MedicalServices");
->>>>>>>> malairaudumitru:MedicalCabinetWeb.DataAccessLayer/Migrations/20260326205811_Initial.Designer.cs
                 });
 #pragma warning restore 612, 618
         }
