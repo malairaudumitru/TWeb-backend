@@ -11,4 +11,15 @@ public class UserRegLogic : UserActions, IUserRegLogic
     {
         return UserRegDataValidationAction(uReg);
     }
+    
+    public ActionResponse PromoteToMedic(int userId, string speciality)
+    {
+        return PromoteToMedicAction(userId, speciality);
+    }
+
+    public ActionResponse PromoteToAdmin(int userId)
+    {
+        return PromoteToAdminAction(userId);
+    }
+    
 }

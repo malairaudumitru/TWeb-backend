@@ -76,4 +76,73 @@ public class UserActions
 
         return ActionResponse.Ok("Inregistrare reusita.");
     }
+    
+    internal ActionResponse PromoteToMedicAction(int userId, string speciality)
+    {
+        using (var db = new UserDbContext())
+        {
+            var patient = db.Patients.FirstOrDefault(x => x.UserAccountId == userId);
+            var user = db.UserAccounts.FirstOrDefault(x => x.Id == userId);
+
+            if (user == null || patient == null)
+                return ActionResponse.BadRequest("Utilizatorul nu a fost gasit.");
+
+            if (user.Role == UserRole.Medic)
+                return ActionResponse.BadRequest("Utilizatorul este deja medic.");
+
+            var medic = new Medic
+            {
+                FirstName     = patient.FirstName,
+                LastName      = patient.LastName,
+                Speciality    = Enum.Parse<MedicSpeciality>(speciality),
+                UserAccountId = userId,
+                UserAccount   = user
+            };
+
+            user.Role = UserRole.Medic;
+            db.Patients.Remove(patient);  
+            db.Medics.Add(medic);         
+            db.SaveChanges();
+
+            return ActionResponse.Ok("Utilizatorul a fost promovat la medic.");
+        }
+    }
+
+    internal ActionResponse PromoteToAdminAction(int userId)
+    {
+        using (var db = new UserDbContext())
+        {
+            var user = db.UserAccounts.FirstOrDefault(x => x.Id == userId);
+
+            if (user == null)
+                return ActionResponse.BadRequest("Utilizatorul nu a fost gasit.");
+
+            if (user.Role == UserRole.Admin)
+                return ActionResponse.BadRequest("Utilizatorul este deja admin.");
+
+            // Caută în tabela din care vine (Patients sau Medics)
+            var patient = db.Patients.FirstOrDefault(x => x.UserAccountId == userId);
+            var medic = db.Medics.FirstOrDefault(x => x.UserAccountId == userId);
+
+            var admin = new Admin
+            {
+                FirstName     = patient?.FirstName ?? medic?.FirstName,
+                LastName      = patient?.LastName  ?? medic?.LastName,
+                Email         = user.Email,
+                UserAccountId = userId,
+                UserAccount   = user
+            };
+
+            
+            if (patient != null) db.Patients.Remove(patient);
+            if (medic != null)   db.Medics.Remove(medic);
+
+            user.Role = UserRole.Admin;
+            db.Admins.Add(admin);
+            db.SaveChanges();
+
+            return ActionResponse.Ok("Utilizatorul a fost promovat la admin.");
+        }
+    }
+    
 }
