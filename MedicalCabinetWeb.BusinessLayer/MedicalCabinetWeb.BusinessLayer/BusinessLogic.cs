@@ -8,7 +8,7 @@ namespace MedicalCabinetWeb.BusinessLayer;
 
 public class BusinessLogic
 {
-<<<<<<< HEAD
+
     public BusinessLogic(){}
     
     
@@ -30,10 +30,6 @@ public class BusinessLogic
         return new AdminLogic();
     }
     
-}
-=======
-    public BusinessLogic(){ }
-    
     public IMedicalServiceLogic GetServiceLogic()
     {
         return new MedicalServiceLogic();
@@ -51,4 +47,4 @@ public class BusinessLogic
     
     
 }
->>>>>>> malairaudumitru
+
