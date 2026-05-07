@@ -10,25 +10,21 @@ namespace MedicalCabinetWeb.DataAccessLayer.Migrations
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.AlterColumn<int>(
-                name: "Status",
-                table: "MedicalAppointments",
-                type: "integer",
-                nullable: false,
-                oldClrType: typeof(string),
-                oldType: "text");
+            migrationBuilder.Sql(
+                @"ALTER TABLE ""MedicalAppointments""
+          ALTER COLUMN ""Status"" TYPE integer
+          USING ""Status""::integer;"
+            );
         }
 
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.AlterColumn<string>(
-                name: "Status",
-                table: "MedicalAppointments",
-                type: "text",
-                nullable: false,
-                oldClrType: typeof(int),
-                oldType: "integer");
+            migrationBuilder.Sql(
+                @"ALTER TABLE ""MedicalAppointments""
+          ALTER COLUMN ""Status"" TYPE text
+          USING ""Status""::text;"
+            );
         }
     }
 }

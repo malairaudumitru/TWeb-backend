@@ -9,11 +9,11 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 #nullable disable
 
-namespace MedicalCabinetWeb.DataAccessLayer.Migrations
+namespace MedicalCabinetWeb.DataAccessLayer.Migrations.NewsDb
 {
     [DbContext(typeof(NewsDbContext))]
-    [Migration("20260403155909_Mig4")]
-    partial class Mig4
+    [Migration("20260507173222_NewsInit2")]
+    partial class NewsInit2
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -38,14 +38,16 @@ namespace MedicalCabinetWeb.DataAccessLayer.Migrations
 
                     b.Property<string>("Description")
                         .IsRequired()
-                        .HasColumnType("text");
+                        .HasMaxLength(400)
+                        .HasColumnType("character varying(400)");
 
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("boolean");
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("text");
+                        .HasMaxLength(50)
+                        .HasColumnType("character varying(50)");
 
                     b.Property<string>("Type")
                         .IsRequired()
