@@ -1,7 +1,0 @@
-﻿namespace MedicalCabinetWeb.Domain.Models.Service;
-
-public class ServiceCreateDto
-{
-    public string Name { get; set; }
-    public decimal Price { get; set; }
-}
