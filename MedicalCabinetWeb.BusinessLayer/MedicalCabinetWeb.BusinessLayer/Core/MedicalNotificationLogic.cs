@@ -7,9 +7,9 @@ namespace MedicalCabinetWeb.BusinessLayer.Core;
 
 public class MedicalNotificationLogic : MedicalNotificationActions, IMedicalNotificationLogic
 {
-    public ActionResponse CreateMedicalNotification(MedicalNotificationCreateDto serviceInfo)
+    public ActionResponse CreateMedicalNotification(MedicalNotificationCreateDto notificationInfo)
     {
-        var result = CreateMedicalNotificationAction(serviceInfo);
+        var result = CreateMedicalNotificationAction(notificationInfo);
         if (result == false)
             return ActionResponse.BadRequest("Error creating notification");
         

@@ -147,7 +147,7 @@ public class MedicalAppointmentActions
         if (appointmentEntities.Count == 0)
             return null;
 
-        var appointmentInfoDtos = appointmentEntities
+        var appointmentInfoDto = appointmentEntities
             .Select(appointmentEntity => new MedicalAppointmentInfoDto
             {
                 Id = appointmentEntity.Id,
@@ -162,7 +162,7 @@ public class MedicalAppointmentActions
                 Status = appointmentEntity.Status
             }).ToList();
 
-        return appointmentInfoDtos;
+        return appointmentInfoDto;
     }
     
     protected bool UpdateMedicalAppointmentAction(int id, MedicalAppointmentCreateDto appointmentInfo)
