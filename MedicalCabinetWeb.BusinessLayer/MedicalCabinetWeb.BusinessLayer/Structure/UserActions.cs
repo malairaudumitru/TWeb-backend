@@ -120,7 +120,7 @@ public class UserActions
             if (user.Role == UserRole.Admin)
                 return ActionResponse.BadRequest("Utilizatorul este deja admin.");
 
-            // Caută în tabela din care vine (Patients sau Medics)
+            
             var patient = db.Patients.FirstOrDefault(x => x.UserAccountId == userId);
             var medic = db.Medics.FirstOrDefault(x => x.UserAccountId == userId);
 

@@ -53,6 +53,8 @@ CodeCoverage/
 TestResult.xml
 nunit-*.xml
 
+**/obj/
+**/bin/
 bin/
 obj/
 .idea/
