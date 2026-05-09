@@ -3,6 +3,7 @@ using MedicalCabinetWeb.BusinessLayer;
 using MedicalCabinetWeb.BusinessLayer.Interfaces;
 using MedicalCabinetWeb.Domain.Entities.MedicalService;
 using MedicalCabinetWeb.Domain.Models.MedicalService;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MedicalCabinetWeb.Api.Controllers;
@@ -19,6 +20,7 @@ public class MedicalServiceController : ControllerBase
     }
 
     [HttpGet("{id}")]
+    [AllowAnonymous]
     public IActionResult GetMedicalServiceById([FromRoute] int id)
     {
         var result = _medicalServiceLogic.GetMedicalServiceById(id);
@@ -30,6 +32,7 @@ public class MedicalServiceController : ControllerBase
     }
 
     [HttpGet("list")]
+    [AllowAnonymous]
     public IActionResult GetMedicalServiceList()
     {
         var result = _medicalServiceLogic.GetMedicalServiceList();
@@ -41,6 +44,7 @@ public class MedicalServiceController : ControllerBase
 
 
     [HttpPost("create")]
+    [Authorize(Roles = "Admin")]
     public IActionResult CreateMedicalService([FromBody] MedicalServiceCreateDto medicalServiceInfo)
     {
         var result = _medicalServiceLogic.CreateMedicalService(medicalServiceInfo);
@@ -51,6 +55,7 @@ public class MedicalServiceController : ControllerBase
     }
 
     [HttpDelete("{id}")]
+    [Authorize(Roles = "Admin")]
     public IActionResult DeleteMedicalService([FromRoute] int id)
     {
         var result = _medicalServiceLogic.DeleteMedicalService(id);
@@ -61,6 +66,7 @@ public class MedicalServiceController : ControllerBase
     }
 
     [HttpPut("update/{id}")]
+    [Authorize(Roles = "Admin")]
     public IActionResult UpdateMedicalService([FromRoute] int id, [FromBody] MedicalServiceCreateDto medicalServiceCreate)
     {
        var result = _medicalServiceLogic.UpdateMedicalService(id, medicalServiceCreate);
@@ -71,6 +77,7 @@ public class MedicalServiceController : ControllerBase
     }
     
     [HttpPatch("{id}/category")]
+    [Authorize(Roles = "Admin")]
     public IActionResult UpdateMedicalServiceCategory(int id, [FromBody] ServiceCategory category)
     {
         var result = _medicalServiceLogic.UpdateMedicalServiceCategory(id, category);
@@ -82,6 +89,7 @@ public class MedicalServiceController : ControllerBase
     }
 
     [HttpGet("by-category/{category}")]
+    [AllowAnonymous]
     public IActionResult GetMedicalServiceByCategory(ServiceCategory category)
     {
         var result = _medicalServiceLogic.GetMedicalServiceByCategory(category);
