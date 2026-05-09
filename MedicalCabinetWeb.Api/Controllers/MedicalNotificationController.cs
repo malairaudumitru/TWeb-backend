@@ -1,12 +1,14 @@
 ﻿using MedicalCabinetWeb.BusinessLayer;
 using MedicalCabinetWeb.BusinessLayer.Interfaces;
 using MedicalCabinetWeb.Domain.Models.MedicalNotification;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MedicalCabinetWeb.Api.Controllers;
 
 [ApiController]
 [Route("api/notification")]
+[Authorize]
 public class MedicalNotificationController : ControllerBase
 {
     private readonly IMedicalNotificationLogic _medicalNotificationLogic;
@@ -19,6 +21,7 @@ public class MedicalNotificationController : ControllerBase
     }
     
     [HttpPost("create")]
+    [Authorize(Roles = "Admin")]
     public IActionResult CreateMedicalNotification([FromBody] MedicalNotificationCreateDto medicalNotificationInfo)
     {
         var result = _medicalNotificationLogic.CreateMedicalNotification(medicalNotificationInfo);
@@ -29,6 +32,7 @@ public class MedicalNotificationController : ControllerBase
     }
     
     [HttpDelete("{id}/delete")]
+    [Authorize(Roles = "Admin")]
     public IActionResult DeleteMedicalNotification([FromRoute] int id)
     {
         var result = _medicalNotificationLogic.DeleteMedicalNotification(id);
@@ -39,6 +43,7 @@ public class MedicalNotificationController : ControllerBase
     }
     
     [HttpPut("{id}/read-status")]
+    [Authorize(Roles = "Patient")]
     public IActionResult UpdateReadStatus([FromRoute] int id)
     {
         var result = _medicalNotificationLogic.UpdateReadStatus(id);
@@ -49,6 +54,7 @@ public class MedicalNotificationController : ControllerBase
     }
     
     [HttpPut("{userId}/mark-all-read")]
+    [Authorize(Roles = "Patient")]
     public IActionResult MarkAllAsRead([FromRoute] int userId)
     {
         var result = _medicalNotificationLogic.MarkAllAsRead(userId);
@@ -59,6 +65,7 @@ public class MedicalNotificationController : ControllerBase
     }
     
     [HttpGet("list")]
+    [Authorize(Roles = "Admin")]
     public IActionResult GetMedicalNotificationList()
     {
         var result = _medicalNotificationLogic.GetMedicalNotificationList();
@@ -69,6 +76,7 @@ public class MedicalNotificationController : ControllerBase
     }
     
     [HttpGet("{id}/by-id")]
+    [Authorize(Roles = "Admin")]
     public IActionResult GetMedicalNotificationById([FromRoute] int id)
     {
         var result = _medicalNotificationLogic.GetMedicalNotificationById(id);
@@ -79,6 +87,7 @@ public class MedicalNotificationController : ControllerBase
     }
     
     [HttpGet("{userId}/by-user-id")]
+    [Authorize(Roles = "Patient")]
     public IActionResult GetMedicalNotificationByUserId([FromRoute] int userId)
     {
         var result = _medicalNotificationLogic.GetMedicalNotificationByUserId(userId);
