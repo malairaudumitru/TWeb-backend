@@ -45,6 +45,7 @@ public class MedicalAppointmentController : ControllerBase
     
     
     [HttpGet("list")]
+    [Authorize(Roles = "Admin")]
     public IActionResult GetMedicalAppointmentList()
     {
         var result = _medicalAppointmentLogic.GetMedicalAppointmentList();
@@ -56,6 +57,7 @@ public class MedicalAppointmentController : ControllerBase
     
     
     [HttpGet("{id}")]
+    [Authorize(Roles = "Admin,Patient")]
     public IActionResult GetMedicalAppointmentById([FromRoute] int id)
     {
         var result = _medicalAppointmentLogic.GetMedicalAppointmentById(id);
@@ -67,6 +69,7 @@ public class MedicalAppointmentController : ControllerBase
     }
     
     [HttpPut("update/{id}")]
+    [Authorize(Roles = "Admin")]
     public IActionResult UpdateMedicalAppointment([FromRoute] int id, [FromBody] MedicalAppointmentCreateDto medicalAppointmentCreate)
     {
         var result = _medicalAppointmentLogic.UpdateMedicalAppointment(id, medicalAppointmentCreate);
@@ -77,6 +80,7 @@ public class MedicalAppointmentController : ControllerBase
     }
     
     [HttpGet("by-date/{date}")]
+    [Authorize(Roles = "Admin")]
     public IActionResult GetMedicalAppointmentByDate([FromRoute] DateOnly date)
     {
         var result = _medicalAppointmentLogic.GetMedicalAppointmentByDate(date);
@@ -87,6 +91,7 @@ public class MedicalAppointmentController : ControllerBase
     }
     
     [HttpPatch("{id}/status")]
+    [Authorize(Roles = "Admin")]
     public IActionResult UpdateAppointmentsStatus([FromRoute] int id, [FromBody] UpdateAppointmentStatusDto dto)
     {
         var result = _medicalAppointmentLogic.UpdateAppointmentStatus(id, dto.Status);
