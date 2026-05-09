@@ -29,4 +29,14 @@ public class AuthController : ControllerBase
 
         return Ok(new { token = result.Message });
     }
+    
+    [HttpPost("reset-password")]
+    public IActionResult ResetPassword([FromBody] ResetPasswordDto data)
+    {
+        var result = _userLogin.ResetPassword(data.Email, data.NewPassword);
+        if (!result.IsSuccess)
+            return BadRequest(result.Message);
+        return Ok(new { message = result.Message });
+    }
+    
 }

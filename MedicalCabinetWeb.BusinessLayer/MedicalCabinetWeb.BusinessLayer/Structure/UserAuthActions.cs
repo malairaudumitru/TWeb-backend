@@ -21,4 +21,10 @@ public class UserAuthActions : UserActions, IUserLoginLogic
 
         return ActionResponse.Ok(token);
     }
+    
+    public ActionResponse ResetPassword(string email, string newPassword)
+    {
+        return ResetPasswordAction(email, newPassword);
+    }
+    
 }

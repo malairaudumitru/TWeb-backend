@@ -22,4 +22,5 @@ public class UserRegLogic : UserActions, IUserRegLogic
         return PromoteToAdminAction(userId);
     }
     
+    
 }

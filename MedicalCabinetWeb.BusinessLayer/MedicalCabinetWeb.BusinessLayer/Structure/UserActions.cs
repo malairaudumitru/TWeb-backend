@@ -145,4 +145,21 @@ public class UserActions
         }
     }
     
+    internal ActionResponse ResetPasswordAction(string email, string newPassword)
+    {
+        using (var db = new UserDbContext())
+        {
+            var user = db.UserAccounts
+                .FirstOrDefault(x => x.Email == email && x.IsDeleted == false);
+
+            if (user == null)
+                return ActionResponse.BadRequest("Utilizatorul nu a fost găsit.");
+
+            user.PasswordHash = PasswordHasher.Hash(newPassword);
+            db.SaveChanges();
+
+            return ActionResponse.Ok("Parola a fost schimbată cu succes.");
+        }
+    }
+    
 }
