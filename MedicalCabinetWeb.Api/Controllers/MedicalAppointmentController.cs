@@ -2,13 +2,14 @@
 using MedicalCabinetWeb.BusinessLayer.Interfaces;
 using MedicalCabinetWeb.Domain.Entities.MedicalAppointment;
 using MedicalCabinetWeb.Domain.Models.MedicalAppointment;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MedicalCabinetWeb.Api.Controllers;
 
 [ApiController]
 [Route("api/appointment")]
-
+[Authorize]
 public class MedicalAppointmentController : ControllerBase
 {
     private readonly IMedicalAppointmentLogic _medicalAppointmentLogic;
@@ -20,6 +21,7 @@ public class MedicalAppointmentController : ControllerBase
     }
     
     [HttpPost("create")]
+    [Authorize(Roles = "Patient")]
     public IActionResult CreateMedicalAppointment([FromBody] MedicalAppointmentCreateDto medicalAppointmentInfo)
     {
         var result = _medicalAppointmentLogic.CreateMedicalAppointment(medicalAppointmentInfo);
@@ -30,6 +32,7 @@ public class MedicalAppointmentController : ControllerBase
     }
     
     [HttpDelete("{id}")]
+    [Authorize(Roles = "Admin,Patient")]
     public IActionResult DeleteMedicalAppointment([FromRoute] int id)
     {
         var result = _medicalAppointmentLogic.DeleteMedicalAppointment(id);
