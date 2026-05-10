@@ -1,6 +1,7 @@
 using MedicalCabinetWeb.BusinessLayer;
 using MedicalCabinetWeb.BusinessLayer.Interfaces;
 using MedicalCabinetWeb.Domain.Models.News;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 namespace MedicalCabinetWeb.Api.Controllers;
 
@@ -17,6 +18,7 @@ public class NewsController : ControllerBase
     }
 
     [HttpGet("{id}")]
+    [AllowAnonymous]
     public IActionResult GetNewsById([FromRoute] int id)
     {
         var result = _newsLogic.GetNewsById(id);
@@ -27,6 +29,7 @@ public class NewsController : ControllerBase
     }
 
     [HttpGet("list")]
+    [AllowAnonymous]
     public IActionResult GetNewsList()
     {
         var result = _newsLogic.GetNewsList();
@@ -37,6 +40,7 @@ public class NewsController : ControllerBase
     }
 
     [HttpPost("create")]
+    [Authorize(Roles = "Admin")]
     public IActionResult CreateNews([FromBody] NewsCreateDto news)
     {
         var result = _newsLogic.CreateNews(news);
@@ -47,6 +51,7 @@ public class NewsController : ControllerBase
     }
 
     [HttpDelete("{id}")]
+    [Authorize(Roles = "Admin")]
     public IActionResult DeleteNews([FromRoute] int id)
     {
         var result = _newsLogic.DeleteNews(id);
@@ -57,6 +62,7 @@ public class NewsController : ControllerBase
     }
 
     [HttpPut("update/{id}")]
+    [Authorize(Roles = "Admin")]
     public IActionResult UpdateNews([FromRoute] int id, [FromBody] NewsCreateDto newsCreateDto)
     {
         var result = _newsLogic.UpdateNews(id, newsCreateDto);
