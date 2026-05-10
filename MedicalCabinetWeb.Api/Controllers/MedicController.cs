@@ -1,6 +1,7 @@
 ﻿using MedicalCabinetWeb.BusinessLayer;
 using MedicalCabinetWeb.BusinessLayer.Interfaces;
 using MedicalCabinetWeb.Domain.Models.Medic;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MedicalCabinetWeb.Api.Controllers;
@@ -18,6 +19,7 @@ public class MedicController : ControllerBase
     }
 
     [HttpPost("Create")]
+    [Authorize(Roles = "Admin")]
     public IActionResult CreateMedic([FromBody] MedicCreateDto medic)
     {
         var result = _medicLogic.CreateMedic(medic);
@@ -28,6 +30,7 @@ public class MedicController : ControllerBase
     }
 
     [HttpGet("{id}")]
+    [AllowAnonymous]
     public IActionResult GetMedicById([FromRoute] int id)
     {
         var result = _medicLogic.GetMedicById(id);
@@ -38,6 +41,7 @@ public class MedicController : ControllerBase
     }
 
     [HttpGet("list")]
+    [AllowAnonymous]
     public IActionResult GetMedicList()
     {
         var result = _medicLogic.GetMedicList();
@@ -48,6 +52,7 @@ public class MedicController : ControllerBase
     }
 
     [HttpPut("update/{id}")]
+    [Authorize(Roles = "Admin")]
     public IActionResult UpdateMedic([FromRoute] int id, [FromBody] MedicCreateDto medicCreate)
     {
         var result = _medicLogic.UpdateMedic(id, medicCreate);
@@ -58,6 +63,7 @@ public class MedicController : ControllerBase
     }
 
     [HttpDelete("{id}")]
+    [Authorize(Roles = "Admin")]
     public IActionResult DeleteMedic([FromRoute] int id)
     {
         var result = _medicLogic.DeleteMedic(id);
