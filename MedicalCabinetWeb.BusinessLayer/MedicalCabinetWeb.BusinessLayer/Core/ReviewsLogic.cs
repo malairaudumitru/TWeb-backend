@@ -20,7 +20,7 @@ public class ReviewsLogic : ReviewsAction, IReviewsLogic
         var result = GetReviewByIdAction(id);
         if (result == null)
             return ActionResponse.BadRequest("Review not found");
-        return  ActionResponse.Ok("Review found successfully");
+        return ActionResponse.Ok(data: result);
     }
 
     public ActionResponse GetReviewsList()
@@ -28,7 +28,7 @@ public class ReviewsLogic : ReviewsAction, IReviewsLogic
         var result = GetReviewsListAction();
         if (result == null)
             return ActionResponse.BadRequest("Error getting reviews");
-        return  ActionResponse.Ok("Reviews found successfully");
+        return ActionResponse.Ok(data: result);
     }
 
     public ActionResponse UpdateReview(int id, ReviewsCreateDto data)
