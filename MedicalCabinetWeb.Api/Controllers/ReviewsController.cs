@@ -1,6 +1,7 @@
 using MedicalCabinetWeb.BusinessLayer;
 using MedicalCabinetWeb.BusinessLayer.Interfaces;
 using MedicalCabinetWeb.Domain.Models.Reviews;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MedicalCabinetWeb.Api.Controllers;
@@ -18,6 +19,7 @@ public class ReviewsController : ControllerBase
     }
 
     [HttpPost("create")]
+    [Authorize(Roles = "Patient")]
     public IActionResult CreateReview([FromBody] ReviewsCreateDto reviewInfo)
     {
         var result = _reviewsLogic.CreateReview(reviewInfo);
@@ -27,6 +29,7 @@ public class ReviewsController : ControllerBase
     }
     
     [HttpGet("{id}")]
+    [AllowAnonymous]
     public IActionResult GetReviewById([FromRoute] int id)
     {
         var result = _reviewsLogic.GetReviewById(id);
@@ -36,6 +39,7 @@ public class ReviewsController : ControllerBase
     }
 
     [HttpGet("list")]
+    [AllowAnonymous]
     public IActionResult GetReviewsList()
     {
         var result = _reviewsLogic.GetReviewsList();
@@ -45,6 +49,7 @@ public class ReviewsController : ControllerBase
     }
 
     [HttpPut("update/{id}")]
+    [Authorize(Roles = "Patient,Admin")]
     public IActionResult UpdateReview([FromRoute] int id, [FromBody] ReviewsCreateDto reviewInfo)
     {
         var result = _reviewsLogic.UpdateReview(id, reviewInfo);
@@ -54,6 +59,7 @@ public class ReviewsController : ControllerBase
     }
     
     [HttpDelete("{id}")]
+    [Authorize(Roles = "Admin,Patient")]
     public IActionResult DeleteReview([FromRoute] int id)
     {
         var result = _reviewsLogic.DeleteReview(id);
