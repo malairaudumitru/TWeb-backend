@@ -20,7 +20,7 @@ public class NewsLogic : NewsActions, INewsLogic
         if (result == null)
             return ActionResponse.BadRequest("Error finding news");
         
-        return ActionResponse.Ok("News found successfully");
+        return ActionResponse.Ok(data: result, message: "News found successfully");
         
     }
 
@@ -29,7 +29,7 @@ public class NewsLogic : NewsActions, INewsLogic
     public  ActionResponse GetNewsList()
     {
         var result = GetNewsListAction();
-            return ActionResponse.Ok("News found successfully");
+        return ActionResponse.Ok(data: result, message: "News found successfully");
 
     }
 

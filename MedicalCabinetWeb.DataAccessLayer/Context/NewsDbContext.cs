@@ -7,14 +7,6 @@ public class NewsDbContext: DbContext
 {
     public DbSet<NewsEntity> News { get; set; }
     
-
-    protected override void OnModelCreating(ModelBuilder modelBuilder)
-    {
-        modelBuilder.Entity<NewsEntity>()
-            .Property(n => n.Type)
-            .HasConversion<string>(); 
-    }
-
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
         if (!optionsBuilder.IsConfigured)
