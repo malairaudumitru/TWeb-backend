@@ -68,6 +68,17 @@ public class MedicalAppointmentController : ControllerBase
         
     }
     
+    [HttpGet("byEmail/{email}")]
+    [Authorize(Roles = "Admin,Patient")]
+    public IActionResult GetMedicalAppointmentByEmail([FromRoute] string email)
+    {
+        var result = _medicalAppointmentLogic.GetMedicalAppointmentByEmail(email);
+        if(result.IsSuccess == false)
+            return StatusCode((int)result.StatusCode, result.Message);
+
+        return Ok(result.Data);
+    }
+    
     [HttpPut("update/{id}")]
     [Authorize(Roles = "Admin")]
     public IActionResult UpdateMedicalAppointment([FromRoute] int id, [FromBody] MedicalAppointmentCreateDto medicalAppointmentCreate)

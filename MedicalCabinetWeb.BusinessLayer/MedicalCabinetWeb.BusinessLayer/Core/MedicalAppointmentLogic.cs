@@ -44,6 +44,13 @@ public class MedicalAppointmentLogic : MedicalAppointmentActions, IMedicalAppoin
         return ActionResponse.Ok(data: appointment);
     }
     
+    public ActionResponse GetMedicalAppointmentByEmail(string email)
+    {
+        var appointments = GetMedicalAppointmentByEmailAction(email);
+        
+        return ActionResponse.Ok(data: appointments);
+    }
+    
     public ActionResponse UpdateMedicalAppointment(int id, MedicalAppointmentCreateDto data)
     {
         var result = UpdateMedicalAppointmentAction(id, data);

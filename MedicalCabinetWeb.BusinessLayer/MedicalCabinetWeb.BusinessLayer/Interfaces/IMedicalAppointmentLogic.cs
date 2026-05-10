@@ -8,6 +8,7 @@ public interface IMedicalAppointmentLogic
 {
     ActionResponse GetMedicalAppointmentList();
     ActionResponse GetMedicalAppointmentById(int id);
+    ActionResponse GetMedicalAppointmentByEmail(string email);
     ActionResponse CreateMedicalAppointment(MedicalAppointmentCreateDto data);
     ActionResponse UpdateMedicalAppointment(int id, MedicalAppointmentCreateDto data);
     ActionResponse DeleteMedicalAppointment(int id); 

@@ -139,6 +139,29 @@ public class MedicalAppointmentActions
 
     }
     
+    
+    protected List<MedicalAppointmentInfoDto> GetMedicalAppointmentByEmailAction(string email)
+    {
+        var appointmentList = _context.MedicalAppointments
+            .Where(x => x.IsDeleted == false && x.Email.ToLower() == email.ToLower())
+            .Select(appointmentEntity => new MedicalAppointmentInfoDto
+            {
+                Id = appointmentEntity.Id,
+                PatientName = appointmentEntity.PatientName,
+                Phone = appointmentEntity.Phone,
+                Email = appointmentEntity.Email,
+                DoctorName = appointmentEntity.DoctorName,
+                ServiceName = appointmentEntity.ServiceName,
+                ReasonForVisit = appointmentEntity.ReasonForVisit,
+                AppointmentTime = appointmentEntity.AppointmentTime,
+                AppointmentDate = appointmentEntity.AppointmentDate,
+                Status = appointmentEntity.Status
+            })
+            .ToList();
+
+        return appointmentList;
+    }
+    
     protected List<MedicalAppointmentInfoDto>? GetMedicalAppointmentByDateAction(DateOnly date)
     {
         var appointmentEntities = _context.MedicalAppointments
