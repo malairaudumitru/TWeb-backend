@@ -43,7 +43,7 @@ public class PatientController : ControllerBase
     }
 
     [HttpPost("Create")]
-    [Authorize(Roles = "Patient")]
+    [Authorize(Roles = "Patient,Admin")]
     public IActionResult CreatePatient([FromBody] PatientCreateDto patient)
     {
         var result = _patientLogic.CreatePatient(patient);
