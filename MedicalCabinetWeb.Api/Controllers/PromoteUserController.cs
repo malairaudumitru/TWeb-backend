@@ -1,11 +1,13 @@
 ﻿using MedicalCabinetWeb.BusinessLayer.Core;
 using MedicalCabinetWeb.Domain.Models.User;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MedicalCabinetWeb.Api.Controllers;
 
 [ApiController]
 [Route("api/promote")]
+[Authorize(Roles = "Admin")]
 public class PromoteUserController : ControllerBase
 {
     [HttpPost("doctor/{userId}")]
