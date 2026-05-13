@@ -17,13 +17,11 @@ namespace MedicalCabinetWeb.Domain.Entities.User
         
         public string Email { get; set; }
         public string Phone { get; set; }
-       public PatientStatus Status { get; set; }
        public bool IsDeleted { get; set; }
        
-       [Required]
-       public int UserAccountId { get; set; }
+       public int? UserAccountId { get; set; }
 
        [ForeignKey(nameof(UserAccountId))]
-       public UserAccount UserAccount { get; set; } = null!;
+       public UserAccount? UserAccount { get; set; } = null!;
     }
 }

@@ -23,7 +23,7 @@ public class PatientActions
             Phone = patient.Phone,
             DateOfBirth = patient.DateOfBirth,
             Sex = patient.Sex,
-            Status = patient.Status
+            UserAccountId = null
         };
 
         try
@@ -53,8 +53,7 @@ public class PatientActions
             DateOfBirth = patientEntity.DateOfBirth,
             Sex = patientEntity.Sex,
             Email = patientEntity.Email,
-            Phone = patientEntity.Phone,
-            Status = patientEntity.Status
+            Phone = patientEntity.Phone
 
         };
 
@@ -73,8 +72,8 @@ public class PatientActions
                 DateOfBirth = patientEntity.DateOfBirth,
                 Sex = patientEntity.Sex,
                 Email = patientEntity.Email,
-                Phone = patientEntity.Phone,
-                Status = patientEntity.Status
+                Phone = patientEntity.Phone
+                
             })
             .ToList();
         return patientList;
@@ -92,7 +91,7 @@ public class PatientActions
         patientEntity.Sex = patient.Sex;
         patientEntity.Email = patient.Email;
         patientEntity.Phone = patient.Phone;
-        patientEntity.Status = patientEntity.Status;
+        
 
         try
         {

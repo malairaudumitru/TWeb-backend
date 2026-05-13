@@ -21,7 +21,7 @@ public class MedicalAppointmentController : ControllerBase
     }
     
     [HttpPost("create")]
-    [Authorize(Roles = "Patient")]
+    [Authorize(Roles = "Admin,Patient")]
     public IActionResult CreateMedicalAppointment([FromBody] MedicalAppointmentCreateDto medicalAppointmentInfo)
     {
         var result = _medicalAppointmentLogic.CreateMedicalAppointment(medicalAppointmentInfo);
