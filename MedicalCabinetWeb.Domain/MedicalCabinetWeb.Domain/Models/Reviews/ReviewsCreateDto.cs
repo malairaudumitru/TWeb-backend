@@ -5,9 +5,9 @@ namespace MedicalCabinetWeb.Domain.Models.Reviews;
 
 public class ReviewsCreateDto
 {
-    [Required]
+    
     [StringLength(50)]
-    public string AuthorName { get; set; } = string.Empty;
+    public string? AuthorName { get; set; } = string.Empty;
     
     [Required]
     [StringLength(400)]

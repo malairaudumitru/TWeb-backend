@@ -86,7 +86,8 @@ public class ReviewsAction
         if (reviewEntity == null) return false;
         if (reviewEntity.IsDeleted == true) return false;
 
-        reviewEntity.AuthorName = reviewInfo.AuthorName;
+        if (!string.IsNullOrEmpty(reviewInfo.AuthorName))
+            reviewEntity.AuthorName = reviewInfo.AuthorName;
         reviewEntity.ReviewText = reviewInfo.ReviewText;
         reviewEntity.Rating = reviewInfo.Rating;
         reviewEntity.IsVerifiedPatient = reviewInfo.IsVerifiedPatient;

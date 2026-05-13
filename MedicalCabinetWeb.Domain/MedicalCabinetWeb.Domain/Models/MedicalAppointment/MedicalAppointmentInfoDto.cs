@@ -34,7 +34,6 @@ public class MedicalAppointmentInfoDto
     public string ReasonForVisit { get; set; }
     
     [Required]
-    [StringLength(10)]
     public TimeOnly AppointmentTime { get; set; } 
     
     [Required]

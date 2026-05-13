@@ -2,13 +2,17 @@
 
     public enum MedicSpeciality
     {
-        Cardiologie, 
-        Pediatrie, 
-        Neurologie, 
-        Dermatologie, 
-        Oftalmologie, 
-        Stomatologie, 
-        Chirurgie, 
-        Ortopedie 
+        Cardiologie,    
+        Pediatrie,      
+        Neurologie,     
+        Dermatologie,  
+        Oftalmologie,   
+        Stomatologie,   
+        Chirurgie,      
+        Ortopedie,      
+        Ginecologie,   
+        Urologie,      
+        Psihiatrie,     
+        MedicinaGenerala
     }
 

@@ -37,7 +37,6 @@ public class MedicalAppointmentData
     public string ReasonForVisit { get; set; }
     
     [Required]
-    [StringLength(10)]
     public TimeOnly AppointmentTime { get; set; } 
     
     [Required]
