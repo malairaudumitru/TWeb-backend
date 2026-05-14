@@ -41,7 +41,11 @@ public class PatientActions
 
     public PatientInfoDto? GetPatientByIdAction(int id)
     {
-        var patientEntity = _context.Patients.Find(id);
+        var patientEntity = _context.Patients
+            .FirstOrDefault(p => p.UserAccountId == id && p.IsDeleted == false);
+
+        patientEntity ??= _context.Patients.Find(id);
+
         if (patientEntity == null)
             return null;
 
@@ -54,10 +58,10 @@ public class PatientActions
             Sex = patientEntity.Sex,
             Email = patientEntity.Email,
             Phone = patientEntity.Phone
-
         };
 
         return patientInfoDto;
+
     }
 
     public List<PatientInfoDto> GetPatientListAction()
@@ -72,7 +76,8 @@ public class PatientActions
                 DateOfBirth = patientEntity.DateOfBirth,
                 Sex = patientEntity.Sex,
                 Email = patientEntity.Email,
-                Phone = patientEntity.Phone
+                Phone = patientEntity.Phone,
+                UserAccountId = patientEntity.UserAccountId
                 
             })
             .ToList();

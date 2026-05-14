@@ -17,5 +17,7 @@ namespace MedicalCabinetWeb.Domain.Models.Patient
         
         public string Phone { get; set; }
         
+        public int? UserAccountId { get; set; }
+        
     }
 }

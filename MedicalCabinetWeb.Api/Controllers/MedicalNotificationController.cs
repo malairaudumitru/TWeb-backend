@@ -32,7 +32,7 @@ public class MedicalNotificationController : ControllerBase
     }
     
     [HttpDelete("{id}/delete")]
-    [Authorize(Roles = "Admin")]
+    [Authorize(Roles = "Admin,Patient")]
     public IActionResult DeleteMedicalNotification([FromRoute] int id)
     {
         var result = _medicalNotificationLogic.DeleteMedicalNotification(id);
@@ -87,7 +87,7 @@ public class MedicalNotificationController : ControllerBase
     }
     
     [HttpGet("{userId}/by-user-id")]
-    [Authorize(Roles = "Patient")]
+    [Authorize(Roles = "Patient,Admin")]
     public IActionResult GetMedicalNotificationByUserId([FromRoute] int userId)
     {
         var result = _medicalNotificationLogic.GetMedicalNotificationByUserId(userId);
