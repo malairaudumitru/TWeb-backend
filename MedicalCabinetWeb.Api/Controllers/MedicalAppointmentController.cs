@@ -45,7 +45,7 @@ public class MedicalAppointmentController : ControllerBase
     
     
     [HttpGet("list")]
-    [Authorize(Roles = "Admin")]
+    [Authorize(Roles = "Admin,Patient")]
     public IActionResult GetMedicalAppointmentList()
     {
         var result = _medicalAppointmentLogic.GetMedicalAppointmentList();
