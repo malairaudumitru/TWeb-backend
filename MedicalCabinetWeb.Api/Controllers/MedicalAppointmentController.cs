@@ -102,7 +102,7 @@ public class MedicalAppointmentController : ControllerBase
     }
     
     [HttpPatch("{id}/status")]
-    [Authorize(Roles = "Admin")]
+    [Authorize(Roles = "Admin,Patient")]
     public IActionResult UpdateAppointmentsStatus([FromRoute] int id, [FromBody] UpdateAppointmentStatusDto dto)
     {
         var result = _medicalAppointmentLogic.UpdateAppointmentStatus(id, dto.Status);
