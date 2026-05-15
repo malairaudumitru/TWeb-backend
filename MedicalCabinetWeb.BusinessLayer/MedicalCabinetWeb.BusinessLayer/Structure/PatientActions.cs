@@ -67,7 +67,6 @@ public class PatientActions
     public List<PatientInfoDto> GetPatientListAction()
     {
         var patientList = _context.Patients
-             .Where(p => p.IsDeleted == false)
              .Select(patientEntity => new PatientInfoDto()
             {
                 Id = patientEntity.Id,
@@ -77,6 +76,7 @@ public class PatientActions
                 Sex = patientEntity.Sex,
                 Email = patientEntity.Email,
                 Phone = patientEntity.Phone,
+                IsDeleted = patientEntity.IsDeleted,
                 UserAccountId = patientEntity.UserAccountId
                 
             })

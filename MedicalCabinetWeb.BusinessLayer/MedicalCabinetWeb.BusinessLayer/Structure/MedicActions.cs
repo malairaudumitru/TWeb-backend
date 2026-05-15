@@ -52,13 +52,13 @@ public class MedicActions
     protected List<MedicInfoDto> GetMedicListAction()
     {
         var medicList = _context.Medics
-            .Where(x => x.IsDeleted == false)
             .Select(medicEntity => new MedicInfoDto
             {
                 Id = medicEntity.Id,
                 LastName =  medicEntity.LastName,
                 FirstName =  medicEntity.FirstName,
-                Specialty =  medicEntity.Speciality
+                Specialty =  medicEntity.Speciality,
+                IsDeleted = medicEntity.IsDeleted
             })
             .ToList();
         

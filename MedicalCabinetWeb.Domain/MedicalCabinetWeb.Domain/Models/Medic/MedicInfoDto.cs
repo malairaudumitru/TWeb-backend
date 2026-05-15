@@ -9,4 +9,5 @@ public class MedicInfoDto
     public string LastName { get; set; }
     public string FirstName { get; set; }
     public MedicSpeciality Specialty { get; set; }
+    public bool IsDeleted { get; set; }
 }
