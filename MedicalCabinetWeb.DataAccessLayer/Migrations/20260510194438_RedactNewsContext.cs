@@ -10,13 +10,8 @@ namespace MedicalCabinetWeb.DataAccessLayer.Migrations
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.AlterColumn<int>(
-                name: "Type",
-                table: "News",
-                type: "integer",
-                nullable: false,
-                oldClrType: typeof(string),
-                oldType: "text");
+            migrationBuilder.Sql(
+                "ALTER TABLE \"News\" ALTER COLUMN \"Type\" TYPE integer USING \"Type\"::integer");
         }
 
         /// <inheritdoc />
