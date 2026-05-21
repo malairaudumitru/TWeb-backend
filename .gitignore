@@ -61,3 +61,7 @@ obj/
 .vs/
 *.user
 *.log
+
+**/appsettings.Development.json
+
+**/launchSettings.json

@@ -17,5 +17,6 @@ jobs:
           script: |
             cd /app
             git pull
+            echo "JWT_SECRET_KEY=${{ secrets.JWT_SECRET_KEY }}" >> /etc/environment
             dotnet publish MedicalCabinetWeb.Api/MedicalCabinetWeb.Api.csproj -c Release -o /app/publish
             systemctl restart medicare-backend
