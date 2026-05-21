@@ -40,6 +40,6 @@
   },
   "environmentVariables": {
     "ASPNETCORE_ENVIRONMENT": "Development",
-    "JWT_SECRET_KEY": "ADWWjamvhtl@#$!adghtq(*7652089DA"
+    "JWT_SECRET_KEY": ""
   }
 }
