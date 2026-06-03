@@ -26,7 +26,8 @@ public class MedicalServiceActions
             ServiceName = serviceInfo.ServiceName,
             ServicePrice = serviceInfo.ServicePrice,
             ServiceDescription = serviceInfo.ServiceDescription,
-            ServiceDuration = serviceInfo.ServiceDuration
+            ServiceDuration = serviceInfo.ServiceDuration,
+            Category = serviceInfo.Category
         };
         try
         {
@@ -70,7 +71,8 @@ public class MedicalServiceActions
             ServiceName = serviceEntity.ServiceName,
             ServicePrice = serviceEntity.ServicePrice,
             ServiceDescription = serviceEntity.ServiceDescription,
-            ServiceDuration = serviceEntity.ServiceDuration
+            ServiceDuration = serviceEntity.ServiceDuration,
+            Category = serviceEntity.Category
         };
        
         return serviceInfoDto;
@@ -89,6 +91,7 @@ public class MedicalServiceActions
                 ServicePrice = serviceEntity.ServicePrice,
                 ServiceDescription = serviceEntity.ServiceDescription,
                 ServiceDuration = serviceEntity.ServiceDuration,
+                Category = serviceEntity.Category
                 
             })
             .ToList();
@@ -127,7 +130,9 @@ public class MedicalServiceActions
         serviceEntity.ServicePrice = serviceInfo.ServicePrice;
         serviceEntity.ServiceDescription = serviceInfo.ServiceDescription;
         serviceEntity.ServiceDuration = serviceInfo.ServiceDuration;
+        serviceEntity.Category = serviceInfo.Category; 
         serviceEntity.UpdatedAt = DateTime.UtcNow;
+        
 
         try
         {

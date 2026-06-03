@@ -22,4 +22,6 @@ public class MedicalServiceCreateDto
     [Range(5, 480)]
     public int ServiceDuration { get; set; }
     
+    public ServiceCategory Category { get; set; }
+    
 }
